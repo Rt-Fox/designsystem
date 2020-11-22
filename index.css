@@ -3,6 +3,10 @@
   margin: 0;
 }
 
+*:focus {
+  outline: none;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -18,28 +22,9 @@ body {
   flex-direction: row;
 }
 
-.mt30 {
-  margin-top: 30px;
-}
-
-.ml30 {
-  margin-left: 30px;
-}
-
-.ml60 {
-  margin-left: 60px;
-}
-
-.mr120 {
-  margin-right: 120px;
-}
-
-.mb16 {
-  margin-bottom: 16px;
-}
-
-.mb30 {
-  margin-bottom: 30px;
+.jce {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .w260 {
@@ -157,7 +142,6 @@ body {
   font-size: 18px;
   line-height: 26px;
   color: #4D4D4D;
-  margin-bottom: 30px;
   margin-left: 20px;
 }
 .css-code .span-yellow {
@@ -240,7 +224,7 @@ body {
   paragraph: 13px;
 }
 
-.cds-small-text, .cds-badge-pill {
+.cds-small-text {
   font-family: Segoe UI, sans-serif;
   font-weight: 400;
   font-size: 14px;
@@ -248,7 +232,7 @@ body {
   paragraph: 11px;
 }
 
-.cds-small-text-bold {
+.cds-small-text-bold, .cds-badge-pill {
   font-family: Segoe UI, sans-serif;
   font-weight: 700;
   font-size: 14px;
@@ -371,7 +355,7 @@ body {
   margin-right: 60px;
 }
 
-.cds-color-primary {
+.cds-color-primary, .cds-tagbutton .cds-small-text-bold, .cds-tagbutton .cds-badge-pill {
   color: #1946BA;
 }
 
@@ -575,43 +559,45 @@ body {
   border: 0.74829px solid #8CC17D;
 }
 
-.cds-shadow, .cds-form-control {
-  box-shadow: 0px 4px 4px 0px #F8F8F8;
-  box-shadow: 0px 4px 16px 0px #F1F1F1;
+.cds-shadow, .cds-tagbutton.hover .cds-form-control-hover, .cds-tagbutton:hover .cds-form-control-hover, .cds-badge-pill.cds-badge-hover, .cds-badge-pill:hover, .cds-form-control, .cds-select.cds-select {
+  box-shadow: 0 4px 4px 0 #F8F8F8;
+  box-shadow: 0 4px 16px 0 #F1F1F1;
 }
 
-.cds-shadow-active, .cds-form-control-active {
-  box-shadow: 0px 4px 4px 0px #F8F8F8;
-  box-shadow: 0px 4px 24px 0px #E3E3E3;
+.cds-shadow-active, .cds-form-control-active, .cds-list.cds-list-flush, .cds-select.cds-select-hover, .cds-select:hover {
+  box-shadow: 0 4px 4px 0 #F8F8F8;
+  box-shadow: 0 4px 24px 0 #E3E3E3;
 }
 
 .cds-shadow-fail, .cds-form-control-fail {
-  box-shadow: 0px 4px 4px 0px #FEF9F9;
-  box-shadow: 0px 4px 16px 0px #FEFCFC;
+  box-shadow: 0 4px 4px 0 #FEF9F9;
+  box-shadow: 0 4px 16px 0 #FEFCFC;
 }
 
 .cds-shadow-fail-active, .cds-form-control-fail-active {
-  box-shadow: 0px 4px 4px 0px #FFFDFE;
-  box-shadow: 0px 4px 24px 0px #FCF1F3;
+  box-shadow: 0 4px 4px 0 #FFFDFE;
+  box-shadow: 0 4px 24px 0 #FCF1F3;
 }
 
 .cds-shadow-success, .cds-form-control-success {
-  box-shadow: 0px 4px 16px 0px #F9FCF8;
-  box-shadow: 0px 4px 8px 0px #FCFDFC;
+  box-shadow: 0 4px 16px 0 #F9FCF8;
+  box-shadow: 0 4px 8px 0 #FCFDFC;
 }
 
 .cds-shadow-success-active {
-  box-shadow: 0px 4px 4px 0px #F5FAF4;
-  box-shadow: 0px 4px 4px 0px #F5FAF4;
+  box-shadow: 0 4px 4px 0 #F5FAF4;
+  box-shadow: 0 4px 4px 0 #F5FAF4;
 }
 
-.cds-form-control {
+.cds-form-control, .cds-select.cds-select {
   border-radius: 4px;
   padding: 16px;
   border: none;
 }
 
-.cds-form-control-active {
+.cds-form-control-active, .cds-list.cds-list-flush, .cds-select.cds-select-hover, .cds-select:hover {
+  display: flex;
+  align-items: center;
   border-radius: 4px;
   padding: 16px;
   border: none;
@@ -641,7 +627,7 @@ body {
   border: none;
 }
 
-.cds-form-control.cds-form-control-attach, .cds-form-control.cds-form-control-attach-help, .cds-form-control.cds-form-control-attach-icon {
+.cds-form-control.cds-form-control-attach, .cds-form-control-attach.cds-select, .cds-form-control.cds-form-control-attach-help, .cds-form-control-attach-help.cds-select, .cds-form-control.cds-form-control-attach-icon, .cds-form-control-attach-icon.cds-select {
   width: 0.1px;
   height: 0.1px;
   opacity: 0;
@@ -654,7 +640,7 @@ body {
   width: 456px;
   height: 42px;
   background: #FFFFFF;
-  box-shadow: 0px 4px 4px rgba(77, 77, 77, 0.04), 0px 4px 16px rgba(77, 77, 77, 0.08);
+  box-shadow: 0 4px 4px rgba(77, 77, 77, 0.04), 0 4px 16px rgba(77, 77, 77, 0.08);
   border-radius: 4px;
   text-align: center;
   display: flex;
@@ -666,7 +652,7 @@ body {
   width: 456px;
   height: 46px;
   background: #FFFFFF;
-  box-shadow: 0px 4px 4px rgba(77, 77, 77, 0.04), 0px 4px 16px rgba(77, 77, 77, 0.08);
+  box-shadow: 0 4px 4px rgba(77, 77, 77, 0.04), 0 4px 16px rgba(77, 77, 77, 0.08);
   border-radius: 4px;
   text-align: center;
   display: flex;
@@ -678,7 +664,7 @@ body {
   width: 456px;
   height: 56px;
   background: #1946BA;
-  box-shadow: 0px 4px 4px rgba(77, 77, 77, 0.04), 0px 4px 24px rgba(77, 77, 77, 0.16);
+  box-shadow: 0 4px 4px rgba(77, 77, 77, 0.04), 0 4px 24px rgba(77, 77, 77, 0.16);
   border-radius: 4px;
 }
 
@@ -691,7 +677,7 @@ body {
   content: url("adddoc.svg");
 }
 
-.cds-form-control.cds-form-control-attach-progress {
+.cds-form-control.cds-form-control-attach-progress, .cds-form-control-attach-progress.cds-select {
   width: 90%;
   height: 4px;
   background: #ddd;
@@ -699,7 +685,7 @@ body {
   padding: 0;
 }
 
-.cds-form-control.cds-form-control-attach-success {
+.cds-form-control.cds-form-control-attach-success, .cds-form-control-attach-success.cds-select {
   width: 90%;
   height: 4px;
   background: #ddd;
@@ -707,7 +693,7 @@ body {
   padding: 0;
 }
 
-.cds-form-control.cds-form-control-attach-fail {
+.cds-form-control.cds-form-control-attach-fail, .cds-form-control-attach-fail.cds-select {
   width: 90%;
   height: 4px;
   background: #ddd;
@@ -715,7 +701,7 @@ body {
   padding: 0;
   position: relative;
 }
-.cds-form-control.cds-form-control-attach-fail:before {
+.cds-form-control.cds-form-control-attach-fail:before, .cds-form-control-attach-fail.cds-select:before {
   content: "Произошла ошибка, попробуйте загрузить файл повторно";
   position: absolute;
   color: #D9364B;
@@ -778,45 +764,141 @@ body {
   align-items: center;
   padding: 4px 16px;
   color: #FFFFFF;
-  width: 99px;
-  height: 30px;
   background: #1946BA;
-  box-shadow: 0px 4px 4px rgba(77, 77, 77, 0.04), 0px 4px 16px rgba(77, 77, 77, 0.08);
+  box-shadow: 0 4px 4px rgba(77, 77, 77, 0.04), 0 4px 16px rgba(77, 77, 77, 0.08);
   border-radius: 16px;
+  border: none;
 }
 .cds-badge-pill.cds-badge-secondary {
   display: flex;
   flex-direction: row;
   align-items: center;
   padding: 4px 16px;
-  width: 68px;
-  height: 30px;
+  width: auto;
+  height: auto;
+  color: #1946BA;
   background: #FFFFFF;
   border: 1px solid #1946BA;
   box-sizing: border-box;
   border-radius: 16px;
 }
-.cds-badge-pill.cds-badge-disable {
+.cds-badge-pill.cds-badge-disable, .cds-badge-pill:disabled, .cds-badge-pill[disabled], .cds-badge-pill[disabled]:hover {
   display: flex;
   flex-direction: row;
   align-items: center;
   padding: 4px 16px;
-  width: 68px;
-  height: 30px;
+  width: auto;
+  height: auto;
+  color: #FFFFFF;
   background: #D1DAF1;
+  border: none;
   border-radius: 16px;
 }
-.cds-badge-pill.cds-badge-hover {
+.cds-badge-pill.cds-badge-hover, .cds-badge-pill:hover {
   display: flex;
   flex-direction: row;
   align-items: center;
   padding: 4px 16px;
-  width: 68px;
-  height: 30px;
+  width: auto;
+  height: auto;
+  color: #1946BA;
   background: #FFFFFF;
   border: 1px solid #D1DAF1;
-  box-shadow: 0px 4px 4px rgba(77, 77, 77, 0.04), 0px 4px 16px rgba(77, 77, 77, 0.08);
   border-radius: 16px;
+}
+
+.cds-tagbutton .cds-form-control-active, .cds-tagbutton .cds-list.cds-list-flush, .cds-tagbutton .cds-select.cds-select-hover, .cds-tagbutton .cds-select:hover {
+  padding: 1px 8px;
+}
+.cds-tagbutton .cds-small-text-bold, .cds-tagbutton .cds-badge-pill {
+  margin-right: 4px;
+}
+.cds-tagbutton .cds-ipack-close .cds-color {
+  stroke: #999999;
+}
+.cds-tagbutton.hover, .cds-tagbutton:hover {
+  cursor: pointer;
+}
+.cds-tagbutton.hover .cds-form-control-hover, .cds-tagbutton:hover .cds-form-control-hover {
+  background-color: #EEEEEE;
+}
+.cds-tagbutton.hover .cds-ipack-close .cds-color, .cds-tagbutton:hover .cds-ipack-close .cds-color {
+  stroke: #262626;
+}
+.cds-tagbutton.click .cds-form-control-hover, .cds-tagbutton:active .cds-form-control-hover {
+  background-color: #143895;
+  box-shadow: none;
+}
+.cds-tagbutton.click .cds-ipack-close .cds-color, .cds-tagbutton:active .cds-ipack-close .cds-color {
+  stroke: #FFFFFF;
+}
+.cds-tagbutton.click .cds-small-text-bold, .cds-tagbutton.click .cds-badge-pill, .cds-tagbutton:active .cds-small-text-bold, .cds-tagbutton:active .cds-badge-pill {
+  color: #FFFFFF;
+}
+.cds-tagbutton.chosen .cds-form-control-chosen, .cds-tagbutton:focus .cds-form-control-chosen {
+  background-color: #1946BA;
+  box-shadow: none;
+}
+.cds-tagbutton.chosen .cds-ipack-close .cds-color, .cds-tagbutton:focus .cds-ipack-close .cds-color {
+  stroke: #FFFFFF;
+}
+.cds-tagbutton.chosen .cds-small-text-bold, .cds-tagbutton.chosen .cds-badge-pill, .cds-tagbutton:focus .cds-small-text-bold, .cds-tagbutton:focus .cds-badge-pill {
+  color: #FFFFFF;
+}
+
+.cds-select {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+.cds-select .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cds-select .icon .cds-ipack-arrow {
+  transform: scale(-1);
+}
+.cds-select .cds-body-text {
+  color: #999999;
+}
+.cds-list.cds-list-flush {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.cds-list.cds-list-flush .cds-body-text {
+  color: #4D4D4D;
+}
+
+.mt30 {
+  margin-top: 30px;
+}
+
+.ml16 {
+  margin-left: 16px;
+}
+
+.ml30 {
+  margin-left: 30px;
+}
+
+.ml60 {
+  margin-left: 60px;
+}
+
+.mr120 {
+  margin-right: 120px;
+}
+
+.mb16 {
+  margin-bottom: 16px;
+}
+
+.mb30 {
+  margin-bottom: 30px;
 }
 
 /*# sourceMappingURL=index.css.map */
