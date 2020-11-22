@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
 }
@@ -33,6 +34,14 @@ body {
   margin-right: 120px;
 }
 
+.mb16 {
+  margin-bottom: 16px;
+}
+
+.mb30 {
+  margin-bottom: 30px;
+}
+
 .w260 {
   width: 260px;
   flex-shrink: 0;
@@ -45,6 +54,7 @@ body {
 
 .w500 {
   width: 500px;
+  flex-shrink: 0;
 }
 
 .w700 {
@@ -58,7 +68,8 @@ body {
 }
 
 .content-wrap {
-  height: 100vh;
+  max-height: 100vh;
+  min-height: 100vh;
 }
 
 .main-title {
@@ -149,9 +160,12 @@ body {
   margin-bottom: 30px;
   margin-left: 20px;
 }
-.css-code span {
+.css-code .span-yellow {
   color: #F69C00;
   margin-left: -20px;
+}
+.css-code .cds-color-dark-500 {
+  margin-left: 30px;
 }
 
 .cds-sp1 {
@@ -226,7 +240,7 @@ body {
   paragraph: 13px;
 }
 
-.cds-small-text {
+.cds-small-text, .cds-badge-pill {
   font-family: Segoe UI, sans-serif;
   font-weight: 400;
   font-size: 14px;
@@ -317,10 +331,6 @@ body {
   position: absolute;
   left: -0.5px;
   bottom: -20px;
-}
-
-.mb16 {
-  margin-bottom: 16px;
 }
 
 .color-block {
@@ -629,6 +639,184 @@ body {
   border-radius: 4px;
   padding: 16px;
   border: none;
+}
+
+.cds-form-control.cds-form-control-attach, .cds-form-control.cds-form-control-attach-help, .cds-form-control.cds-form-control-attach-icon {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.cds-form-control-attach + label {
+  width: 456px;
+  height: 42px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(77, 77, 77, 0.04), 0px 4px 16px rgba(77, 77, 77, 0.08);
+  border-radius: 4px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cds-form-control-attach-help + label {
+  width: 456px;
+  height: 46px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(77, 77, 77, 0.04), 0px 4px 16px rgba(77, 77, 77, 0.08);
+  border-radius: 4px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cds-form-control-attach-icon + label {
+  width: 456px;
+  height: 56px;
+  background: #1946BA;
+  box-shadow: 0px 4px 4px rgba(77, 77, 77, 0.04), 0px 4px 24px rgba(77, 77, 77, 0.16);
+  border-radius: 4px;
+}
+
+.cds-ipack-doc-add {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cds-ipack-doc-add:after {
+  content: url("adddoc.svg");
+}
+
+.cds-form-control.cds-form-control-attach-progress {
+  width: 90%;
+  height: 4px;
+  background: #ddd;
+  margin-bottom: 20px;
+  padding: 0;
+}
+
+.cds-form-control.cds-form-control-attach-success {
+  width: 90%;
+  height: 4px;
+  background: #ddd;
+  margin-bottom: 20px;
+  padding: 0;
+}
+
+.cds-form-control.cds-form-control-attach-fail {
+  width: 90%;
+  height: 4px;
+  background: #ddd;
+  margin-bottom: 20px;
+  padding: 0;
+  position: relative;
+}
+.cds-form-control.cds-form-control-attach-fail:before {
+  content: "Произошла ошибка, попробуйте загрузить файл повторно";
+  position: absolute;
+  color: #D9364B;
+  right: 0;
+  bottom: -20px;
+}
+
+.cds-progress {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 73%;
+  height: 4px;
+  border-radius: 7px;
+  background: #1946BA;
+}
+.cds-progress.cds-progress-success {
+  width: 100%;
+  background: #3F9726;
+}
+.cds-progress.cds-progress-success:after {
+  content: "100%";
+  position: absolute;
+  color: #3F9726;
+  right: -15px;
+  top: -20px;
+}
+.cds-progress.cds-progress-fail {
+  width: 73%;
+  background: #D9364B;
+}
+.cds-progress.cds-progress-fail:after {
+  content: "73%";
+  position: absolute;
+  color: #D9364B;
+  right: -15px;
+  top: -20px;
+}
+.cds-progress:after {
+  content: "73%";
+  position: absolute;
+  color: #1946BA;
+  right: -15px;
+  top: -20px;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cds-form-control-attach-wrong {
+  padding: 0;
+}
+
+.cds-badge-pill.cds-badge-primary {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 4px 16px;
+  color: #FFFFFF;
+  width: 99px;
+  height: 30px;
+  background: #1946BA;
+  box-shadow: 0px 4px 4px rgba(77, 77, 77, 0.04), 0px 4px 16px rgba(77, 77, 77, 0.08);
+  border-radius: 16px;
+}
+.cds-badge-pill.cds-badge-secondary {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 4px 16px;
+  width: 68px;
+  height: 30px;
+  background: #FFFFFF;
+  border: 1px solid #1946BA;
+  box-sizing: border-box;
+  border-radius: 16px;
+}
+.cds-badge-pill.cds-badge-disable {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 4px 16px;
+  width: 68px;
+  height: 30px;
+  background: #D1DAF1;
+  border-radius: 16px;
+}
+.cds-badge-pill.cds-badge-hover {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 4px 16px;
+  width: 68px;
+  height: 30px;
+  background: #FFFFFF;
+  border: 1px solid #D1DAF1;
+  box-shadow: 0px 4px 4px rgba(77, 77, 77, 0.04), 0px 4px 16px rgba(77, 77, 77, 0.08);
+  border-radius: 16px;
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -67,7 +67,12 @@ body {
 .mr120 {
   margin-right: 120px;
 }
-
+.mb16 {
+  margin-bottom: 16px;
+}
+.mb30 {
+  margin-bottom: 30px;
+}
 .w260 {
   width: 260px;
   flex-shrink: 0;
@@ -80,6 +85,7 @@ body {
 
 .w500 {
   width: 500px;
+  flex-shrink: 0;
 }
 
 .w700 {
@@ -93,7 +99,8 @@ body {
 }
 
 .content-wrap {
-  height: 100vh;
+  max-height: 100vh;
+  min-height: 100vh;
 }
 
 .description {
@@ -190,9 +197,12 @@ body {
   margin-bottom: 30px;
   margin-left: 20px;
 
-  span {
-    color: #F69C00;
+  .span-yellow {
+    color: $color-warning;
     margin-left: -20px;
+  }
+  .cds-color-dark-500 {
+    margin-left: 30px;
   }
 }
 
@@ -369,10 +379,6 @@ body {
 }
 
 //базовые цвета
-.mb16 {
-  margin-bottom: 16px;
-}
-
 .color-block {
   margin-bottom: 30px;
   margin-right: 120px;
@@ -698,4 +704,193 @@ body {
   padding: 16px;
   border: none;
   @extend .cds-bg-light-700;
+}
+.cds-form-control {
+  &.cds-form-control-attach, &.cds-form-control-attach-help, &.cds-form-control-attach-icon {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+  }
+}
+.cds-form-control-attach {
+  + label {
+    width: 456px;
+    height: 42px;
+    background: $color-light-100;
+    box-shadow: 0px 4px 4px rgba(77, 77, 77, 0.04), 0px 4px 16px rgba(77, 77, 77, 0.08);
+    border-radius: 4px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.cds-form-control-attach-help {
+  + label {
+    width: 456px;
+    height: 46px;
+    background: $color-light-100;
+    box-shadow: 0px 4px 4px rgba(77, 77, 77, 0.04), 0px 4px 16px rgba(77, 77, 77, 0.08);
+    border-radius: 4px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.cds-form-control-attach-icon {
+  + label {
+    width: 456px;
+    height: 56px;
+    background: $color-primary;
+    box-shadow: 0px 4px 4px rgba(77, 77, 77, 0.04), 0px 4px 24px rgba(77, 77, 77, 0.16);
+    border-radius: 4px;
+  }
+}
+.cds-ipack-doc-add {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:after {
+    content: url("adddoc.svg");
+  }
+}
+.cds-form-control.cds-form-control-attach-progress {
+   width: 90%;
+   height: 4px;
+   background: #ddd;
+   margin-bottom: 20px;
+   padding: 0;
+ }
+.cds-form-control.cds-form-control-attach-success {
+  width: 90%;
+  height: 4px;
+  background: #ddd;
+  margin-bottom: 20px;
+  padding: 0;
+}
+.cds-form-control.cds-form-control-attach-fail {
+  width: 90%;
+  height: 4px;
+  background: #ddd;
+  margin-bottom: 20px;
+  padding: 0;
+  position: relative;
+  &:before {
+    content: "Произошла ошибка, попробуйте загрузить файл повторно";
+    position: absolute;
+    color: $color-fail;
+    right: 0;
+    bottom: -20px;
+  }
+}
+.cds-progress {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+
+  &.cds-progress-success {
+    width: 100%;
+    background:$color-success;
+
+    &:after {
+      content: "100%";
+      position: absolute;
+      color: $color-success;
+      right: -15px;
+      top: -20px;
+    }
+
+  }
+  &.cds-progress-fail {
+    width: 73%;
+    background:$color-fail;
+
+    &:after {
+      content: "73%";
+      position: absolute;
+      color: $color-fail;
+      right: -15px;
+      top: -20px;
+    }
+  }
+
+  &:after {
+    content: "73%";
+    position: absolute;
+    color: $color-primary;
+    right: -15px;
+    top: -20px;
+  }
+
+  width: 73%;
+  height: 4px;
+  border-radius: 7px;
+  background: $color-primary;
+}
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cds-form-control-attach-wrong {
+  padding: 0;
+}
+.cds-badge-pill {
+  @extend .cds-small-text;
+
+  &.cds-badge-primary {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 4px 16px;
+    color: $color-light-100;
+    width: 99px;
+    height: 30px;
+    background: $color-primary;
+    box-shadow: 0px 4px 4px rgba(77, 77, 77, 0.04), 0px 4px 16px rgba(77, 77, 77, 0.08);
+    border-radius: 16px;
+  }
+  &.cds-badge-secondary {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 4px 16px;
+    width: 68px;
+    height: 30px;
+    background: $color-light-100;
+    border: 1px solid $color-border-primary;
+    box-sizing: border-box;
+    border-radius: 16px;
+  }
+  &.cds-badge-disable {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 4px 16px;
+    width: 68px;
+    height: 30px;
+    background: $color-primary-100;
+    border-radius: 16px;
+  }
+  &.cds-badge-hover {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 4px 16px;
+
+    width: 68px;
+    height: 30px;
+
+    background: $color-light-100;
+
+    border: 1px solid $color-primary-100;
+    box-shadow: 0px 4px 4px rgba(77, 77, 77, 0.04), 0px 4px 16px rgba(77, 77, 77, 0.08);
+    border-radius: 16px;
+  }
 }
