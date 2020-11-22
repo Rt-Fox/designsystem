@@ -582,7 +582,7 @@
     <div class="main-title">константы</div>
     <div class="partition-title">Basic Kit</div>
     <div class="row">
-        <div class="column mr120">
+        <div class="column mr60 w900">
             <p class="second-partition-title">Forms</p>
             <div class="row ml60 11">
                 <div class="column">
@@ -652,7 +652,7 @@
                 </div>
             </div>
         </div>
-        <div class="column ">
+        <div class="column w900">
             <p class="second-partition-title">Shadow</p>
             <div class="row">
                 <div class="column">
@@ -1189,9 +1189,11 @@
     <div class="main-title">Компоненты</div>
     <div class="partition-title">Input</div>
     <div class="row ml30">
-        <div class="column">
+        <div class="column mr60 w260">
             <div class="cds-input">
-                <input class="cds-form-control cds-body-text" type="text" placeholder="Имя">
+                <div class="cds-form-control">
+                    <input class="cds-body-text" type="text" placeholder="Имя">
+                </div>
             </div>
             <div class="css-code mb16">
                 <p class="span-yellow">.cds-input</p>
@@ -1200,7 +1202,9 @@
                 <p class="cds-color-dark-500">.cds-color-dark-300</p>
             </div>
             <div class="cds-input-disabled">
-                <input class="cds-form-control-disabled cds-body-text" type="text" placeholder="Имя" disabled>
+                <div class="cds-form-control-disabled">
+                    <input class="cds-body-text" type="text" placeholder="Имя">
+                </div>
             </div>
             <div class="css-code mb16">
                 <p class="span-yellow">.cds-input-disabled</p>
@@ -1221,20 +1225,392 @@
                     </div>
                 </div>
             </div>
-            <div class="css-code">
-                <p class="span-yellow">.cds-form-control-success</p>
-                <p>border-radius: 4px</p>
-                <p>padding: 16px</p>
-                <p>border: none</p>
-                <p>.cds-color-success-100</p>
-                <p>.cds-shadow-success</p>
+            <div class="css-code mb16">
+                <p class="span-yellow">.cds-input-success</p>
+                <p>.cds-form-control-success</p>
+                <p>.cds-small-text</p>
+                <p class="cds-color-dark-500">.cds-color-dark-500</p>
+                <p>.cds-body-text</p>
+                <p class="cds-color-dark-500">.cds-color-dark-700</p>
+                <p>.cds-ipack-checkmark</p>
+                <p class="cds-color-dark-500">.cds-color-success</p>
             </div>
-
         </div>
-        <div class="column"></div>
-        <div class="column"></div>
-        <div class="column"></div>
-        <div class="column"></div>
+        <div class="column mr60 w260">
+            <div class="cds-input-active">
+                <div class="cds-form-control-active">
+                    <div class="column">
+                        <div class="cds-small-text">Имя</div>
+                        <input class="cds-body-text" type="text" placeholder="Ваше имя">
+                    </div>
+                </div>
+            </div>
+            <div class="css-code mb16">
+                <p class="span-yellow">.cds-input-active</p>
+                <p>.cds-form-control-active</p>
+                <p>.cds-small-text</p>
+                <p class="cds-color-dark-500">.cds-color-light</p>
+                <p>.cds-body-text</p>
+                <p class="cds-color-dark-500">.cds-color-dark-700</p>
+            </div>
+            <div class="cds-input-disabled">
+                <div class="cds-form-control-disabled">
+                    <div class="column">
+                        <div class="cds-small-text">Имя</div>
+                        <input class="cds-body-text" type="text" placeholder="Введено что-нибудь" disabled>
+                    </div>
+                </div>
+            </div>
+            <div class="css-code mb16">
+                <p class="span-yellow">.cds-input-disabled</p>
+                <p>.cds-form-control-disabled</p>
+                <p>.cds-small-text</p>
+                <p class="cds-color-dark-500">.cds-color-dark-300</p>
+                <p>.cds-body-text</p>
+                <p class="cds-color-dark-500">.cds-color-dark-500</p>
+            </div>
+            <div class="cds-input-tip">
+                <div class="cds-form-control">
+                    <input class="cds-body-text" type="text" placeholder="Имя">
+                </div>
+                <div class="cds-small-text">Текст подсказки</div>
+            </div>
+            <div class="css-code mb16">
+                <p class="span-yellow">.cds-input</p>
+                <p>.cds-form-control</p>
+                <p>.cds-body-text</p>
+                <p class="cds-color-dark-500">.cds-color-dark-300</p>
+                <p>.cds-small-text</p>
+                <p class="cds-color-dark-500">.cds-color-dark-500</p>
+            </div>
+        </div>
+        <div class="column mr60 w260">
+            <div class="cds-input-fail-tip">
+                <div class="cds-form-control-fail">
+                    <div class="column">
+                        <div class="cds-small-text">Имя</div>
+                        <input class="cds-body-text" type="text" placeholder="Введено что-нибудь" disabled>
+                    </div>
+                </div>
+            </div>
+            <div class="css-code mb16">
+                <p class="span-yellow">.cds-input-fail-tip</p>
+                <p>.cds-form-control-fail</p>
+                <p>.cds-body-text</p>
+                <p class="cds-color-dark-500">.cds-color-dark-700</p>
+                <p>.cds-small-text</p>
+                <p class="cds-color-dark-500">.cds-color-fail</p>
+            </div>
+            <div class="cds-input-fail-tip">
+                <div class="cds-form-control-fail-active">
+                    <div class="column">
+                        <div class="cds-small-text">Имя</div>
+                        <input class="cds-body-text" type="text" placeholder="Введено что-нибудь" disabled>
+                    </div>                </div>
+                <div class="cds-small-text">Текст ошибки</div>
+            </div>
+            <div class="css-code mb16">
+                <p class="span-yellow">.cds-input-fail-active-tip</p>
+                <p>.cds-form-control-fail-active</p>
+                <p>.cds-small-text</p>
+                <p class="cds-color-dark-500">.cds-color-dark-500</p>
+                <p>.cds-body-text</p>
+                <p class="cds-color-dark-500">.cds-color-dark-700</p>
+                <p>.cds-small-text</p>
+                <p class="cds-color-dark-500">.cds-color-fail</p>
+            </div>
+        </div>
+        <div class="column mr60 w260">
+            <div class="cds-input-phone">
+                <div class="cds-form-control">
+                    <svg class="cds-flag-ru" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M24 9.37993H0V4.55233C0 4.32382 0.185297 4.13852 0.413812 4.13852H23.5862C23.8147 4.13852 24 4.32382 24 4.55233L24 9.37993Z" fill="#F5F5F5"/>
+                        <path d="M23.5861 19.8628H0.413812C0.185297 19.8628 0 19.6775 0 19.449V14.6215H24V19.449C24 19.6776 23.8147 19.8628 23.5861 19.8628Z" fill="#FF4B55"/>
+                        <path d="M24 9.37848H0V14.6196H24V9.37848Z" fill="#41479B"/>
+                    </svg>
+                    <input class="cds-body-text" type="tel" placeholder="+7">
+                </div>
+            </div>
+            <div class="css-code mb16">
+                <p class="span-yellow">.cds-input-phone</p>
+                <p>.cds-form-control</p>
+                <p>.cds-body-text</p>
+                <p class="cds-color-dark-500">.cds-color-dark-300</p>
+                <p>.cds-flag-ru</p>
+            </div>
+            <div class="cds-input-phone-active">
+                <div class="cds-form-control-active">
+                    <svg class="cds-flag-ru" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M24 9.37993H0V4.55233C0 4.32382 0.185297 4.13852 0.413812 4.13852H23.5862C23.8147 4.13852 24 4.32382 24 4.55233L24 9.37993Z" fill="#F5F5F5"/>
+                        <path d="M23.5861 19.8628H0.413812C0.185297 19.8628 0 19.6775 0 19.449V14.6215H24V19.449C24 19.6776 23.8147 19.8628 23.5861 19.8628Z" fill="#FF4B55"/>
+                        <path d="M24 9.37848H0V14.6196H24V9.37848Z" fill="#41479B"/>
+                    </svg>
+                    <input class="cds-body-text" type="tel" placeholder="+7 (___) ___ __ __">
+                </div>
+            </div>
+            <div class="css-code mb16">
+                <p class="span-yellow">.cds-input-phone</p>
+                <p>.cds-form-control</p>
+                <p>.cds-body-text</p>
+                <p class="cds-color-dark-500">.cds-color-dark-700</p>
+                <p>.cds-flag-ru</p>
+            </div>
+            <div class="cds-input-icon">
+                <div class="cds-form-control">
+                    <input class="cds-body-text" type="text" placeholder="___ ___ ___ ___" disabled>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21.375 3.75H2.625C1.17759 3.75 0 4.92759 0 6.375V17.625C0 19.0724 1.17759 20.25 2.625 20.25H21.375C22.8224 20.25 24 19.0724 24 17.625V6.375C24 4.92759 22.8224 3.75 21.375 3.75ZM2.625 5.25H21.375C21.9953 5.25 22.5 5.7547 22.5 6.375V7.875H1.5V6.375C1.5 5.7547 2.0047 5.25 2.625 5.25ZM21.375 18.75H2.625C2.0047 18.75 1.5 18.2453 1.5 17.625V9.375H22.5V17.625C22.5 18.2453 21.9953 18.75 21.375 18.75Z" fill="#CCCCCC"/>
+                        <path d="M5.25 16.5H4.5C4.08581 16.5 3.75 16.1642 3.75 15.75V15C3.75 14.5858 4.08581 14.25 4.5 14.25H5.25C5.66419 14.25 6 14.5858 6 15V15.75C6 16.1642 5.66419 16.5 5.25 16.5Z" fill="#CCCCCC"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class="column mr60 w260">
+            <div class="cds-input-icon">
+                <div class="cds-form-control">
+                    <input class="cds-body-text" type="text" placeholder="Имя">
+                    <svg class="cds-ipack-info" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="11.9998" cy="12" r="9.00375" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M10.998 15.5015H13.3083" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12.1583 15.5015V11.2497H11.0078" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12.0999 8.24569C12.0999 8.38382 11.9879 8.4958 11.8498 8.4958C11.7117 8.4958 11.5997 8.38382 11.5997 8.24569C11.5997 8.10756 11.7117 7.99559 11.8498 7.99559" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M11.8498 7.99558C11.9879 7.99558 12.0999 8.10755 12.0999 8.24568" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="css-code mb16">
+                <p class="span-yellow">.cds-input-icon</p>
+                <p>.cds-form-control</p>
+                <p>.cds-body-text</p>
+                <p class="cds-color-dark-500">.cds-color-dark-300</p>
+                <p>.cds-ipack-info</p>
+            </div>
+            <div class="cds-input-icon-active">
+                <div class="cds-form-control-active">
+                    <div class="column">
+                        <div class="cds-small-text">Имя</div>
+                        <input class="cds-body-text" type="text" placeholder="Имя">
+                    </div>
+                    <svg class="cds-ipack-info" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="11.9998" cy="12" r="9.00375" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M10.998 15.5015H13.3083" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12.1583 15.5015V11.2497H11.0078" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12.0999 8.24569C12.0999 8.38382 11.9879 8.4958 11.8498 8.4958C11.7117 8.4958 11.5997 8.38382 11.5997 8.24569C11.5997 8.10756 11.7117 7.99559 11.8498 7.99559" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M11.8498 7.99558C11.9879 7.99558 12.0999 8.10755 12.0999 8.24568" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="css-code mb16">
+                <p class="span-yellow">.cds-input-icon-active</p>
+                <p>.cds-form-control-active</p>
+                <p>.cds-small-text</p>
+                <p class="cds-color-dark-500">.cds-color-dark-300</p>
+                <p>.cds-body-text</p>
+                <p class="cds-color-dark-500">.cds-color-dark-700</p>
+                <p>.cds-ipack-info</p>
+            </div>
+            <div class="cds-input-icon">
+                <div class="cds-form-control">
+                    <input class="cds-body-text" type="text" placeholder="___ ___ ___ ___">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21.375 3.75H2.625C1.17759 3.75 0 4.92759 0 6.375V17.625C0 19.0724 1.17759 20.25 2.625 20.25H21.375C22.8224 20.25 24 19.0724 24 17.625V6.375C24 4.92759 22.8224 3.75 21.375 3.75ZM2.625 5.25H21.375C21.9953 5.25 22.5 5.7547 22.5 6.375V7.875H1.5V6.375C1.5 5.7547 2.0047 5.25 2.625 5.25ZM21.375 18.75H2.625C2.0047 18.75 1.5 18.2453 1.5 17.625V9.375H22.5V17.625C22.5 18.2453 21.9953 18.75 21.375 18.75Z" fill="#4D4D4D"/>
+                        <path d="M5.25 16.5H4.5C4.08581 16.5 3.75 16.1642 3.75 15.75V15C3.75 14.5858 4.08581 14.25 4.5 14.25H5.25C5.66419 14.25 6 14.5858 6 15V15.75C6 16.1642 5.66419 16.5 5.25 16.5Z" fill="#4D4D4D"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Двенадцатая страница-->
+<div class="content-wrap">
+    <div class="main-title">Компоненты</div>
+    <div class="partition-title">CalendarInput</div>
+    <div class="row ml30">
+        <div class="column mr60 w260">
+            <div class="cds-input-calendar">
+                <div class="cds-form-control">
+                    <input class="cds-body-text" type="text"  value="2001-01-01">
+                    <svg class="cds-ipack-calendar" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect class="cds-color" x="3.99609" y="3.99625" width="18.0075" height="18.0075" rx="3" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M22.0036 8.99832H3.99609" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M18.3022 12.4998C18.3022 12.5274 18.2798 12.5498 18.2522 12.5498C18.2245 12.5498 18.2021 12.5274 18.2021 12.4998C18.2021 12.4722 18.2245 12.4498 18.2522 12.4498" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M18.2506 12.4498C18.2782 12.4498 18.3006 12.4722 18.3006 12.4998" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M14.7983 12.4998C14.7983 12.5274 14.7759 12.5498 14.7483 12.5498C14.7206 12.5498 14.6982 12.5274 14.6982 12.4998C14.6982 12.4722 14.7206 12.4498 14.7483 12.4498" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M14.7486 12.4498C14.7763 12.4498 14.7987 12.4722 14.7987 12.4998" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M11.2983 12.4998C11.2983 12.5274 11.2759 12.5498 11.2483 12.5498C11.2206 12.5498 11.1982 12.5274 11.1982 12.4998C11.1982 12.4722 11.2206 12.4498 11.2483 12.4498" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M11.2467 12.4498C11.2743 12.4498 11.2967 12.4722 11.2967 12.4998" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M7.79632 15.501C7.79632 15.5287 7.77393 15.5511 7.7463 15.5511C7.71868 15.5511 7.69628 15.5287 7.69628 15.501C7.69628 15.4734 7.71868 15.451 7.7463 15.451" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M7.74668 15.451C7.77431 15.451 7.7967 15.4734 7.7967 15.501" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M11.2983 15.501C11.2983 15.5287 11.2759 15.5511 11.2483 15.5511C11.2206 15.5511 11.1982 15.5287 11.1982 15.501C11.1982 15.4734 11.2206 15.451 11.2483 15.451" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M11.2467 15.451C11.2743 15.451 11.2967 15.4734 11.2967 15.501" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M14.7983 15.501C14.7983 15.5287 14.7759 15.5511 14.7483 15.5511C14.7206 15.5511 14.6982 15.5287 14.6982 15.501C14.6982 15.4734 14.7206 15.451 14.7483 15.451" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M14.7486 15.451C14.7763 15.451 14.7987 15.4734 14.7987 15.501" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M18.3022 15.501C18.3022 15.5287 18.2798 15.5511 18.2522 15.5511C18.2245 15.5511 18.2021 15.5287 18.2021 15.501C18.2021 15.4734 18.2245 15.451 18.2522 15.451" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M18.2506 15.451C18.2782 15.451 18.3006 15.4734 18.3006 15.501" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M18.3022 18.5023C18.3022 18.5299 18.2798 18.5523 18.2522 18.5523C18.2245 18.5523 18.2021 18.5299 18.2021 18.5023C18.2021 18.4747 18.2245 18.4523 18.2522 18.4523" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M18.2506 18.4523C18.2782 18.4523 18.3006 18.4747 18.3006 18.5023" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M14.7983 18.5023C14.7983 18.5299 14.7759 18.5523 14.7483 18.5523C14.7206 18.5523 14.6982 18.5299 14.6982 18.5023C14.6982 18.4747 14.7206 18.4523 14.7483 18.4523" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M14.7486 18.4523C14.7763 18.4523 14.7987 18.4747 14.7987 18.5023" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M11.2983 18.5023C11.2983 18.5299 11.2759 18.5523 11.2483 18.5523C11.2206 18.5523 11.1982 18.5299 11.1982 18.5023C11.1982 18.4747 11.2206 18.4523 11.2483 18.4523" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M11.2467 18.4523C11.2743 18.4523 11.2967 18.4747 11.2967 18.5023" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M7.79632 18.5023C7.79632 18.5299 7.77393 18.5523 7.7463 18.5523C7.71868 18.5523 7.69628 18.5299 7.69628 18.5023C7.69628 18.4747 7.71868 18.4523 7.7463 18.4523" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M7.74668 18.4523C7.77431 18.4523 7.7967 18.4747 7.7967 18.5023" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="css-code mb16">
+                <p class="span-yellow">.cds-input-calendar</p>
+                <p>.cds-form-control</p>
+                <p>.cds-body-text</p>
+                <p class="cds-color-dark-500">.cds-color-dark-300</p>
+                <p>.cds-ipack-calendar</p>
+                <p class="cds-color-dark-500">.cds-color-dark-300</p>
+            </div>
+        </div>
+        <div class="column mr60 w260">
+            <div class="cds-input-calendar-active">
+                <div class="cds-form-control-active">
+                    <input class="cds-body-text" type="text"  value="2001-01-01">
+                    <svg class="cds-ipack-calendar" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect class="cds-color" x="3.99609" y="3.99625" width="18.0075" height="18.0075" rx="3" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M22.0036 8.99832H3.99609" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M18.3022 12.4998C18.3022 12.5274 18.2798 12.5498 18.2522 12.5498C18.2245 12.5498 18.2021 12.5274 18.2021 12.4998C18.2021 12.4722 18.2245 12.4498 18.2522 12.4498" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M18.2506 12.4498C18.2782 12.4498 18.3006 12.4722 18.3006 12.4998" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M14.7983 12.4998C14.7983 12.5274 14.7759 12.5498 14.7483 12.5498C14.7206 12.5498 14.6982 12.5274 14.6982 12.4998C14.6982 12.4722 14.7206 12.4498 14.7483 12.4498" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M14.7486 12.4498C14.7763 12.4498 14.7987 12.4722 14.7987 12.4998" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M11.2983 12.4998C11.2983 12.5274 11.2759 12.5498 11.2483 12.5498C11.2206 12.5498 11.1982 12.5274 11.1982 12.4998C11.1982 12.4722 11.2206 12.4498 11.2483 12.4498" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M11.2467 12.4498C11.2743 12.4498 11.2967 12.4722 11.2967 12.4998" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M7.79632 15.501C7.79632 15.5287 7.77393 15.5511 7.7463 15.5511C7.71868 15.5511 7.69628 15.5287 7.69628 15.501C7.69628 15.4734 7.71868 15.451 7.7463 15.451" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M7.74668 15.451C7.77431 15.451 7.7967 15.4734 7.7967 15.501" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M11.2983 15.501C11.2983 15.5287 11.2759 15.5511 11.2483 15.5511C11.2206 15.5511 11.1982 15.5287 11.1982 15.501C11.1982 15.4734 11.2206 15.451 11.2483 15.451" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M11.2467 15.451C11.2743 15.451 11.2967 15.4734 11.2967 15.501" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M14.7983 15.501C14.7983 15.5287 14.7759 15.5511 14.7483 15.5511C14.7206 15.5511 14.6982 15.5287 14.6982 15.501C14.6982 15.4734 14.7206 15.451 14.7483 15.451" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M14.7486 15.451C14.7763 15.451 14.7987 15.4734 14.7987 15.501" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M18.3022 15.501C18.3022 15.5287 18.2798 15.5511 18.2522 15.5511C18.2245 15.5511 18.2021 15.5287 18.2021 15.501C18.2021 15.4734 18.2245 15.451 18.2522 15.451" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M18.2506 15.451C18.2782 15.451 18.3006 15.4734 18.3006 15.501" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M18.3022 18.5023C18.3022 18.5299 18.2798 18.5523 18.2522 18.5523C18.2245 18.5523 18.2021 18.5299 18.2021 18.5023C18.2021 18.4747 18.2245 18.4523 18.2522 18.4523" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M18.2506 18.4523C18.2782 18.4523 18.3006 18.4747 18.3006 18.5023" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M14.7983 18.5023C14.7983 18.5299 14.7759 18.5523 14.7483 18.5523C14.7206 18.5523 14.6982 18.5299 14.6982 18.5023C14.6982 18.4747 14.7206 18.4523 14.7483 18.4523" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M14.7486 18.4523C14.7763 18.4523 14.7987 18.4747 14.7987 18.5023" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M11.2983 18.5023C11.2983 18.5299 11.2759 18.5523 11.2483 18.5523C11.2206 18.5523 11.1982 18.5299 11.1982 18.5023C11.1982 18.4747 11.2206 18.4523 11.2483 18.4523" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M11.2467 18.4523C11.2743 18.4523 11.2967 18.4747 11.2967 18.5023" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M7.79632 18.5023C7.79632 18.5299 7.77393 18.5523 7.7463 18.5523C7.71868 18.5523 7.69628 18.5299 7.69628 18.5023C7.69628 18.4747 7.71868 18.4523 7.7463 18.4523" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M7.74668 18.4523C7.77431 18.4523 7.7967 18.4747 7.7967 18.5023" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="css-code mb16">
+                <p class="span-yellow">.cds-input-calendar-active</p>
+                <p>.cds-form-control-active</p>
+                <p>.cds-body-text</p>
+                <p class="cds-color-dark-500">.cds-color-dark-700</p>
+                <p>.cds-ipack-calendar</p>
+                <p class="cds-color-dark-500">.cds-color-dark-700</p>
+            </div>
+        </div>
+        <div class="column mr60 w260">
+            <div class="cds-input-calendar-fail">
+                <div class="cds-form-control-fail">
+                    <input class="cds-body-text" type="text"  value="2001-01-01">
+                    <svg class="cds-ipack-calendar" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect class="cds-color" x="3.99609" y="3.99625" width="18.0075" height="18.0075" rx="3" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M22.0036 8.99832H3.99609" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M18.3022 12.4998C18.3022 12.5274 18.2798 12.5498 18.2522 12.5498C18.2245 12.5498 18.2021 12.5274 18.2021 12.4998C18.2021 12.4722 18.2245 12.4498 18.2522 12.4498" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M18.2506 12.4498C18.2782 12.4498 18.3006 12.4722 18.3006 12.4998" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M14.7983 12.4998C14.7983 12.5274 14.7759 12.5498 14.7483 12.5498C14.7206 12.5498 14.6982 12.5274 14.6982 12.4998C14.6982 12.4722 14.7206 12.4498 14.7483 12.4498" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M14.7486 12.4498C14.7763 12.4498 14.7987 12.4722 14.7987 12.4998" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M11.2983 12.4998C11.2983 12.5274 11.2759 12.5498 11.2483 12.5498C11.2206 12.5498 11.1982 12.5274 11.1982 12.4998C11.1982 12.4722 11.2206 12.4498 11.2483 12.4498" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M11.2467 12.4498C11.2743 12.4498 11.2967 12.4722 11.2967 12.4998" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M7.79632 15.501C7.79632 15.5287 7.77393 15.5511 7.7463 15.5511C7.71868 15.5511 7.69628 15.5287 7.69628 15.501C7.69628 15.4734 7.71868 15.451 7.7463 15.451" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M7.74668 15.451C7.77431 15.451 7.7967 15.4734 7.7967 15.501" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M11.2983 15.501C11.2983 15.5287 11.2759 15.5511 11.2483 15.5511C11.2206 15.5511 11.1982 15.5287 11.1982 15.501C11.1982 15.4734 11.2206 15.451 11.2483 15.451" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M11.2467 15.451C11.2743 15.451 11.2967 15.4734 11.2967 15.501" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M14.7983 15.501C14.7983 15.5287 14.7759 15.5511 14.7483 15.5511C14.7206 15.5511 14.6982 15.5287 14.6982 15.501C14.6982 15.4734 14.7206 15.451 14.7483 15.451" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M14.7486 15.451C14.7763 15.451 14.7987 15.4734 14.7987 15.501" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M18.3022 15.501C18.3022 15.5287 18.2798 15.5511 18.2522 15.5511C18.2245 15.5511 18.2021 15.5287 18.2021 15.501C18.2021 15.4734 18.2245 15.451 18.2522 15.451" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M18.2506 15.451C18.2782 15.451 18.3006 15.4734 18.3006 15.501" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M18.3022 18.5023C18.3022 18.5299 18.2798 18.5523 18.2522 18.5523C18.2245 18.5523 18.2021 18.5299 18.2021 18.5023C18.2021 18.4747 18.2245 18.4523 18.2522 18.4523" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M18.2506 18.4523C18.2782 18.4523 18.3006 18.4747 18.3006 18.5023" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M14.7983 18.5023C14.7983 18.5299 14.7759 18.5523 14.7483 18.5523C14.7206 18.5523 14.6982 18.5299 14.6982 18.5023C14.6982 18.4747 14.7206 18.4523 14.7483 18.4523" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M14.7486 18.4523C14.7763 18.4523 14.7987 18.4747 14.7987 18.5023" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M11.2983 18.5023C11.2983 18.5299 11.2759 18.5523 11.2483 18.5523C11.2206 18.5523 11.1982 18.5299 11.1982 18.5023C11.1982 18.4747 11.2206 18.4523 11.2483 18.4523" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M11.2467 18.4523C11.2743 18.4523 11.2967 18.4747 11.2967 18.5023" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M7.79632 18.5023C7.79632 18.5299 7.77393 18.5523 7.7463 18.5523C7.71868 18.5523 7.69628 18.5299 7.69628 18.5023C7.69628 18.4747 7.71868 18.4523 7.7463 18.4523" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M7.74668 18.4523C7.77431 18.4523 7.7967 18.4747 7.7967 18.5023" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="cds-small-text">
+                    Такой даты не существует
+                </div>
+            </div>
+            <div class="css-code mb16">
+                <p class="span-yellow">.cds-form-control-fail</p>
+                <p>.cds-form-control-active</p>
+                <p>.cds-body-text</p>
+                <p class="cds-color-dark-500">.cds-color-dark-700</p>
+                <p>.cds-ipack-calendar</p>
+                <p class="cds-color-dark-500">.cds-color-fail</p>
+                <p>.cds-small-text</p>
+                <p class="cds-color-dark-500">.cds-color-fail</p>
+            </div>
+        </div>
+        <div class="column mr60 w260">
+            <div class="cds-input-calendar-success">
+                <div class="cds-form-control-success">
+                    <input class="cds-body-text" type="text"  value="2001-01-01">
+                    <svg class="cds-ipack-calendar" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect class="cds-color" x="3.99609" y="3.99625" width="18.0075" height="18.0075" rx="3" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M22.0036 8.99832H3.99609" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M18.3022 12.4998C18.3022 12.5274 18.2798 12.5498 18.2522 12.5498C18.2245 12.5498 18.2021 12.5274 18.2021 12.4998C18.2021 12.4722 18.2245 12.4498 18.2522 12.4498" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M18.2506 12.4498C18.2782 12.4498 18.3006 12.4722 18.3006 12.4998" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M14.7983 12.4998C14.7983 12.5274 14.7759 12.5498 14.7483 12.5498C14.7206 12.5498 14.6982 12.5274 14.6982 12.4998C14.6982 12.4722 14.7206 12.4498 14.7483 12.4498" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M14.7486 12.4498C14.7763 12.4498 14.7987 12.4722 14.7987 12.4998" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M11.2983 12.4998C11.2983 12.5274 11.2759 12.5498 11.2483 12.5498C11.2206 12.5498 11.1982 12.5274 11.1982 12.4998C11.1982 12.4722 11.2206 12.4498 11.2483 12.4498" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M11.2467 12.4498C11.2743 12.4498 11.2967 12.4722 11.2967 12.4998" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M7.79632 15.501C7.79632 15.5287 7.77393 15.5511 7.7463 15.5511C7.71868 15.5511 7.69628 15.5287 7.69628 15.501C7.69628 15.4734 7.71868 15.451 7.7463 15.451" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M7.74668 15.451C7.77431 15.451 7.7967 15.4734 7.7967 15.501" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M11.2983 15.501C11.2983 15.5287 11.2759 15.5511 11.2483 15.5511C11.2206 15.5511 11.1982 15.5287 11.1982 15.501C11.1982 15.4734 11.2206 15.451 11.2483 15.451" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M11.2467 15.451C11.2743 15.451 11.2967 15.4734 11.2967 15.501" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M14.7983 15.501C14.7983 15.5287 14.7759 15.5511 14.7483 15.5511C14.7206 15.5511 14.6982 15.5287 14.6982 15.501C14.6982 15.4734 14.7206 15.451 14.7483 15.451" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M14.7486 15.451C14.7763 15.451 14.7987 15.4734 14.7987 15.501" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M18.3022 15.501C18.3022 15.5287 18.2798 15.5511 18.2522 15.5511C18.2245 15.5511 18.2021 15.5287 18.2021 15.501C18.2021 15.4734 18.2245 15.451 18.2522 15.451" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M18.2506 15.451C18.2782 15.451 18.3006 15.4734 18.3006 15.501" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M18.3022 18.5023C18.3022 18.5299 18.2798 18.5523 18.2522 18.5523C18.2245 18.5523 18.2021 18.5299 18.2021 18.5023C18.2021 18.4747 18.2245 18.4523 18.2522 18.4523" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M18.2506 18.4523C18.2782 18.4523 18.3006 18.4747 18.3006 18.5023" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M14.7983 18.5023C14.7983 18.5299 14.7759 18.5523 14.7483 18.5523C14.7206 18.5523 14.6982 18.5299 14.6982 18.5023C14.6982 18.4747 14.7206 18.4523 14.7483 18.4523" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M14.7486 18.4523C14.7763 18.4523 14.7987 18.4747 14.7987 18.5023" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M11.2983 18.5023C11.2983 18.5299 11.2759 18.5523 11.2483 18.5523C11.2206 18.5523 11.1982 18.5299 11.1982 18.5023C11.1982 18.4747 11.2206 18.4523 11.2483 18.4523" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M11.2467 18.4523C11.2743 18.4523 11.2967 18.4747 11.2967 18.5023" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M7.79632 18.5023C7.79632 18.5299 7.77393 18.5523 7.7463 18.5523C7.71868 18.5523 7.69628 18.5299 7.69628 18.5023C7.69628 18.4747 7.71868 18.4523 7.7463 18.4523" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="cds-color" d="M7.74668 18.4523C7.77431 18.4523 7.7967 18.4747 7.7967 18.5023" stroke="#CCCCCC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="css-code mb16">
+                <p class="span-yellow">.cds-form-control-success</p>
+                <p>.cds-form-control-active</p>
+                <p>.cds-body-text</p>
+                <p class="cds-color-dark-500">.cds-color-dark-700</p>
+                <p>.cds-ipack-calendar</p>
+                <p class="cds-color-dark-500">.cds-color-success</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Двенадцатая страница-->
+<div class="content-wrap">
+    <div class="main-title">Компоненты</div>
+    <div class="partition-title">CalendarInput</div>
+    <div class="row">
+
+    </div>
+</div>
+<!--Двенадцатая страница-->
+<div class="content-wrap">
+    <div class="main-title">Компоненты</div>
+    <div class="partition-title">CalendarInput</div>
+    <div class="row">
+
     </div>
 </div>
 </body>

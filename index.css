@@ -47,8 +47,8 @@ body {
   flex-shrink: 0;
 }
 
-.w800 {
-  width: 800px;
+.w900 {
+  width: 900px;
   flex-shrink: 0;
 }
 
@@ -353,9 +353,9 @@ body {
 }
 
 .box {
-  width: 222px;
+  width: 200px;
   height: 56px;
-  margin-right: 60px;
+  margin-right: 50px;
 }
 
 .cds-color-primary, .cds-tagbutton .cds-small-text-bold, .cds-tagbutton .cds-badge-pill {
@@ -603,20 +603,20 @@ body {
   display: flex;
   align-items: center;
   border-radius: 4px;
-  padding: 16px;
+  padding: 10px 16px;
   border: none;
   background: #FFFFFF;
 }
 
 .cds-form-control-fail {
   border-radius: 4px;
-  padding: 16px;
+  padding: 10px 16px;
   border: none;
 }
 
 .cds-form-control-fail-active {
   border-radius: 4px;
-  padding: 16px;
+  padding: 10px 16px;
   border: none;
 }
 
@@ -628,7 +628,7 @@ body {
 
 .cds-form-control-disabled {
   border-radius: 4px;
-  padding: 16px;
+  padding: 10px 16px;
   border: none;
 }
 
@@ -938,24 +938,109 @@ body {
   stroke: #FFFFFF;
 }
 
-.cds-input-success > div {
+.cds-input > div, .cds-input-calendar > div, .cds-input-disabled > div, .cds-input-success > div, .cds-input-active > div, .cds-input-tip > div, .cds-input-fail-tip > div {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
-.cds-input-success input, .cds-input-success input[disabled] {
+.cds-input input, .cds-input input[disabled], .cds-input-calendar input, .cds-input-calendar input[disabled], .cds-input-disabled input, .cds-input-disabled input[disabled], .cds-input-success input, .cds-input-success input[disabled], .cds-input-active input, .cds-input-active input[disabled], .cds-input-tip input, .cds-input-tip input[disabled], .cds-input-fail-tip input, .cds-input-fail-tip input[disabled] {
+  padding: 0;
   background: none;
   border: none;
 }
-.cds-input-success .cds-small-text {
-  color: #999999;
+.cds-input .cds-form-control .cds-body-text, .cds-input-calendar .cds-form-control .cds-body-text, .cds-input-disabled .cds-form-control .cds-body-text, .cds-input-success .cds-form-control .cds-body-text, .cds-input-active .cds-form-control .cds-body-text, .cds-input-tip .cds-form-control .cds-body-text, .cds-input-fail-tip .cds-form-control .cds-body-text {
+  color: #CCCCCC;
 }
-.cds-input-success .cds-body-text {
+.cds-input .cds-form-control-disabled .cds-small-text, .cds-input-calendar .cds-form-control-disabled .cds-small-text, .cds-input-disabled .cds-form-control-disabled .cds-small-text, .cds-input-success .cds-form-control-disabled .cds-small-text, .cds-input-active .cds-form-control-disabled .cds-small-text, .cds-input-tip .cds-form-control-disabled .cds-small-text, .cds-input-fail-tip .cds-form-control-disabled .cds-small-text {
+  color: #CCCCCC;
+}
+.cds-input .cds-form-control-active .cds-small-text, .cds-input .cds-list.cds-list-flush .cds-small-text, .cds-input-calendar .cds-form-control-active .cds-small-text, .cds-input-calendar .cds-list.cds-list-flush .cds-small-text, .cds-input-disabled .cds-form-control-active .cds-small-text, .cds-input-disabled .cds-list.cds-list-flush .cds-small-text, .cds-input-success .cds-form-control-active .cds-small-text, .cds-input-success .cds-list.cds-list-flush .cds-small-text, .cds-input-active .cds-form-control-active .cds-small-text, .cds-input-active .cds-list.cds-list-flush .cds-small-text, .cds-input-tip .cds-form-control-active .cds-small-text, .cds-input-tip .cds-list.cds-list-flush .cds-small-text, .cds-input-fail-tip .cds-form-control-active .cds-small-text, .cds-input-fail-tip .cds-list.cds-list-flush .cds-small-text {
+  color: #E8E8E8;
+}
+.cds-input .cds-form-control-active .cds-body-text, .cds-input .cds-list.cds-list-flush .cds-body-text, .cds-input-calendar .cds-form-control-active .cds-body-text, .cds-input-calendar .cds-list.cds-list-flush .cds-body-text, .cds-input-disabled .cds-form-control-active .cds-body-text, .cds-input-disabled .cds-list.cds-list-flush .cds-body-text, .cds-input-success .cds-form-control-active .cds-body-text, .cds-input-success .cds-list.cds-list-flush .cds-body-text, .cds-input-active .cds-form-control-active .cds-body-text, .cds-input-active .cds-list.cds-list-flush .cds-body-text, .cds-input-tip .cds-form-control-active .cds-body-text, .cds-input-tip .cds-list.cds-list-flush .cds-body-text, .cds-input-fail-tip .cds-form-control-active .cds-body-text, .cds-input-fail-tip .cds-list.cds-list-flush .cds-body-text {
   color: #4D4D4D;
 }
-.cds-input-success .cds-ipack-checkmark .cds-color-success {
+.cds-input .cds-form-control-success .cds-small-text, .cds-input-calendar .cds-form-control-success .cds-small-text, .cds-input-disabled .cds-form-control-success .cds-small-text, .cds-input-success .cds-form-control-success .cds-small-text, .cds-input-active .cds-form-control-success .cds-small-text, .cds-input-tip .cds-form-control-success .cds-small-text, .cds-input-fail-tip .cds-form-control-success .cds-small-text {
+  color: #999999;
+}
+.cds-input .cds-form-control-success .cds-body-text, .cds-input-calendar .cds-form-control-success .cds-body-text, .cds-input-disabled .cds-form-control-success .cds-body-text, .cds-input-success .cds-form-control-success .cds-body-text, .cds-input-active .cds-form-control-success .cds-body-text, .cds-input-tip .cds-form-control-success .cds-body-text, .cds-input-fail-tip .cds-form-control-success .cds-body-text {
+  color: #4D4D4D;
+}
+.cds-input .cds-form-control-success .cds-ipack-checkmark .cds-color-success, .cds-input-calendar .cds-form-control-success .cds-ipack-checkmark .cds-color-success, .cds-input-disabled .cds-form-control-success .cds-ipack-checkmark .cds-color-success, .cds-input-success .cds-form-control-success .cds-ipack-checkmark .cds-color-success, .cds-input-active .cds-form-control-success .cds-ipack-checkmark .cds-color-success, .cds-input-tip .cds-form-control-success .cds-ipack-checkmark .cds-color-success, .cds-input-fail-tip .cds-form-control-success .cds-ipack-checkmark .cds-color-success {
   stroke: #3F9726;
+}
+
+.cds-input-tip .cds-small-text {
+  margin-left: 16px;
+  margin-top: 4px;
+  color: #999999;
+}
+
+.cds-input-fail-tip .cds-form-control-fail .cds-small-text {
+  margin: 0;
+  color: #999999;
+}
+.cds-input-fail-tip .cds-small-text {
+  margin-left: 16px;
+  margin-top: 4px;
+  color: #D9364B;
+}
+
+.cds-input-phone .cds-form-control, .cds-input-phone .cds-form-control-active, .cds-input-phone .cds-list.cds-list-flush, .cds-input-phone .cds-form-control-fail, .cds-input-phone .cds-form-control-success, .cds-input-calendar .cds-form-control, .cds-input-calendar .cds-form-control-active, .cds-input-calendar .cds-list.cds-list-flush, .cds-input-calendar .cds-form-control-fail, .cds-input-calendar .cds-form-control-success, .cds-input-calendar-success .cds-form-control, .cds-input-calendar-success .cds-form-control-active, .cds-input-calendar-success .cds-list.cds-list-flush, .cds-input-calendar-success .cds-form-control-fail, .cds-input-calendar-success .cds-form-control-success, .cds-input-calendar-fail .cds-form-control, .cds-input-calendar-fail .cds-form-control-active, .cds-input-calendar-fail .cds-list.cds-list-flush, .cds-input-calendar-fail .cds-form-control-fail, .cds-input-calendar-fail .cds-form-control-success, .cds-input-calendar-active .cds-form-control, .cds-input-calendar-active .cds-form-control-active, .cds-input-calendar-active .cds-list.cds-list-flush, .cds-input-calendar-active .cds-form-control-fail, .cds-input-calendar-active .cds-form-control-success, .cds-input-icon .cds-form-control, .cds-input-icon .cds-form-control-active, .cds-input-icon .cds-list.cds-list-flush, .cds-input-icon .cds-form-control-fail, .cds-input-icon .cds-form-control-success, .cds-input-icon-active .cds-form-control, .cds-input-icon-active .cds-form-control-active, .cds-input-icon-active .cds-list.cds-list-flush, .cds-input-icon-active .cds-form-control-fail, .cds-input-icon-active .cds-form-control-success {
+  display: flex;
+  flex-direction: revert;
+}
+.cds-input-phone .cds-flag-ru, .cds-input-calendar .cds-flag-ru, .cds-input-calendar-success .cds-flag-ru, .cds-input-calendar-fail .cds-flag-ru, .cds-input-calendar-active .cds-flag-ru, .cds-input-icon .cds-flag-ru, .cds-input-icon-active .cds-flag-ru {
+  margin-right: 4px;
+}
+.cds-input-phone input, .cds-input-phone input[disabled], .cds-input-calendar input, .cds-input-calendar input[disabled], .cds-input-calendar-success input, .cds-input-calendar-success input[disabled], .cds-input-calendar-fail input, .cds-input-calendar-fail input[disabled], .cds-input-calendar-active input, .cds-input-calendar-active input[disabled], .cds-input-icon input, .cds-input-icon input[disabled], .cds-input-icon-active input, .cds-input-icon-active input[disabled] {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  box-sizing: border-box;
+}
+.cds-input-phone .cds-body-text, .cds-input-calendar .cds-body-text, .cds-input-calendar-success .cds-body-text, .cds-input-calendar-fail .cds-body-text, .cds-input-calendar-active .cds-body-text, .cds-input-icon .cds-body-text, .cds-input-icon-active .cds-body-text {
+  color: #CCCCCC;
+}
+.cds-input-phone .cds-form-control-active .cds-small-text, .cds-input-phone .cds-list.cds-list-flush .cds-small-text, .cds-input-calendar .cds-form-control-active .cds-small-text, .cds-input-calendar .cds-list.cds-list-flush .cds-small-text, .cds-input-calendar-success .cds-form-control-active .cds-small-text, .cds-input-calendar-success .cds-list.cds-list-flush .cds-small-text, .cds-input-calendar-fail .cds-form-control-active .cds-small-text, .cds-input-calendar-fail .cds-list.cds-list-flush .cds-small-text, .cds-input-calendar-active .cds-form-control-active .cds-small-text, .cds-input-calendar-active .cds-list.cds-list-flush .cds-small-text, .cds-input-icon .cds-form-control-active .cds-small-text, .cds-input-icon .cds-list.cds-list-flush .cds-small-text, .cds-input-icon-active .cds-form-control-active .cds-small-text, .cds-input-icon-active .cds-list.cds-list-flush .cds-small-text {
+  color: #CCCCCC;
+}
+.cds-input-phone .cds-form-control-active .cds-body-text, .cds-input-phone .cds-list.cds-list-flush .cds-body-text, .cds-input-calendar .cds-form-control-active .cds-body-text, .cds-input-calendar .cds-list.cds-list-flush .cds-body-text, .cds-input-calendar-success .cds-form-control-active .cds-body-text, .cds-input-calendar-success .cds-list.cds-list-flush .cds-body-text, .cds-input-calendar-fail .cds-form-control-active .cds-body-text, .cds-input-calendar-fail .cds-list.cds-list-flush .cds-body-text, .cds-input-calendar-active .cds-form-control-active .cds-body-text, .cds-input-calendar-active .cds-list.cds-list-flush .cds-body-text, .cds-input-icon .cds-form-control-active .cds-body-text, .cds-input-icon .cds-list.cds-list-flush .cds-body-text, .cds-input-icon-active .cds-form-control-active .cds-body-text, .cds-input-icon-active .cds-list.cds-list-flush .cds-body-text {
+  color: #4D4D4D;
+}
+
+.cds-input-calendar .cds-ipack-calendar {
+  stroke: #CCCCCC;
+}
+
+.cds-input-calendar-active .cds-ipack-calendar .cds-color, .cds-input-calendar-active .cds-body-text, .cds-input-calendar-success .cds-ipack-calendar .cds-color, .cds-input-calendar-success .cds-body-text {
+  stroke: #4D4D4D;
+}
+
+.cds-input-calendar-fail .cds-form-control-fail .cds-body-text {
+  color: #4D4D4D;
+}
+.cds-input-calendar-fail .cds-ipack-calendar .cds-color {
+  stroke: #D9364B;
+}
+.cds-input-calendar-fail .cds-small-text {
+  color: #D9364B;
+  margin-left: 16px;
+}
+
+.cds-input-calendar-success .cds-form-control-success .cds-body-text {
+  color: #4D4D4D;
+}
+.cds-input-calendar-success .cds-ipack-calendar .cds-color {
+  stroke: #3F9726;
+}
+.cds-input-calendar-success .cds-small-text {
+  color: #3F9726;
+  margin-left: 16px;
 }
 
 .mt30 {
@@ -976,6 +1061,10 @@ body {
 
 .mr120 {
   margin-right: 120px;
+}
+
+.mr60 {
+  margin-right: 60px;
 }
 
 .mb16 {

@@ -78,8 +78,8 @@ body {
   flex-shrink: 0;
 }
 
-.w800 {
-  width: 800px;
+.w900 {
+  width: 900px;
   flex-shrink: 0;
 }
 
@@ -401,9 +401,9 @@ body {
 }
 
 .box {
-  width: 222px;
+  width: 200px;
   height: 56px;
-  margin-right: 60px;
+  margin-right: 50px;
 }
 
 //фирменный цвет и оттенки
@@ -660,7 +660,7 @@ body {
   display: flex;
   align-items: center;
   border-radius: 4px;
-  padding: 16px;
+  padding: 10px 16px;
   border: none;
   background: $color-light-100;
   @extend .cds-shadow-active
@@ -668,7 +668,7 @@ body {
 
 .cds-form-control-fail {
   border-radius: 4px;
-  padding: 16px;
+  padding: 10px 16px;
   border: none;
   @extend .cds-bg-fail-100;
   @extend .cds-shadow-fail;
@@ -676,7 +676,7 @@ body {
 
 .cds-form-control-fail-active {
   border-radius: 4px;
-  padding: 16px;
+  padding: 10px 16px;
   border: none;
   @extend .cds-bg-fail-100;
   @extend .cds-shadow-fail-active;
@@ -692,7 +692,7 @@ body {
 
 .cds-form-control-disabled {
   border-radius: 4px;
-  padding: 16px;
+  padding: 10px 16px;
   border: none;
   @extend .cds-bg-light-700;
 }
@@ -1058,7 +1058,7 @@ body {
 
   }
 }
-.cds-input-success {
+.cds-input,.cds-input-calendar,.cds-input-disabled,.cds-input-success,.cds-input-active, .cds-input-tip, .cds-input-fail-tip {
   & > div {
     display: flex;
     flex-direction: row;
@@ -1066,24 +1066,129 @@ body {
     align-items: center;
   }
   input, input[disabled] {
+    padding: 0;
     background: none;
     border: none;
   }
-  .cds-small-text {
-    color: $color-dark-500;
+  .cds-form-control {
+    .cds-body-text {
+      color: $color-dark-300;
+    }
   }
-  .cds-body-text {
-    color: $color-dark-700;
+  .cds-form-control-disabled {
+    .cds-small-text {
+      color: $color-dark-300;
+    }
   }
-  .cds-ipack-checkmark {
-    .cds-color-success {
-      stroke: $color-success;
+  .cds-form-control-active {
+    .cds-small-text {
+      color: $color-light;
+    }
+    .cds-body-text {
+      color: $color-dark-700;
+    }
+  }
+  .cds-form-control-success{
+    .cds-small-text {
+      color: $color-dark-500;
+    }
+    .cds-body-text {
+      color: $color-dark-700;
+    }
+    .cds-ipack-checkmark {
+      .cds-color-success {
+        stroke: $color-success;
+      }
     }
   }
 }
-
-
-
+.cds-input-tip {
+  .cds-small-text {
+    margin-left: 16px;
+    margin-top: 4px;
+    color: $color-dark-500;
+  }
+}
+.cds-input-fail-tip {
+  .cds-form-control-fail {
+    .cds-small-text {
+      margin: 0;
+      color: $color-dark-500;
+    }
+  }
+  .cds-small-text {
+    margin-left: 16px;
+    margin-top: 4px;
+    color: $color-fail;
+  }
+}
+.cds-input-phone,.cds-input-calendar,.cds-input-calendar-success,.cds-input-calendar-fail, .cds-input-calendar-active, .cds-input-icon, .cds-input-icon-active {
+  .cds-form-control, .cds-form-control-active,.cds-form-control-fail,.cds-form-control-success  {
+    display: flex;
+    flex-direction: revert;
+  }
+  .cds-flag-ru {
+    margin-right: 4px;
+  }
+  input, input[disabled] {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+    box-sizing: border-box;
+  }
+  .cds-body-text {
+    color: $color-dark-300;
+  }
+  .cds-form-control-active {
+    .cds-small-text {
+      color: $color-dark-300;
+    }
+    .cds-body-text {
+      color: $color-dark-700;
+    }
+  }
+}
+.cds-input-calendar {
+  .cds-ipack-calendar {
+    stroke: $color-dark-300;
+  }
+}
+.cds-input-calendar-active, , .cds-input-calendar-success {
+  .cds-ipack-calendar .cds-color, .cds-body-text {
+    stroke: $color-dark-700;
+  }
+}
+.cds-input-calendar-fail {
+  .cds-form-control-fail {
+    .cds-body-text {
+      color: $color-dark-700;
+    }
+  }
+  .cds-ipack-calendar .cds-color{
+    stroke: $color-fail;
+  }
+  .cds-small-text {
+    color: $color-fail;
+    margin-left: 16px;
+  }
+}
+.cds-input-calendar-success {
+  .cds-form-control-success {
+    .cds-body-text {
+      color: $color-dark-700;
+    }
+  }
+  .cds-ipack-calendar .cds-color{
+    stroke: $color-success;
+  }
+  .cds-small-text {
+    color: $color-success;
+    margin-left: 16px;
+  }
+}
 .mt30 {
   margin-top: 30px;
 }
@@ -1101,6 +1206,9 @@ body {
 
 .mr120 {
   margin-right: 120px;
+}
+.mr60 {
+  margin-right: 60px;
 }
 .mb16 {
   margin-bottom: 16px;
