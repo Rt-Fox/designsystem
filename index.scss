@@ -188,6 +188,9 @@ body {
   .cds-color-dark-500 {
     margin-left: 30px;
   }
+  .cds-color-dark-300 {
+    margin-left: 40px;
+  }
 }
 
 //Заголовки
@@ -649,6 +652,7 @@ body {
   border-radius: 4px;
   padding: 16px;
   border: none;
+  background: $color-light-100;
   @extend .cds-shadow
 }
 
@@ -658,6 +662,7 @@ body {
   border-radius: 4px;
   padding: 16px;
   border: none;
+  background: $color-light-100;
   @extend .cds-shadow-active
 }
 
@@ -679,7 +684,7 @@ body {
 
 .cds-form-control-success {
   border-radius: 4px;
-  padding: 16px;
+  padding: 10px 16px;
   border: none;
   @extend .cds-bg-success-100;
   @extend .cds-shadow-success;
@@ -938,36 +943,63 @@ body {
     }
   }
 }
+
 .cds-select {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
-  .icon {
+  & > div {
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
+  }
+  .cds-body-text {
+    color: $color-dark-500;
+  }
+
+  &.cds-select-active {
+    .cds-body-text {
+      color: $color-dark-700;
+    }
+    .cds-small-text {
+      color: $color-dark-500;
+    }
     .cds-ipack-arrow {
       transform: scale(-1);
     }
   }
+ &.selected {
+    .cds-form-control {
+      background-color: $color-primary;
+      color: $color-light-100;
+    }
+    .cds-color {
+      stroke: $color-light-100;
+    }
 
-  .cds-body-text {
-    color: $color-dark-500;
   }
-  &.cds-select {
-    @extend .cds-form-control;
+  li.cds-item-hover, .cds-item-selected, li:hover {
+    background-color: $color-light-700;
+    &:after {
+      content: url("Checkmark.svg");
+    }
   }
-  &.cds-select-hover, &:hover {
-    @extend .cds-form-control-active;
-  }
-  &.cds-select-active {
-    @extend .cds-form-control;
-  }
-
 }
 .cds-list.cds-list-flush {
+  margin-top: 5px;
+  width: auto;
+  height: auto;
   @extend .cds-form-control-active;
+  padding: 0;
+
+  .cds-form-control-active {
+    width: -moz-available;
+    width: -webkit-fill-available;
+    width: available;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: auto;
+    box-shadow: none;
+  }
 
   display: flex;
   flex-direction: column;
@@ -978,6 +1010,80 @@ body {
     color: $color-dark-700
   }
 }
+.cds-dropdown {
+  & > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &.cds-form-control {
+    .cds-body-text {
+      color: $color-dark-700;
+    }
+    .cds-ipack-arrow {
+      .cds-color {
+        stroke: $color-primary;
+      }
+    }
+  }
+  &.cds-body-text {
+    color: $color-dark;
+  }
+  &.disabled, &:disabled {
+    .cds-form-control-disabled {
+      .cds-body-text {
+        color: $color-dark-500;
+      }
+      .cds-ipack-arrow {
+        .cds-color {
+          stroke: $color-dark-500;
+        }
+      }
+    }
+  }
+  &.cds-dropdown-list {
+    .cds-ipack-arrow {
+      transform: scale(-1);
+    }
+  }
+  &.selected {
+    .cds-form-control {
+      background-color: $color-primary;
+      color: $color-light-100;
+    }
+    .cds-color {
+      stroke: $color-light-100;
+    }
+
+  }
+}
+.cds-input-success {
+  & > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  input, input[disabled] {
+    background: none;
+    border: none;
+  }
+  .cds-small-text {
+    color: $color-dark-500;
+  }
+  .cds-body-text {
+    color: $color-dark-700;
+  }
+  .cds-ipack-checkmark {
+    .cds-color-success {
+      stroke: $color-success;
+    }
+  }
+}
+
+
+
 .mt30 {
   margin-top: 30px;
 }

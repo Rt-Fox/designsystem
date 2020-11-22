@@ -151,6 +151,9 @@ body {
 .css-code .cds-color-dark-500 {
   margin-left: 30px;
 }
+.css-code .cds-color-dark-300 {
+  margin-left: 40px;
+}
 
 .cds-sp1 {
   font-family: Segoe UI, sans-serif;
@@ -559,12 +562,12 @@ body {
   border: 0.74829px solid #8CC17D;
 }
 
-.cds-shadow, .cds-tagbutton.hover .cds-form-control-hover, .cds-tagbutton:hover .cds-form-control-hover, .cds-badge-pill.cds-badge-hover, .cds-badge-pill:hover, .cds-form-control, .cds-select.cds-select {
+.cds-shadow, .cds-tagbutton.hover .cds-form-control-hover, .cds-tagbutton:hover .cds-form-control-hover, .cds-badge-pill.cds-badge-hover, .cds-badge-pill:hover, .cds-form-control {
   box-shadow: 0 4px 4px 0 #F8F8F8;
   box-shadow: 0 4px 16px 0 #F1F1F1;
 }
 
-.cds-shadow-active, .cds-form-control-active, .cds-list.cds-list-flush, .cds-select.cds-select-hover, .cds-select:hover {
+.cds-shadow-active, .cds-form-control-active, .cds-list.cds-list-flush {
   box-shadow: 0 4px 4px 0 #F8F8F8;
   box-shadow: 0 4px 24px 0 #E3E3E3;
 }
@@ -589,18 +592,20 @@ body {
   box-shadow: 0 4px 4px 0 #F5FAF4;
 }
 
-.cds-form-control, .cds-select.cds-select {
+.cds-form-control {
   border-radius: 4px;
   padding: 16px;
   border: none;
+  background: #FFFFFF;
 }
 
-.cds-form-control-active, .cds-list.cds-list-flush, .cds-select.cds-select-hover, .cds-select:hover {
+.cds-form-control-active, .cds-list.cds-list-flush {
   display: flex;
   align-items: center;
   border-radius: 4px;
   padding: 16px;
   border: none;
+  background: #FFFFFF;
 }
 
 .cds-form-control-fail {
@@ -617,7 +622,7 @@ body {
 
 .cds-form-control-success {
   border-radius: 4px;
-  padding: 16px;
+  padding: 10px 16px;
   border: none;
 }
 
@@ -627,7 +632,7 @@ body {
   border: none;
 }
 
-.cds-form-control.cds-form-control-attach, .cds-form-control-attach.cds-select, .cds-form-control.cds-form-control-attach-help, .cds-form-control-attach-help.cds-select, .cds-form-control.cds-form-control-attach-icon, .cds-form-control-attach-icon.cds-select {
+.cds-form-control.cds-form-control-attach, .cds-form-control.cds-form-control-attach-help, .cds-form-control.cds-form-control-attach-icon {
   width: 0.1px;
   height: 0.1px;
   opacity: 0;
@@ -677,7 +682,7 @@ body {
   content: url("adddoc.svg");
 }
 
-.cds-form-control.cds-form-control-attach-progress, .cds-form-control-attach-progress.cds-select {
+.cds-form-control.cds-form-control-attach-progress {
   width: 90%;
   height: 4px;
   background: #ddd;
@@ -685,7 +690,7 @@ body {
   padding: 0;
 }
 
-.cds-form-control.cds-form-control-attach-success, .cds-form-control-attach-success.cds-select {
+.cds-form-control.cds-form-control-attach-success {
   width: 90%;
   height: 4px;
   background: #ddd;
@@ -693,7 +698,7 @@ body {
   padding: 0;
 }
 
-.cds-form-control.cds-form-control-attach-fail, .cds-form-control-attach-fail.cds-select {
+.cds-form-control.cds-form-control-attach-fail {
   width: 90%;
   height: 4px;
   background: #ddd;
@@ -701,7 +706,7 @@ body {
   padding: 0;
   position: relative;
 }
-.cds-form-control.cds-form-control-attach-fail:before, .cds-form-control-attach-fail.cds-select:before {
+.cds-form-control.cds-form-control-attach-fail:before {
   content: "Произошла ошибка, попробуйте загрузить файл повторно";
   position: absolute;
   color: #D9364B;
@@ -807,7 +812,7 @@ body {
   border-radius: 16px;
 }
 
-.cds-tagbutton .cds-form-control-active, .cds-tagbutton .cds-list.cds-list-flush, .cds-tagbutton .cds-select.cds-select-hover, .cds-tagbutton .cds-select:hover {
+.cds-tagbutton .cds-form-control-active, .cds-tagbutton .cds-list.cds-list-flush {
   padding: 1px 8px;
 }
 .cds-tagbutton .cds-small-text-bold, .cds-tagbutton .cds-badge-pill {
@@ -846,31 +851,111 @@ body {
   color: #FFFFFF;
 }
 
-.cds-select {
+.cds-select > div {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 100%;
-}
-.cds-select .icon {
-  display: flex;
   align-items: center;
-  justify-content: center;
-}
-.cds-select .icon .cds-ipack-arrow {
-  transform: scale(-1);
 }
 .cds-select .cds-body-text {
   color: #999999;
 }
+.cds-select.cds-select-active .cds-body-text {
+  color: #4D4D4D;
+}
+.cds-select.cds-select-active .cds-small-text {
+  color: #999999;
+}
+.cds-select.cds-select-active .cds-ipack-arrow {
+  transform: scale(-1);
+}
+.cds-select.selected .cds-form-control {
+  background-color: #1946BA;
+  color: #FFFFFF;
+}
+.cds-select.selected .cds-color {
+  stroke: #FFFFFF;
+}
+.cds-select li.cds-item-hover, .cds-select .cds-item-selected, .cds-select li:hover {
+  background-color: #EEEEEE;
+}
+.cds-select li.cds-item-hover:after, .cds-select .cds-item-selected:after, .cds-select li:hover:after {
+  content: url("Checkmark.svg");
+}
+
 .cds-list.cds-list-flush {
+  margin-top: 5px;
+  width: auto;
+  height: auto;
+  padding: 0;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
 }
+.cds-list.cds-list-flush .cds-form-control-active, .cds-list.cds-list-flush .cds-list.cds-list-flush {
+  width: -moz-available;
+  width: -webkit-fill-available;
+  width: available;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: auto;
+  box-shadow: none;
+}
 .cds-list.cds-list-flush .cds-body-text {
   color: #4D4D4D;
+}
+
+.cds-dropdown > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.cds-dropdown.cds-form-control .cds-body-text {
+  color: #4D4D4D;
+}
+.cds-dropdown.cds-form-control .cds-ipack-arrow .cds-color {
+  stroke: #1946BA;
+}
+.cds-dropdown.cds-body-text {
+  color: #262626;
+}
+.cds-dropdown.disabled .cds-form-control-disabled .cds-body-text, .cds-dropdown:disabled .cds-form-control-disabled .cds-body-text {
+  color: #999999;
+}
+.cds-dropdown.disabled .cds-form-control-disabled .cds-ipack-arrow .cds-color, .cds-dropdown:disabled .cds-form-control-disabled .cds-ipack-arrow .cds-color {
+  stroke: #999999;
+}
+.cds-dropdown.cds-dropdown-list .cds-ipack-arrow {
+  transform: scale(-1);
+}
+.cds-dropdown.selected .cds-form-control {
+  background-color: #1946BA;
+  color: #FFFFFF;
+}
+.cds-dropdown.selected .cds-color {
+  stroke: #FFFFFF;
+}
+
+.cds-input-success > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.cds-input-success input, .cds-input-success input[disabled] {
+  background: none;
+  border: none;
+}
+.cds-input-success .cds-small-text {
+  color: #999999;
+}
+.cds-input-success .cds-body-text {
+  color: #4D4D4D;
+}
+.cds-input-success .cds-ipack-checkmark .cds-color-success {
+  stroke: #3F9726;
 }
 
 .mt30 {
