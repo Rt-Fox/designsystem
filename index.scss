@@ -693,9 +693,24 @@ body {
   @extend .cds-shadow-success;
 }
 
+
 .cds-form-control-disabled {
   border-radius: 4px;
   padding: 16px;
   border: none;
   @extend .cds-bg-light-700;
 }
+.cds-checkbox.cds-checkbox-checked{
+  width: 24px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 12px 0px;
+  @extend .form-check-input;
+  @extend .cds-ipack-ckeck;
+}
+.marg-text-chec{
+  @extend .marg-text-chec-top;
+
+}
+

@@ -59,6 +59,7 @@ body {
 
 .content-wrap {
   height: 100vh;
+  margin-top: 200px;
 }
 
 .main-title {
@@ -631,4 +632,132 @@ body {
   border: none;
 }
 
-/*# sourceMappingURL=index.css.map */
+.cds-ipack-ckeck{
+   color: #FFFFFF;
+}
+.form-check div{
+  width: 23px;
+  height: 23px;
+  border: 1px;
+  /*background: #143895;*/
+border-radius: 4px;
+
+   border: 1px solid #e3e3e3;
+
+}
+
+.input-i{
+  margin-top: 8px;
+  margin-left: 5px;
+}
+.input-s{
+
+  /*background:url("images/Vector.svg");*/
+  background-color: #0F2A70;
+
+}
+ /*шаблон input*/
+
+.form-check input[type="checkbox"] {
+ display: none;
+}
+
+.marg-text-chec-top{
+  margin-top: 2px;
+}
+.form-check label {
+  color: #000;
+ cursor: default;
+ font-weight: normal;
+
+ padding: 10px 0;
+ vertical-align: middle;
+}
+.form-check label:before {
+box-sizing: border-box;
+ content: " ";
+ color: #000;
+ display: inline-block;
+/* шрифт Awesome*/
+ font: 7px/30px FontAwesome;
+ margin-right: 15px;
+ position: relative;
+ text-align: center;
+ text-indent: 0px;
+ width: 24px;
+ height: 24px;
+ background: #FFF;
+ border: 1px solid #e3e3e3;
+ border-image: initial;
+  border-radius: 4px;
+ vertical-align: middle;
+}
+.form-check input:checked + label::before {
+  background: #143895;;
+border-radius: 5px;
+  content: url("images/Vector.svg");
+  color: white;
+}
+/* disabled */
+
+.form-check input:disabled + label::before {
+  background: #eee;
+  color: #aaa;
+}
+#input-chec-3{
+  background: #D1DAF1;
+}
+#input-chec-4{
+border: 1px solid #1946BA;
+  background: #FFFFFF;
+}
+#input-chec-5{
+  border: 2px solid #E88693;
+  background: #FFFFFF;
+}
+#input-chec-6{
+  /*border: 2px solid #E88693;*/
+  background: #FFFFFF;
+}
+#input-chec-7{
+  border: 2px solid #CCCCCC;;
+  background: #FFFFFF;
+
+}
+#input-chec-8{
+  border: 2px solid #1946BA;
+  background: #CCCCCC;
+}
+#input-chec-9{
+  border: 2px solid #CCCCCC;
+  background: #D1DAF1;
+}
+#input-chec-10{
+  border: 2px solid #0F2A70;
+  background:   #1946BA;
+}
+.marg-text-chec-top{
+  margin-left: 12px;
+  margin-top: 4px;
+}
+.elem-form{
+   color: #999999;;
+  margin-left: 19px;
+}
+.elem-form-line{
+
+   color: #999999;;
+  margin-left: 19px;
+}
+
+.fs14{ font-size:14px; }
+.fs18{ font-size:18px; }
+.fs20{ font-size:20px; }
+.fs56{ font-size:56px; }
+.fw700{ font-weight:700; }
+.lh22{ line-height:22px; }
+.lh26{ line-height:26px; }
+.lh30{ line-height:30px; }
+.lh84{ line-height:84px; }
+.tac{ text-align:center; }
+.ttu{ text-transform:uppercase; }
