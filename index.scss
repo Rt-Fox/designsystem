@@ -1189,6 +1189,111 @@ body {
     margin-left: 16px;
   }
 }
+
+.cds-alert {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-right: 4px;
+  padding: 16px;
+  border: none;
+  @extend .cds-shadow;
+  .cds-ipack-delete path{
+      stroke: $color-dark-500;
+  }
+}
+.cds-alert {
+  &.cds-alert {
+    .cds-body-text {
+      color: $color-dark-700;
+    }
+    .cds-ipack-delete path{
+      stroke: $color-dark-500;
+    }
+  }
+  &.cds-info {
+    .cds-ipack-info {
+      margin-right: 10px;
+    }
+  }
+  &.cds-warning {
+    background-color: $color-warning-100;
+
+    .cds-body-text {
+      margin-left: 10px;
+      color: $color-warning;
+    }
+    .cds-ipack-delete path{
+      stroke: $color-dark-500;
+    }
+    .cds-ipack-warning path {
+      stroke: $color-warning;
+      fill: $color-warning;
+    }
+  }
+  &.cds-fail {
+    background-color: $color-fail-100;
+
+    .cds-body-text {
+      margin-left: 10px;
+      color: $color-fail;
+    }
+    .cds-ipack-delete path{
+      stroke: $color-dark-500;
+    }
+    .cds-ipack-warning path {
+      stroke: $color-fail;
+      fill: $color-fail;
+    }
+  }
+  &.cds-success {
+    background-color: $color-success-100;
+
+    .cds-body-text {
+      margin-left: 10px;
+      color: $color-success;
+    }
+    .cds-ipack-delete path{
+      stroke: $color-dark-500;
+    }
+    .cds-ipack-checkmark path {
+      stroke: $color-success;
+      fill: $color-success;
+    }
+  }
+}
+.cds-interactive-plate {
+  .cds-form-control-active {
+    & > div {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+    display: flex;
+    flex-direction: column;
+    padding: 16px 36px 16px 16px;
+
+    .cds-body-text {
+      color: $color-dark-700;
+    }
+    .cds-ipack-arrowdown {
+      transform: translateX(24px);
+      path {
+        stroke: $color-dark-500
+      }
+    }
+
+  }
+  &.cds-interactive-plate-text {
+    .cds-small-text {
+      margin-top: 5px;
+      color: $color-dark-500;
+    }
+    .cds-ipack-arrowdown {
+      transform: scale(-1) translateX(-24px);
+    }
+  }
+}
 .mt30 {
   margin-top: 30px;
 }
