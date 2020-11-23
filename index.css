@@ -761,3 +761,8 @@ border: 1px solid #1946BA;
 .lh84{ line-height:84px; }
 .tac{ text-align:center; }
 .ttu{ text-transform:uppercase; }
+
+.calendar{
+  width: 285px;
+  height: 353px;
+}
