@@ -59,7 +59,6 @@ body {
 
 .content-wrap {
   height: 100vh;
-  margin-top: 200px;
 }
 
 .main-title {
@@ -630,6 +629,360 @@ body {
   border-radius: 4px;
   padding: 16px;
   border: none;
+}
+
+.cds-form-control.cds-form-control-attach, .cds-form-control.cds-form-control-attach-help, .cds-form-control.cds-form-control-attach-icon {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.cds-form-control-attach + label {
+  width: 456px;
+  height: 42px;
+  background: #FFFFFF;
+  box-shadow: 0 4px 4px rgba(77, 77, 77, 0.04), 0 4px 16px rgba(77, 77, 77, 0.08);
+  border-radius: 4px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cds-form-control-attach-help + label {
+  width: 456px;
+  height: 46px;
+  background: #FFFFFF;
+  box-shadow: 0 4px 4px rgba(77, 77, 77, 0.04), 0 4px 16px rgba(77, 77, 77, 0.08);
+  border-radius: 4px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cds-form-control-attach-icon + label {
+  width: 456px;
+  height: 56px;
+  background: #1946BA;
+  box-shadow: 0 4px 4px rgba(77, 77, 77, 0.04), 0 4px 24px rgba(77, 77, 77, 0.16);
+  border-radius: 4px;
+}
+
+.cds-ipack-doc-add {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cds-ipack-doc-add:after {
+  content: url("adddoc.svg");
+}
+
+.cds-form-control.cds-form-control-attach-progress {
+  width: 90%;
+  height: 4px;
+  background: #ddd;
+  margin-bottom: 20px;
+  padding: 0;
+}
+
+.cds-form-control.cds-form-control-attach-success {
+  width: 90%;
+  height: 4px;
+  background: #ddd;
+  margin-bottom: 20px;
+  padding: 0;
+}
+
+.cds-form-control.cds-form-control-attach-fail {
+  width: 90%;
+  height: 4px;
+  background: #ddd;
+  margin-bottom: 20px;
+  padding: 0;
+  position: relative;
+}
+.cds-form-control.cds-form-control-attach-fail:before {
+  content: "Произошла ошибка, попробуйте загрузить файл повторно";
+  position: absolute;
+  color: #D9364B;
+  right: 0;
+  bottom: -20px;
+}
+
+.cds-progress {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 73%;
+  height: 4px;
+  border-radius: 7px;
+  background: #1946BA;
+}
+.cds-progress.cds-progress-success {
+  width: 100%;
+  background: #3F9726;
+}
+.cds-progress.cds-progress-success:after {
+  content: "100%";
+  position: absolute;
+  color: #3F9726;
+  right: -15px;
+  top: -20px;
+}
+.cds-progress.cds-progress-fail {
+  width: 73%;
+  background: #D9364B;
+}
+.cds-progress.cds-progress-fail:after {
+  content: "73%";
+  position: absolute;
+  color: #D9364B;
+  right: -15px;
+  top: -20px;
+}
+.cds-progress:after {
+  content: "73%";
+  position: absolute;
+  color: #1946BA;
+  right: -15px;
+  top: -20px;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cds-form-control-attach-wrong {
+  padding: 0;
+}
+
+.cds-badge-pill.cds-badge-primary {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 4px 16px;
+  color: #FFFFFF;
+  background: #1946BA;
+  box-shadow: 0 4px 4px rgba(77, 77, 77, 0.04), 0 4px 16px rgba(77, 77, 77, 0.08);
+  border-radius: 16px;
+  border: none;
+}
+.cds-badge-pill.cds-badge-secondary {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 4px 16px;
+  width: auto;
+  height: auto;
+  color: #1946BA;
+  background: #FFFFFF;
+  border: 1px solid #1946BA;
+  box-sizing: border-box;
+  border-radius: 16px;
+}
+.cds-badge-pill.cds-badge-disable, .cds-badge-pill:disabled, .cds-badge-pill[disabled], .cds-badge-pill[disabled]:hover {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 4px 16px;
+  width: auto;
+  height: auto;
+  color: #FFFFFF;
+  background: #D1DAF1;
+  border: none;
+  border-radius: 16px;
+}
+.cds-badge-pill.cds-badge-hover, .cds-badge-pill:hover {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 4px 16px;
+  width: auto;
+  height: auto;
+  color: #1946BA;
+  background: #FFFFFF;
+  border: 1px solid #D1DAF1;
+  border-radius: 16px;
+}
+
+.cds-tagbutton .cds-form-control-active, .cds-tagbutton .cds-list.cds-list-flush {
+  padding: 1px 8px;
+}
+.cds-tagbutton .cds-small-text-bold, .cds-tagbutton .cds-badge-pill {
+  margin-right: 4px;
+}
+.cds-tagbutton .cds-ipack-close .cds-color {
+  stroke: #999999;
+}
+.cds-tagbutton.hover, .cds-tagbutton:hover {
+  cursor: pointer;
+}
+.cds-tagbutton.hover .cds-form-control-hover, .cds-tagbutton:hover .cds-form-control-hover {
+  background-color: #EEEEEE;
+}
+.cds-tagbutton.hover .cds-ipack-close .cds-color, .cds-tagbutton:hover .cds-ipack-close .cds-color {
+  stroke: #262626;
+}
+.cds-tagbutton.click .cds-form-control-hover, .cds-tagbutton:active .cds-form-control-hover {
+  background-color: #143895;
+  box-shadow: none;
+}
+.cds-tagbutton.click .cds-ipack-close .cds-color, .cds-tagbutton:active .cds-ipack-close .cds-color {
+  stroke: #FFFFFF;
+}
+.cds-tagbutton.click .cds-small-text-bold, .cds-tagbutton.click .cds-badge-pill, .cds-tagbutton:active .cds-small-text-bold, .cds-tagbutton:active .cds-badge-pill {
+  color: #FFFFFF;
+}
+.cds-tagbutton.chosen .cds-form-control-chosen, .cds-tagbutton:focus .cds-form-control-chosen {
+  background-color: #1946BA;
+  box-shadow: none;
+}
+.cds-tagbutton.chosen .cds-ipack-close .cds-color, .cds-tagbutton:focus .cds-ipack-close .cds-color {
+  stroke: #FFFFFF;
+}
+.cds-tagbutton.chosen .cds-small-text-bold, .cds-tagbutton.chosen .cds-badge-pill, .cds-tagbutton:focus .cds-small-text-bold, .cds-tagbutton:focus .cds-badge-pill {
+  color: #FFFFFF;
+}
+
+.cds-select > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.cds-select .cds-body-text {
+  color: #999999;
+}
+.cds-select.cds-select-active .cds-body-text {
+  color: #4D4D4D;
+}
+.cds-select.cds-select-active .cds-small-text {
+  color: #999999;
+}
+.cds-select.cds-select-active .cds-ipack-arrow {
+  transform: scale(-1);
+}
+.cds-select.selected .cds-form-control {
+  background-color: #1946BA;
+  color: #FFFFFF;
+}
+.cds-select.selected .cds-color {
+  stroke: #FFFFFF;
+}
+.cds-select li.cds-item-hover, .cds-select .cds-item-selected, .cds-select li:hover {
+  background-color: #EEEEEE;
+}
+.cds-select li.cds-item-hover:after, .cds-select .cds-item-selected:after, .cds-select li:hover:after {
+  content: url("Checkmark.svg");
+}
+
+.cds-list.cds-list-flush {
+  margin-top: 5px;
+  width: auto;
+  height: auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.cds-list.cds-list-flush .cds-form-control-active, .cds-list.cds-list-flush .cds-list.cds-list-flush {
+  width: -moz-available;
+  width: -webkit-fill-available;
+  width: available;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: auto;
+  box-shadow: none;
+}
+.cds-list.cds-list-flush .cds-body-text {
+  color: #4D4D4D;
+}
+
+.cds-dropdown > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.cds-dropdown.cds-form-control .cds-body-text {
+  color: #4D4D4D;
+}
+.cds-dropdown.cds-form-control .cds-ipack-arrow .cds-color {
+  stroke: #1946BA;
+}
+.cds-dropdown.cds-body-text {
+  color: #262626;
+}
+.cds-dropdown.disabled .cds-form-control-disabled .cds-body-text, .cds-dropdown:disabled .cds-form-control-disabled .cds-body-text {
+  color: #999999;
+}
+.cds-dropdown.disabled .cds-form-control-disabled .cds-ipack-arrow .cds-color, .cds-dropdown:disabled .cds-form-control-disabled .cds-ipack-arrow .cds-color {
+  stroke: #999999;
+}
+.cds-dropdown.cds-dropdown-list .cds-ipack-arrow {
+  transform: scale(-1);
+}
+.cds-dropdown.selected .cds-form-control {
+  background-color: #1946BA;
+  color: #FFFFFF;
+}
+.cds-dropdown.selected .cds-color {
+  stroke: #FFFFFF;
+}
+
+.cds-input-success > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.cds-input-success input, .cds-input-success input[disabled] {
+  background: none;
+  border: none;
+}
+.cds-input-success .cds-small-text {
+  color: #999999;
+}
+.cds-input-success .cds-body-text {
+  color: #4D4D4D;
+}
+.cds-input-success .cds-ipack-checkmark .cds-color-success {
+  stroke: #3F9726;
+}
+
+.mt30 {
+  margin-top: 30px;
+}
+
+.ml16 {
+  margin-left: 16px;
+}
+
+.ml30 {
+  margin-left: 30px;
+}
+
+.ml60 {
+  margin-left: 60px;
+}
+
+.mr120 {
+  margin-right: 120px;
+}
+
+.mb16 {
+  margin-bottom: 16px;
+}
+
+.mb30 {
+  margin-bottom: 30px;
 }
 
 .cds-ipack-ckeck{
