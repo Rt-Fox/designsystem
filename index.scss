@@ -58,6 +58,10 @@ body {
   display: flex;
   justify-content: flex-end;
 }
+.w150 {
+  width: 150px;
+  flex-shrink: 0;
+}
 .w260 {
   width: 260px;
   flex-shrink: 0;
@@ -748,91 +752,89 @@ body {
   justify-content: center;
 
   &:after {
-    content: url("adddoc.svg");
+    content: url("img/adddoc.svg");
   }
 }
 
-.cds-form-control.cds-form-control-attach-progress {
-   width: 90%;
-   height: 4px;
-   background: #ddd;
-   margin-bottom: 20px;
-   padding: 0;
- }
-.cds-form-control.cds-form-control-attach-success {
-  width: 90%;
-  height: 4px;
-  background: #ddd;
-  margin-bottom: 20px;
-  padding: 0;
-}
-.cds-form-control.cds-form-control-attach-fail {
-  width: 90%;
-  height: 4px;
-  background: #ddd;
-  margin-bottom: 20px;
-  padding: 0;
-  position: relative;
-
-  &:before {
-    content: "Произошла ошибка, попробуйте загрузить файл повторно";
-    position: absolute;
-    color: $color-fail;
-    right: 0;
-    bottom: -20px;
-  }
-}
-.cds-progress {
-  display: flex;
-  flex-direction: row;
-  position: relative;
-
-  &.cds-progress-success {
+.cds-form-control {
+  &.cds-form-control-attach-success,&.cds-form-control-attach-fail,&.cds-form-control-attach-progress,&.cds-form-control-attach-wrong {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    background:$color-success;
-
-    &:after {
-      content: "100%";
-      position: absolute;
-      color: $color-success;
-      right: -15px;
-      top: -20px;
-    }
-
+    box-sizing: border-box;
   }
-  &.cds-progress-fail {
-    width: 73%;
-    background:$color-fail;
+
+
+  .cds-progress {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    border-radius: 7px;
+    height: 4px;
+    background: #ddd;
+    margin-top: 20px;
+    padding: 0;
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      height: 4px;
+      width: 73%;
+      background:$color-primary;
+    }
 
     &:after {
       content: "73%";
       position: absolute;
-      color: $color-fail;
-      right: -15px;
+      color: $color-primary;
+      right: -10px;
       top: -20px;
     }
-  }
+    &.cds-progress-success {
+      &:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        background:$color-success;
+      }
 
-  &:after {
-    content: "73%";
-    position: absolute;
-    color: $color-primary;
-    right: -15px;
-    top: -20px;
-  }
+      &:after {
+        content: "100%";
+        position: absolute;
+        color: $color-success;
+        right: -10px;
+        top: -20px;
+      }
+    }
 
-  width: 73%;
-  height: 4px;
-  border-radius: 7px;
-  background: $color-primary;
-}
+    &.cds-progress-fail {
+      &:before {
+        content: "";
+        position: absolute;
+        height: 4px;
+        width: 73%;
+        background:$color-fail;
+      }
+      &:after {
+        content: "73%";
+        position: absolute;
+        color: $color-fail;
+        right: -10px;
+        top: -20px;
+      }
+    }
+  }
+ }
+
+
 .center {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.cds-form-control-attach-wrong {
-  padding: 0;
 }
 .cds-badge-pill {
   @extend .cds-small-text-bold;
@@ -979,7 +981,7 @@ body {
   li.cds-item-hover, .cds-item-selected, li:hover {
     background-color: $color-light-700;
     &:after {
-      content: url("Checkmark.svg");
+      content: url("img/Checkmark.svg");
     }
   }
 }
@@ -1434,6 +1436,509 @@ body {
     box-sizing: border-box;
   }
 }
+.cds-tab {
+  width: max-content;
+
+  .cds-body-text {
+    color: $color-dark-500;
+    margin-top: 21px;
+    margin-bottom: 25px;
+  }
+  &.cds-tab-medium {
+    .cds-body-text {
+      margin-top: 7px;
+      margin-bottom: 15px;
+    }
+  }
+  &.cds-tab-small {
+    .cds-body-text {
+      margin-top: 10px;
+      margin-bottom: 7px;
+    }
+  }
+
+
+
+  &.hover, &:hover {
+    .cds-body-text {
+      color: $color-dark-300;
+    }
+    &.cds-underline {
+      box-shadow: inset 0px -4px 0px $color-dark-500;
+    }
+    &.cds-tab-medium.cds-underline {
+      box-shadow: inset 0px -3px 0px $color-dark-500;
+    }
+    &.cds-tab-small.cds-underline {
+      box-shadow: inset 0px -2px 0px $color-dark-500;
+    }
+  }
+  &.active, &:active {
+    .cds-body-text {
+      color: $color-dark;
+    }
+    &.cds-underline {
+      box-shadow: inset 0px -4px 0px $color-primary;
+    }
+    &.cds-tab-medium.cds-underline {
+      box-shadow: inset 0px -3px 0px $color-primary;
+    }
+    &.cds-tab-small.cds-underline {
+      box-shadow: inset 0px -2px 0px $color-primary;
+    }
+  }
+}
+.cds-checkbox {
+  input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+  }
+
+  .form-check-input+label {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+
+    &:before {
+      content: '';
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      padding: 4px;
+      background-color: none;
+      border-radius: 4px;
+      border: 1px solid $color-dark-300;
+      margin-right: 12px;
+      flex-shrink: 0;
+    }
+  }
+
+  /* стили при наведении курсора на checkbox */
+  .form-check-input:not(:disabled):not(:checked)+label:hover:before, &.hover .form-check-input + label:before {
+    border-color: $color-primary;
+  }
+
+  /* стили для активного чекбокса (при нажатии на него) */
+  .form-check-input:not(:disabled):active+label:before, &.active .form-check-input:not(:checked) + label:before {
+    background-color: $color-light-700;
+    border-color: $color-primary;
+  }
+  /* стили для чекбокса, находящегося в состоянии disabled */
+  .form-check-input:disabled+label::before {
+    background-color: none;
+    border: 1px solid $color-dark-300;
+  }
+  .form-check-input:disabled+label {
+      color: $color-dark-300;
+  }
+  .cds-body-text {
+    color: $color-dark-700;
+  }
+  &.fail {
+    label:before {
+      border: 1px solid;
+      border-color: $color-fail-300;
+    }
+    .cds-body-text {
+      color: $color-fail-300;
+    }
+  }
+  /* стили для чекбокса, находящегося в состоянии checked */
+  .form-check-input:checked+label::before {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    content: url("img/Vector.svg");
+    background-color: $color-primary-500;
+    border: 1px solid $color-primary-500;
+  }
+  .form-check-input:checked:active + label::before, &.active .form-check-input:checked + .cds-body-text::before {
+    background-color: $color-primary-700;
+  }
+  .form-check-input:checked:hover + label::before,&.hover .form-check-input:checked + .cds-body-text::before {
+    background-color: $color-primary;
+    border: 1px solid;
+    border-color: $color-primary-700;
+  }
+  .form-check-input:checked:disabled + label::before {
+    background-color: $color-primary-100;
+    border: none;
+  }
+
+  &.cds-checkbox-indeterminated {
+    &.disabled {
+      &:hover, &:active {
+        .form-check-input:before {
+          background-color: none;
+          border: none;
+        }
+      }
+    }
+    label:before {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      content: url("img/minus.svg");
+      background-color: $color-primary-100;
+      border: none;
+    }
+    .cds-body-text {
+      color: $color-dark-300;
+    }
+  }
+}
+.cds-radiobutton {
+  input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+  }
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+
+  .form-radiobutton-input + label {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+    position: relative;
+  }
+  .form-radiobutton-input + label:before {
+    content: '';
+    display: inline-block;
+    flex-shrink: 0;
+    flex-grow: 0;
+    width: 10px;
+    height: 10px;
+    padding: 4px;
+    border-radius: 50%;
+    border: 1px solid;
+    border-color: $color-dark-300;
+    margin-right: 8px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+  }
+  /* стили при наведении курсора на радио */
+  .form-radiobutton-input:not(:disabled):not(:checked)+label:hover::before {
+    border-color: $color-primary;
+  }
+  &.hover label::before {
+    border-color: $color-primary;
+  }
+  /* стили для активной радиокнопки (при нажатии на неё) */
+  .form-radiobutton-input:not(:disabled):active+label::before {
+    background-color: $color-light-700;
+    border-color: $color-primary;
+  }
+  &.active label::before {
+    background-color: $color-light-700;
+    border-color: $color-primary;
+  }
+
+
+  /* стили для радиокнопки, находящейся в состоянии checked */
+  .form-radiobutton-input:checked+label::before {
+    border-color: $color-primary-100;
+    background-color: $color-light-500;
+  }
+  &.cds-radiobutton-selected .form-radiobutton-input + label:after, .form-radiobutton-input:checked+label::after {
+    content: '';
+    position: absolute;
+    left: 10px;
+    //width = border + padding + width = 2+8+10 = 20
+    transform: translateX(-50%);
+    border-radius: 50%;
+    width: 7px;
+    height: 7px;
+    border: none;
+    background-color: $color-primary;
+  }
+
+  /* стили для радиокнопки, находящейся в состоянии disabled */
+  .form-radiobutton-input:disabled + .cds-body-text{
+      color: $color-dark-300;
+  }
+  &.cds-radiobutton-selected .form-radiobutton-input:disabled + .cds-body-text{
+      color: $color-dark-700;
+  }
+  &.cds-radiobutton-selected input.form-radiobutton-input:disabled + .cds-body-text:before {
+    background-color: $color-light-500;
+    border-color: $color-primary-100;
+  }
+  &.cds-radiobutton-selected .form-radiobutton-input:disabled + .cds-body-text:after {
+    background-color: $color-primary-100;
+  }
+
+  .cds-body-text {
+    color:$color-dark-700 ;
+  }
+
+  &.fail .cds-body-text:before {
+      border-color: $color-fail;
+  }
+}
+
+.cds-radiogroup {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  &.cds-radiogroup-horizontal {
+    position: relative;
+
+    .cds-horizontal  {
+      display: flex;
+      flex-direction: row;
+
+      .cds-radiobutton {
+        margin-right: 8px;
+        margin-bottom: 0;
+      }
+    }
+
+    &.fail.cds-rectangle:before {
+      position: absolute;
+      content: '';
+      height: 82px;
+      width: 1px;
+      background-color: $color-fail;
+      left: -8px;
+    }
+  }
+
+  .cds-small-text {
+    color: $color-dark-500;
+    margin-bottom: 6px;
+  }
+  .cds-radiobutton {
+    margin-bottom: 8px;
+  }
+
+  &.fail .cds-small-text:last-child {
+    color: $color-fail;
+    margin-top: 6px;
+  }
+}
+.cds-radiogroup-btn {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  .cds-small-text {
+    margin-bottom: 8px;
+    color: $color-dark-500;
+  }
+
+  &.cds-radiogroup-horizontal {
+    position: relative;
+
+    .cds-horizontal  {
+      display: flex;
+      flex-direction: row;
+      .cds-btn {
+        margin-right: 8px;
+        margin-bottom: 0;
+      }
+      .cds-radiobutton {
+        margin-right: 8px;
+        margin-bottom: 0;
+      }
+
+      &.fail.cds-rectangle:before {
+        position: absolute;
+        content: '';
+        height: 104px;
+        width: 1px;
+        background-color: $color-fail;
+        left: -8px;
+      }
+    }
+
+    &.help .cds-small-text:last-child {
+      color: $color-dark-300;
+      margin-top: 8px;
+    }
+    &.fail .cds-small-text:last-child {
+      color: $color-fail;
+      margin-top: 6px;
+    }
+  }
+}
+.cds-checkboxgroup-line, .cds-checkboxgroup-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  position: relative;
+  .cds-horizontal {
+    display: flex;
+    flex-direction: row;
+  }
+  .cds-checkbox {
+    margin-right: 8px;
+  }
+  .cds-body-text:first-child {
+    color: $color-dark-500;
+    margin-bottom: 8px;
+  }
+  .cds-small-text {
+    color: $color-dark-300;
+    margin-bottom: 8px;
+  }
+  &.fail.cds-rectangle:before {
+    position: absolute;
+    content: '';
+    height: 90px;
+    width: 1px;
+    background-color: $color-fail;
+    left: -8px;
+  }
+  &.fail .cds-small-text:last-child {
+    color: $color-fail;
+    margin-top: 8px;
+  }
+}
+.cds-checkboxgroup-btn {
+  .cds-btn {
+    margin-right: 12px;
+  }
+  &.fail.cds-rectangle:before {
+    position: absolute;
+    content: '';
+    height: 104px;
+    width: 1px;
+    background-color: $color-fail;
+    left: -8px;
+  }
+}
+.cds-checkboxgroup {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  .cds-body-text {
+    color: $color-dark-500;
+    margin-bottom: 8px;
+  }
+
+  &.cds-radiogroup-horizontal {
+    position: relative;
+
+    .cds-horizontal  {
+      display: flex;
+      flex-direction: row;
+
+      .cds-radiobutton {
+        margin-right: 8px;
+        margin-bottom: 0;
+      }
+    }
+
+    &.fail.cds-rectangle:before {
+      position: absolute;
+      content: '';
+      height: 82px;
+      width: 1px;
+      background-color: $color-fail;
+      left: -8px;
+    }
+  }
+
+  .cds-body-text {
+    color: $color-dark-500;
+    margin-bottom: 8px;
+  }
+  .cds-small-text {
+    color: $color-dark-300;
+    margin-bottom: 8px;
+  }
+
+
+  &.fail .cds-small-text:last-child {
+    color: $color-fail;
+    margin-top: 6px;
+  }
+}
+.cds-link {
+  text-decoration: none;
+  height: min-content;
+  padding:2px 10px ;
+  div {
+    padding: 4px;
+  }
+  &.cds-link {
+    color: $color-primary;
+
+    &:active {
+      text-decoration: underline;
+      color: $color-primary-500;
+    }
+  }
+  &.cds-link-dark {
+    color: $color-dark-700;
+
+    &:active {
+      text-decoration: underline;
+      color: $color-primary-500;
+    }
+  }
+  &.cds-link-light {
+    color: $color-dark-500;
+
+    &:active {
+      text-decoration: underline;
+      color: $color-dark;
+    }
+  }
+  &.cds-link-dotted {
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    color: $color-primary;
+
+    &:active {
+      text-decoration: underline;
+      text-decoration-style: dotted;
+      color: $color-primary-700;
+    }
+  }
+  &.cds-link-dark-background {
+    background-color: $color-primary;
+    color: $color-light-100;
+
+    &:active {
+      text-decoration: underline;
+      color: $color-dark-500;
+    }
+  }
+  &:hover {
+    text-decoration: underline;
+  }
+  &.cds-link-light:hover {
+    color: $color-dark;
+  }
+  &.cds-link-dotted:hover {
+    text-decoration: underline;
+    text-decoration-style: dotted;
+  }
+  &.inactive {
+    cursor: not-allowed;
+    &.cds-link-dotted {
+      color: $color-dark-500;
+    }
+    .cds-body-text {
+      color: $color-dark-500;
+    }
+  }
+}
+//не мое
 
 .content-wrap > .row > .table {
   margin: 30px;
@@ -1571,8 +2076,6 @@ body {
   line-height: 26px;
   paragraph: 13px;
 }
-
-
 .cds-btn {
   background: $color-primary;
 }
