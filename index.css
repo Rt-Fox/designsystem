@@ -1710,12 +1710,27 @@ body {
   color: #999999;
 }
 
-.content-wrap > .row > .table {
-  margin: 30px;
+.cds-notification .cds-form-control-active, .cds-notification .cds-list.cds-list-flush {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.cds-notification .row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+}
+.cds-notification .cds-form-circle {
+  height: 56px;
+  width: 56px;
+  border-radius: 50%;
+  background-color: #F7D7DB;
 }
 
-.content-wrap > .row > .primary {
-  /*background: color-primary;*/
+.content-wrap > .row > .table {
+  margin: 30px;
 }
 
 .primary {
@@ -1724,18 +1739,18 @@ body {
 
 .primary > caption {
   background-color: #1946BA;
-  color: #ffffff !important;
+  color: #FFFFFF !important;
 }
 
 .content-wrap > .row > .primary > thead > tr > .data {
   background-color: #1946BA;
-  color: #ffffff;
+  color: #FFFFFF;
   padding-left: 16px;
 }
 
 .content-wrap > .row > .primary > tbody > tr > .data {
   background-color: #1946BA;
-  color: #ffffff;
+  color: #FFFFFF;
   padding-left: 16px;
 }
 
@@ -1750,6 +1765,8 @@ body {
 .content-wrap > .row > .classes {
   display: flex;
   flex-wrap: wrap;
+  width: 1400px;
+  flex-shrink: 0;
 }
 
 .content-wrap > .row > .classes > .element {
@@ -1757,9 +1774,8 @@ body {
   /*position: relative;*/
   flex-flow: column;
   height: fit-content;
-  width: 50%;
-  min-width: 600px;
   margin-bottom: 50px;
+  width: 45%;
 }
 
 .content-wrap > .row > .classes > .element > .title {
@@ -1872,18 +1888,18 @@ body {
   background: #D1DAF1 !important;
 }
 
-.cds-btn > .cds-btn-text {
+.cds-btn > .cds-body-text {
   font-family: Segoe UI, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
   line-height: 26px;
-  color: #ffffff;
+  color: #FFFFFF;
   margin: 0 8px;
 }
 
 .cds-btn > .icon {
-  color: #ffffff;
+  color: #FFFFFF;
   margin-left: 4px;
 }
 
@@ -1912,27 +1928,27 @@ body {
 }
 
 .cds-btn-hover > .icon {
-  color: #ffffff;
+  color: #FFFFFF;
 }
 
 .cds-btn:hover > .icon {
-  color: #ffffff;
+  color: #FFFFFF;
 }
 
 .cds-btn-active > .icon {
-  color: #ffffff;
+  color: #FFFFFF;
 }
 
 .cds-btn:active > .icon {
-  color: #ffffff;
+  color: #FFFFFF;
 }
 
 .cds-btn-disabled > .icon {
-  color: #ffffff !important;
+  color: #FFFFFF !important;
 }
 
 .cds-btn:disabled > .icon {
-  color: #ffffff !important;
+  color: #FFFFFF !important;
 }
 
 .cds-btn.cds-btn-secondary {
@@ -1968,7 +1984,7 @@ body {
   border: 1px solid #D1DAF1 !important;
 }
 
-.cds-btn-secondary > .cds-btn-text {
+.cds-btn-secondary > .cds-body-text {
   font-family: Segoe UI, sans-serif;
   font-style: normal;
   font-weight: normal;
@@ -1978,27 +1994,27 @@ body {
   margin: 0 8px;
 }
 
-.cds-btn-secondary-hover > .cds-btn-text {
+.cds-btn-secondary-hover > .cds-body-text {
   color: #1946BA;
 }
 
-.cds-btn-secondary:hover > .cds-btn-text {
+.cds-btn-secondary:hover > .cds-body-text {
   color: #1946BA;
 }
 
-.cds-btn-secondary-active > .cds-btn-text {
+.cds-btn-secondary-active > .cds-body-text {
   color: #0F2A70;
 }
 
-.cds-btn-secondary:active > .cds-btn-text {
+.cds-btn-secondary:active > .cds-body-text {
   color: #0F2A70;
 }
 
-.cds-btn-secondary-disabled > .cds-btn-text {
+.cds-btn-secondary-disabled > .cds-body-text {
   color: #D1DAF1 !important;
 }
 
-.cds-btn-secondary:disabled > .cds-btn-text {
+.cds-btn-secondary:disabled > .cds-body-text {
   color: #D1DAF1 !important;
 }
 
@@ -2051,6 +2067,112 @@ body {
   color: #D1DAF1 !important;
 }
 
+.cds-btn.cds-btn-secondary-white {
+  background: transparent;
+  border: 1px solid #FFFFFF;
+}
+
+.cds-btn-secondary-white {
+  border: 1px solid #FFFFFF;
+}
+
+.cds-btn-secondary-white-hover {
+  border: 1px solid #EEEEEE;
+}
+
+.cds-btn-secondary-white:hover {
+  border: 1px solid #EEEEEE;
+}
+
+.cds-btn-secondary-white-active {
+  border: 1px solid #CCCCCC;
+}
+
+.cds-btn-secondary-white:active {
+  border: 1px solid #CCCCCC;
+}
+
+.cds-btn-secondary-white-disabled {
+  border: 1px solid #999999 !important;
+}
+
+.cds-btn-secondary-white:disabled {
+  border: 1px solid #999999 !important;
+}
+
+.cds-btn-secondary-white-hover > .cds-body-text {
+  color: #EEEEEE;
+}
+
+.cds-btn-secondary-white:hover > .cds-body-text {
+  color: #EEEEEE;
+}
+
+.cds-btn-secondary-white-active > .cds-body-text {
+  color: #CCCCCC;
+}
+
+.cds-btn-secondary-white:active > .cds-body-text {
+  color: #CCCCCC;
+}
+
+.cds-btn-secondary-white-disabled > .cds-body-text {
+  color: #999999 !important;
+}
+
+.cds-btn-secondary-white:disabled > .cds-body-text {
+  color: #999999 !important;
+}
+
+.cds-btn-secondary-white > .icon {
+  color: #FFFFFF;
+  margin-left: 4px;
+}
+
+.cds-btn-icon > .icon {
+  margin-left: 0;
+}
+
+.cds-btn-secondary-white.cds-btn-circle {
+  border-radius: 50%;
+}
+
+.cds-btn-secondary-white.cds-btn-circle > .icon {
+  margin-left: 0;
+}
+
+.cds-btn-secondary-white-circle {
+  border-radius: 50%;
+}
+
+.cds-btn-secondary-white-circle > .icon {
+  margin-left: 0;
+}
+
+.cds-btn-secondary-white-hover > .icon {
+  color: #EEEEEE;
+}
+
+.cds-btn-secondary-white:hover > .icon {
+  color: #EEEEEE;
+}
+
+.cds-btn-secondary-white-active > .icon {
+  color: #CCCCCC;
+}
+
+.cds-btn-secondary-white:active > .icon {
+  color: #CCCCCC;
+}
+
+.cds-btn-secondary-white-disabled > .icon {
+  color: #999999 !important;
+}
+
+.cds-btn-secondary-white:disabled > .icon {
+  color: #999999 !important;
+}
+
 .cds-btn-white {
   background: #FFFFFF;
   border: none !important;
@@ -2080,7 +2202,7 @@ body {
   background: #FFFFFF44 !important;
 }
 
-.cds-btn-white > .cds-btn-text {
+.cds-btn-white > .cds-body-text {
   color: #1946BA;
 }
 
@@ -2152,6 +2274,10 @@ body {
   align-self: flex-end;
 }
 .cds-confirmation-modal.cds-form-control-active div:last-child .cds-btn-secondary, .cds-confirmation-modal.cds-list.cds-list-flush div:last-child .cds-btn-secondary {
+  margin-right: 16px;
+  margin-top: 32px;
+}
+.cds-confirmation-modal.cds-form-control-active div:last-child .cds-btn-secondary-white, .cds-confirmation-modal.cds-list.cds-list-flush div:last-child .cds-btn-secondary-white {
   margin-right: 16px;
   margin-top: 32px;
 }
