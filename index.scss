@@ -2629,7 +2629,90 @@ ul.cds-list-header {
     }
   }
 }
+.cds-slider {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-shrink: 0;
+  height: 20px;
+  width: 322px;
+  .cds-small-text {
+    color: $color-dark-300;
+  }
+  .cds-slidecontainer {
+    height: 1.72px;
+    width: 100%;
+    background-color: $color-light-700;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
 
+    .cds-slidecontainer-filled {
+      height: 100%;
+      width: 30%;
+      background-color: $color-primary;
+    }
+    .cds-slider-unput {
+      height: 10px;
+      width: 10px;
+      border-radius: 50%;
+      background-color: $color-primary;
+      &:hover {
+        box-shadow: 0 0 0 5px $color-primary;
+      }
+    }
+  }
+  &.cds-slider-dubble {
+    .cds-slider-unput:first-child {
+      margin-left: 30%;
+    }
+  }
+  &.cds-slider-badge.hover .cds-slider-unput:last-child, &.cds-slider-badge .cds-slider-unput:hover {
+      position: relative;
+      &:before {
+        @extend .cds-small-text;
+        display: flex;
+        align-items: center;
+        color: $color-light-100;
+        content: 'Текст';
+        height: 15px;
+        padding: 5px 8px;
+        background-color: $color-primary;
+        border-radius: 4px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: -40px;
+        z-index: 2;
+      }
+      &:after {
+        content: '';
+        background-color: $color-primary;
+        height: 20px;
+        position: absolute;
+        width: 4px;
+        left: 50%;
+        transform: translateX(-50%);
+        top: -20px;
+      }
+  }
+  &.hover {
+    .cds-slider-unput:last-child {
+      box-shadow: 0 0 0 5px $color-primary;
+    }
+  }
+
+  &:disabled, &.disabled {
+    .cds-slidecontainer-filled {
+      background-color: $color-dark-300;
+    }
+    .cds-slider-unput {
+      background-color: $color-dark-300;
+    }
+  }
+
+}
 
 .content-wrap > .row > .table {
   margin: 30px;
@@ -3342,4 +3425,7 @@ ul.cds-list-header {
 }
 .mb30 {
   margin-bottom: 30px;
+}
+.mb60 {
+  margin-bottom: 60px;
 }
