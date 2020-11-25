@@ -62,6 +62,78 @@ body {
   min-height: 100vh;
 }
 
+/* ВНЕШНИЙ БЛОК */
+#panel {
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  /* положение */
+  top: 100px;
+  /* отступ сверху */
+  left: 0;
+  /* отступ слева */
+  background: #1946BA;
+  /* цвет фона */
+  width: 20px;
+  /* ширина блока */
+  height: 40px;
+  /* высота блока */
+  font: 14px Arial;
+  /* размер и тип шрифта */
+  color: #FFFFFF;
+  text-align: center;
+  /* выравнивание текста по центру */
+  padding: 4px;
+  /* отступы от границ внутри блока */
+  -webkit-transition-duration: 0.3s;
+  /* анимационное выдвижение для всех браузеров*/
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-border-radius: 0 5px 5px 0;
+  /* закругление границ для всех браузеров*/
+  -moz-border-radius: 0 5px 5px 0;
+  border-radius: 0 5px 5px 0;
+}
+
+/* СКРЫТЫЙ БЛОК */
+#hidden_panel {
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+  position: fixed;
+  left: -270px;
+  background: #FFFFFF;
+  border: 1px solid #CCCCCC;
+  border-left: none;
+  top: 0;
+  width: 250px;
+  height: 100vh;
+  padding: 10px;
+  text-align: left;
+  color: #1946BA;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  border-radius: 0 5px 5px 0;
+}
+#hidden_panel nav {
+  display: flex;
+  flex-direction: column;
+}
+
+#panel:hover {
+  left: 270px;
+}
+
+#panel:hover #hidden_panel {
+  left: 0;
+  /* отступ слева */
+}
+
 .main-title {
   font-family: Gilroy, sans-serif;
   font-style: normal;
@@ -232,7 +304,7 @@ body {
   paragraph: 13px;
 }
 
-.cds-small-text, .cds-list li {
+.cds-small-text, .cds-progressbar-circle:before, .cds-list li {
   font-family: Segoe UI, sans-serif;
   font-weight: 400;
   font-size: 14px;
@@ -567,12 +639,12 @@ body {
   border: 0.74829px solid #8CC17D;
 }
 
-.cds-shadow, .cds-alert, .cds-tagbutton.hover .cds-form-control-hover, .cds-tagbutton:hover .cds-form-control-hover, .cds-badge-pill.cds-badge-hover, .cds-badge-pill:hover, .cds-form-control {
+.cds-shadow, .cds-datapicker, .cds-alert, .cds-tagbutton.hover .cds-form-control-hover, .cds-tagbutton:hover .cds-form-control-hover, .cds-badge-pill.cds-badge-hover, .cds-badge-pill:hover, .cds-form-control {
   box-shadow: 0 4px 4px 0 #F8F8F8;
   box-shadow: 0 4px 16px 0 #F1F1F1;
 }
 
-.cds-shadow-active, .cds-form-control-active, .cds-list.cds-list-flush {
+.cds-shadow-active, .cds-form-control-active {
   box-shadow: 0 4px 4px 0 #F8F8F8;
   box-shadow: 0 4px 24px 0 #E3E3E3;
 }
@@ -604,7 +676,7 @@ body {
   background: #FFFFFF;
 }
 
-.cds-form-control-active, .cds-list.cds-list-flush {
+.cds-form-control-active {
   display: flex;
   border-radius: 4px;
   padding: 10px 16px;
@@ -694,53 +766,54 @@ body {
   width: 100%;
   box-sizing: border-box;
 }
-.cds-form-control .cds-progress {
+
+.cds-progress {
   display: flex;
   flex-direction: row;
   width: 100%;
   border-radius: 7px;
   height: 4px;
-  background: #ddd;
+  background: #EEEEEE;
   margin-top: 20px;
   padding: 0;
   position: relative;
 }
-.cds-form-control .cds-progress:before {
+.cds-progress:before {
   content: "";
   position: absolute;
   height: 4px;
   width: 73%;
   background: #1946BA;
 }
-.cds-form-control .cds-progress:after {
+.cds-progress:after {
   content: "73%";
   position: absolute;
   color: #1946BA;
   right: -10px;
   top: -20px;
 }
-.cds-form-control .cds-progress.cds-progress-success:before {
+.cds-progress.cds-progress-success:before {
   content: "";
   position: absolute;
   width: 100%;
   height: 4px;
   background: #3F9726;
 }
-.cds-form-control .cds-progress.cds-progress-success:after {
+.cds-progress.cds-progress-success:after {
   content: "100%";
   position: absolute;
   color: #3F9726;
   right: -10px;
   top: -20px;
 }
-.cds-form-control .cds-progress.cds-progress-fail:before {
+.cds-progress.cds-progress-fail:before {
   content: "";
   position: absolute;
   height: 4px;
   width: 73%;
   background: #D9364B;
 }
-.cds-form-control .cds-progress.cds-progress-fail:after {
+.cds-progress.cds-progress-fail:after {
   content: "73%";
   position: absolute;
   color: #D9364B;
@@ -803,7 +876,7 @@ body {
   border-radius: 16px;
 }
 
-.cds-tagbutton .cds-form-control-active, .cds-tagbutton .cds-list.cds-list-flush {
+.cds-tagbutton .cds-form-control-active {
   padding: 1px 8px;
 }
 .cds-tagbutton .cds-small-text-bold, .cds-tagbutton .cds-badge-pill {
@@ -854,7 +927,7 @@ body {
 .cds-select.cds-select-active .cds-body-text {
   color: #4D4D4D;
 }
-.cds-select.cds-select-active .cds-small-text, .cds-select.cds-select-active .cds-list li, .cds-list .cds-select.cds-select-active li {
+.cds-select.cds-select-active .cds-small-text, .cds-select.cds-select-active .cds-progressbar-circle:before, .cds-select.cds-select-active .cds-list li, .cds-list .cds-select.cds-select-active li {
   color: #999999;
 }
 .cds-select.cds-select-active .cds-ipack-arrow {
@@ -869,32 +942,41 @@ body {
 }
 .cds-select li.cds-item-hover, .cds-select .cds-item-selected, .cds-select li:hover {
   background-color: #EEEEEE;
+  position: relative;
 }
 .cds-select li.cds-item-hover:after, .cds-select .cds-item-selected:after, .cds-select li:hover:after {
   content: url("img/Checkmark.svg");
+  position: absolute;
+  right: 16px;
 }
-
-.cds-list.cds-list-flush {
+.cds-select .cds-list.cds-list-flush {
   margin-top: 5px;
   width: auto;
   height: auto;
   padding: 0;
+}
+.cds-select .cds-list.cds-list-flush.cds-form-control-active {
+  width: 100%;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-.cds-list.cds-list-flush .cds-form-control-active, .cds-list.cds-list-flush .cds-list.cds-list-flush {
-  width: -moz-available;
-  width: -webkit-fill-available;
-  width: available;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   height: auto;
-  box-shadow: none;
+  background-color: #FFFFFF;
 }
-.cds-list.cds-list-flush .cds-body-text {
+.cds-select .cds-list.cds-list-flush.cds-form-control-active .cds-list-item {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 16px;
+}
+.cds-select .cds-list.cds-list-flush.cds-form-control-active .cds-list-item:first-child {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+.cds-select .cds-list.cds-list-flush.cds-form-control-active .cds-list-item:last-child {
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.cds-select .cds-list.cds-list-flush .cds-body-text {
   color: #4D4D4D;
 }
 
@@ -921,6 +1003,40 @@ body {
 .cds-dropdown.cds-dropdown-list .cds-ipack-arrow {
   transform: scale(-1);
 }
+.cds-dropdown.cds-dropdown-list .cds-list.cds-list-flush {
+  margin-top: 5px;
+  width: auto;
+  height: auto;
+  padding: 0;
+}
+.cds-dropdown.cds-dropdown-list .cds-list.cds-list-flush.cds-form-control-active {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  background-color: #FFFFFF;
+}
+.cds-dropdown.cds-dropdown-list .cds-list.cds-list-flush.cds-form-control-active .cds-list-item {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 16px;
+}
+.cds-dropdown.cds-dropdown-list .cds-list.cds-list-flush.cds-form-control-active .cds-list-item:first-child {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+.cds-dropdown.cds-dropdown-list .cds-list.cds-list-flush.cds-form-control-active .cds-list-item:last-child {
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.cds-dropdown.cds-dropdown-list .cds-list.cds-list-flush.cds-form-control-active .cds-list-item.active {
+  background-color: #1946BA;
+  color: #FFFFFF;
+}
+.cds-dropdown.cds-dropdown-list .cds-list.cds-list-flush .cds-body-text {
+  color: #4D4D4D;
+}
 .cds-dropdown.selected .cds-form-control {
   background-color: #1946BA;
   color: #FFFFFF;
@@ -943,16 +1059,16 @@ body {
 .cds-input .cds-form-control .cds-body-text, .cds-input-calendar .cds-form-control .cds-body-text, .cds-input-disabled .cds-form-control .cds-body-text, .cds-input-success .cds-form-control .cds-body-text, .cds-input-active .cds-form-control .cds-body-text, .cds-input-tip .cds-form-control .cds-body-text, .cds-input-fail-tip .cds-form-control .cds-body-text {
   color: #CCCCCC;
 }
-.cds-input .cds-form-control-disabled .cds-small-text, .cds-input .cds-form-control-disabled .cds-list li, .cds-list .cds-input .cds-form-control-disabled li, .cds-input-calendar .cds-form-control-disabled .cds-small-text, .cds-input-calendar .cds-form-control-disabled .cds-list li, .cds-list .cds-input-calendar .cds-form-control-disabled li, .cds-input-disabled .cds-form-control-disabled .cds-small-text, .cds-input-disabled .cds-form-control-disabled .cds-list li, .cds-list .cds-input-disabled .cds-form-control-disabled li, .cds-input-success .cds-form-control-disabled .cds-small-text, .cds-input-success .cds-form-control-disabled .cds-list li, .cds-list .cds-input-success .cds-form-control-disabled li, .cds-input-active .cds-form-control-disabled .cds-small-text, .cds-input-active .cds-form-control-disabled .cds-list li, .cds-list .cds-input-active .cds-form-control-disabled li, .cds-input-tip .cds-form-control-disabled .cds-small-text, .cds-input-tip .cds-form-control-disabled .cds-list li, .cds-list .cds-input-tip .cds-form-control-disabled li, .cds-input-fail-tip .cds-form-control-disabled .cds-small-text, .cds-input-fail-tip .cds-form-control-disabled .cds-list li, .cds-list .cds-input-fail-tip .cds-form-control-disabled li {
+.cds-input .cds-form-control-disabled .cds-small-text, .cds-input .cds-form-control-disabled .cds-progressbar-circle:before, .cds-input .cds-form-control-disabled .cds-list li, .cds-list .cds-input .cds-form-control-disabled li, .cds-input-calendar .cds-form-control-disabled .cds-small-text, .cds-input-calendar .cds-form-control-disabled .cds-progressbar-circle:before, .cds-input-calendar .cds-form-control-disabled .cds-list li, .cds-list .cds-input-calendar .cds-form-control-disabled li, .cds-input-disabled .cds-form-control-disabled .cds-small-text, .cds-input-disabled .cds-form-control-disabled .cds-progressbar-circle:before, .cds-input-disabled .cds-form-control-disabled .cds-list li, .cds-list .cds-input-disabled .cds-form-control-disabled li, .cds-input-success .cds-form-control-disabled .cds-small-text, .cds-input-success .cds-form-control-disabled .cds-progressbar-circle:before, .cds-input-success .cds-form-control-disabled .cds-list li, .cds-list .cds-input-success .cds-form-control-disabled li, .cds-input-active .cds-form-control-disabled .cds-small-text, .cds-input-active .cds-form-control-disabled .cds-progressbar-circle:before, .cds-input-active .cds-form-control-disabled .cds-list li, .cds-list .cds-input-active .cds-form-control-disabled li, .cds-input-tip .cds-form-control-disabled .cds-small-text, .cds-input-tip .cds-form-control-disabled .cds-progressbar-circle:before, .cds-input-tip .cds-form-control-disabled .cds-list li, .cds-list .cds-input-tip .cds-form-control-disabled li, .cds-input-fail-tip .cds-form-control-disabled .cds-small-text, .cds-input-fail-tip .cds-form-control-disabled .cds-progressbar-circle:before, .cds-input-fail-tip .cds-form-control-disabled .cds-list li, .cds-list .cds-input-fail-tip .cds-form-control-disabled li {
   color: #CCCCCC;
 }
-.cds-input .cds-form-control-active .cds-small-text, .cds-input .cds-form-control-active .cds-list li, .cds-list .cds-input .cds-form-control-active li, .cds-input .cds-list.cds-list-flush .cds-small-text, .cds-input .cds-list.cds-list-flush li, .cds-input-calendar .cds-form-control-active .cds-small-text, .cds-input-calendar .cds-form-control-active .cds-list li, .cds-list .cds-input-calendar .cds-form-control-active li, .cds-input-calendar .cds-list.cds-list-flush .cds-small-text, .cds-input-calendar .cds-list.cds-list-flush li, .cds-input-disabled .cds-form-control-active .cds-small-text, .cds-input-disabled .cds-form-control-active .cds-list li, .cds-list .cds-input-disabled .cds-form-control-active li, .cds-input-disabled .cds-list.cds-list-flush .cds-small-text, .cds-input-disabled .cds-list.cds-list-flush li, .cds-input-success .cds-form-control-active .cds-small-text, .cds-input-success .cds-form-control-active .cds-list li, .cds-list .cds-input-success .cds-form-control-active li, .cds-input-success .cds-list.cds-list-flush .cds-small-text, .cds-input-success .cds-list.cds-list-flush li, .cds-input-active .cds-form-control-active .cds-small-text, .cds-input-active .cds-form-control-active .cds-list li, .cds-list .cds-input-active .cds-form-control-active li, .cds-input-active .cds-list.cds-list-flush .cds-small-text, .cds-input-active .cds-list.cds-list-flush li, .cds-input-tip .cds-form-control-active .cds-small-text, .cds-input-tip .cds-form-control-active .cds-list li, .cds-list .cds-input-tip .cds-form-control-active li, .cds-input-tip .cds-list.cds-list-flush .cds-small-text, .cds-input-tip .cds-list.cds-list-flush li, .cds-input-fail-tip .cds-form-control-active .cds-small-text, .cds-input-fail-tip .cds-form-control-active .cds-list li, .cds-list .cds-input-fail-tip .cds-form-control-active li, .cds-input-fail-tip .cds-list.cds-list-flush .cds-small-text, .cds-input-fail-tip .cds-list.cds-list-flush li {
+.cds-input .cds-form-control-active .cds-small-text, .cds-input .cds-form-control-active .cds-progressbar-circle:before, .cds-input .cds-form-control-active .cds-list li, .cds-list .cds-input .cds-form-control-active li, .cds-input-calendar .cds-form-control-active .cds-small-text, .cds-input-calendar .cds-form-control-active .cds-progressbar-circle:before, .cds-input-calendar .cds-form-control-active .cds-list li, .cds-list .cds-input-calendar .cds-form-control-active li, .cds-input-disabled .cds-form-control-active .cds-small-text, .cds-input-disabled .cds-form-control-active .cds-progressbar-circle:before, .cds-input-disabled .cds-form-control-active .cds-list li, .cds-list .cds-input-disabled .cds-form-control-active li, .cds-input-success .cds-form-control-active .cds-small-text, .cds-input-success .cds-form-control-active .cds-progressbar-circle:before, .cds-input-success .cds-form-control-active .cds-list li, .cds-list .cds-input-success .cds-form-control-active li, .cds-input-active .cds-form-control-active .cds-small-text, .cds-input-active .cds-form-control-active .cds-progressbar-circle:before, .cds-input-active .cds-form-control-active .cds-list li, .cds-list .cds-input-active .cds-form-control-active li, .cds-input-tip .cds-form-control-active .cds-small-text, .cds-input-tip .cds-form-control-active .cds-progressbar-circle:before, .cds-input-tip .cds-form-control-active .cds-list li, .cds-list .cds-input-tip .cds-form-control-active li, .cds-input-fail-tip .cds-form-control-active .cds-small-text, .cds-input-fail-tip .cds-form-control-active .cds-progressbar-circle:before, .cds-input-fail-tip .cds-form-control-active .cds-list li, .cds-list .cds-input-fail-tip .cds-form-control-active li {
   color: #E8E8E8;
 }
-.cds-input .cds-form-control-active .cds-body-text, .cds-input .cds-list.cds-list-flush .cds-body-text, .cds-input-calendar .cds-form-control-active .cds-body-text, .cds-input-calendar .cds-list.cds-list-flush .cds-body-text, .cds-input-disabled .cds-form-control-active .cds-body-text, .cds-input-disabled .cds-list.cds-list-flush .cds-body-text, .cds-input-success .cds-form-control-active .cds-body-text, .cds-input-success .cds-list.cds-list-flush .cds-body-text, .cds-input-active .cds-form-control-active .cds-body-text, .cds-input-active .cds-list.cds-list-flush .cds-body-text, .cds-input-tip .cds-form-control-active .cds-body-text, .cds-input-tip .cds-list.cds-list-flush .cds-body-text, .cds-input-fail-tip .cds-form-control-active .cds-body-text, .cds-input-fail-tip .cds-list.cds-list-flush .cds-body-text {
+.cds-input .cds-form-control-active .cds-body-text, .cds-input-calendar .cds-form-control-active .cds-body-text, .cds-input-disabled .cds-form-control-active .cds-body-text, .cds-input-success .cds-form-control-active .cds-body-text, .cds-input-active .cds-form-control-active .cds-body-text, .cds-input-tip .cds-form-control-active .cds-body-text, .cds-input-fail-tip .cds-form-control-active .cds-body-text {
   color: #4D4D4D;
 }
-.cds-input .cds-form-control-success .cds-small-text, .cds-input .cds-form-control-success .cds-list li, .cds-list .cds-input .cds-form-control-success li, .cds-input-calendar .cds-form-control-success .cds-small-text, .cds-input-calendar .cds-form-control-success .cds-list li, .cds-list .cds-input-calendar .cds-form-control-success li, .cds-input-disabled .cds-form-control-success .cds-small-text, .cds-input-disabled .cds-form-control-success .cds-list li, .cds-list .cds-input-disabled .cds-form-control-success li, .cds-input-success .cds-form-control-success .cds-small-text, .cds-input-success .cds-form-control-success .cds-list li, .cds-list .cds-input-success .cds-form-control-success li, .cds-input-active .cds-form-control-success .cds-small-text, .cds-input-active .cds-form-control-success .cds-list li, .cds-list .cds-input-active .cds-form-control-success li, .cds-input-tip .cds-form-control-success .cds-small-text, .cds-input-tip .cds-form-control-success .cds-list li, .cds-list .cds-input-tip .cds-form-control-success li, .cds-input-fail-tip .cds-form-control-success .cds-small-text, .cds-input-fail-tip .cds-form-control-success .cds-list li, .cds-list .cds-input-fail-tip .cds-form-control-success li {
+.cds-input .cds-form-control-success .cds-small-text, .cds-input .cds-form-control-success .cds-progressbar-circle:before, .cds-input .cds-form-control-success .cds-list li, .cds-list .cds-input .cds-form-control-success li, .cds-input-calendar .cds-form-control-success .cds-small-text, .cds-input-calendar .cds-form-control-success .cds-progressbar-circle:before, .cds-input-calendar .cds-form-control-success .cds-list li, .cds-list .cds-input-calendar .cds-form-control-success li, .cds-input-disabled .cds-form-control-success .cds-small-text, .cds-input-disabled .cds-form-control-success .cds-progressbar-circle:before, .cds-input-disabled .cds-form-control-success .cds-list li, .cds-list .cds-input-disabled .cds-form-control-success li, .cds-input-success .cds-form-control-success .cds-small-text, .cds-input-success .cds-form-control-success .cds-progressbar-circle:before, .cds-input-success .cds-form-control-success .cds-list li, .cds-list .cds-input-success .cds-form-control-success li, .cds-input-active .cds-form-control-success .cds-small-text, .cds-input-active .cds-form-control-success .cds-progressbar-circle:before, .cds-input-active .cds-form-control-success .cds-list li, .cds-list .cds-input-active .cds-form-control-success li, .cds-input-tip .cds-form-control-success .cds-small-text, .cds-input-tip .cds-form-control-success .cds-progressbar-circle:before, .cds-input-tip .cds-form-control-success .cds-list li, .cds-list .cds-input-tip .cds-form-control-success li, .cds-input-fail-tip .cds-form-control-success .cds-small-text, .cds-input-fail-tip .cds-form-control-success .cds-progressbar-circle:before, .cds-input-fail-tip .cds-form-control-success .cds-list li, .cds-list .cds-input-fail-tip .cds-form-control-success li {
   color: #999999;
 }
 .cds-input .cds-form-control-success .cds-body-text, .cds-input-calendar .cds-form-control-success .cds-body-text, .cds-input-disabled .cds-form-control-success .cds-body-text, .cds-input-success .cds-form-control-success .cds-body-text, .cds-input-active .cds-form-control-success .cds-body-text, .cds-input-tip .cds-form-control-success .cds-body-text, .cds-input-fail-tip .cds-form-control-success .cds-body-text {
@@ -962,23 +1078,23 @@ body {
   stroke: #3F9726;
 }
 
-.cds-input-tip .cds-small-text, .cds-input-tip .cds-list li, .cds-list .cds-input-tip li {
+.cds-input-tip .cds-small-text, .cds-input-tip .cds-progressbar-circle:before, .cds-input-tip .cds-list li, .cds-list .cds-input-tip li {
   margin-left: 16px;
   margin-top: 4px;
   color: #999999;
 }
 
-.cds-input-fail-tip .cds-form-control-fail .cds-small-text, .cds-input-fail-tip .cds-form-control-fail .cds-list li, .cds-list .cds-input-fail-tip .cds-form-control-fail li {
+.cds-input-fail-tip .cds-form-control-fail .cds-small-text, .cds-input-fail-tip .cds-form-control-fail .cds-progressbar-circle:before, .cds-input-fail-tip .cds-form-control-fail .cds-list li, .cds-list .cds-input-fail-tip .cds-form-control-fail li {
   margin: 0;
   color: #999999;
 }
-.cds-input-fail-tip .cds-small-text, .cds-input-fail-tip .cds-list li, .cds-list .cds-input-fail-tip li {
+.cds-input-fail-tip .cds-small-text, .cds-input-fail-tip .cds-progressbar-circle:before, .cds-input-fail-tip .cds-list li, .cds-list .cds-input-fail-tip li {
   margin-left: 16px;
   margin-top: 4px;
   color: #D9364B;
 }
 
-.cds-input-phone .cds-form-control, .cds-input-phone .cds-form-control-active, .cds-input-phone .cds-list.cds-list-flush, .cds-input-phone .cds-form-control-fail, .cds-input-phone .cds-form-control-success, .cds-input-phone-active .cds-form-control, .cds-input-phone-active .cds-form-control-active, .cds-input-phone-active .cds-list.cds-list-flush, .cds-input-phone-active .cds-form-control-fail, .cds-input-phone-active .cds-form-control-success, .cds-input-calendar .cds-form-control, .cds-input-calendar .cds-form-control-active, .cds-input-calendar .cds-list.cds-list-flush, .cds-input-calendar .cds-form-control-fail, .cds-input-calendar .cds-form-control-success, .cds-input-calendar-success .cds-form-control, .cds-input-calendar-success .cds-form-control-active, .cds-input-calendar-success .cds-list.cds-list-flush, .cds-input-calendar-success .cds-form-control-fail, .cds-input-calendar-success .cds-form-control-success, .cds-input-calendar-fail .cds-form-control, .cds-input-calendar-fail .cds-form-control-active, .cds-input-calendar-fail .cds-list.cds-list-flush, .cds-input-calendar-fail .cds-form-control-fail, .cds-input-calendar-fail .cds-form-control-success, .cds-input-calendar-active .cds-form-control, .cds-input-calendar-active .cds-form-control-active, .cds-input-calendar-active .cds-list.cds-list-flush, .cds-input-calendar-active .cds-form-control-fail, .cds-input-calendar-active .cds-form-control-success, .cds-input-icon .cds-form-control, .cds-input-icon .cds-form-control-active, .cds-input-icon .cds-list.cds-list-flush, .cds-input-icon .cds-form-control-fail, .cds-input-icon .cds-form-control-success, .cds-input-icon-active .cds-form-control, .cds-input-icon-active .cds-form-control-active, .cds-input-icon-active .cds-list.cds-list-flush, .cds-input-icon-active .cds-form-control-fail, .cds-input-icon-active .cds-form-control-success {
+.cds-input-phone .cds-form-control, .cds-input-phone .cds-form-control-active, .cds-input-phone .cds-form-control-fail, .cds-input-phone .cds-form-control-success, .cds-input-phone-active .cds-form-control, .cds-input-phone-active .cds-form-control-active, .cds-input-phone-active .cds-form-control-fail, .cds-input-phone-active .cds-form-control-success, .cds-input-calendar .cds-form-control, .cds-input-calendar .cds-form-control-active, .cds-input-calendar .cds-form-control-fail, .cds-input-calendar .cds-form-control-success, .cds-input-calendar-success .cds-form-control, .cds-input-calendar-success .cds-form-control-active, .cds-input-calendar-success .cds-form-control-fail, .cds-input-calendar-success .cds-form-control-success, .cds-input-calendar-fail .cds-form-control, .cds-input-calendar-fail .cds-form-control-active, .cds-input-calendar-fail .cds-form-control-fail, .cds-input-calendar-fail .cds-form-control-success, .cds-input-calendar-active .cds-form-control, .cds-input-calendar-active .cds-form-control-active, .cds-input-calendar-active .cds-form-control-fail, .cds-input-calendar-active .cds-form-control-success, .cds-input-icon .cds-form-control, .cds-input-icon .cds-form-control-active, .cds-input-icon .cds-form-control-fail, .cds-input-icon .cds-form-control-success, .cds-input-icon-active .cds-form-control, .cds-input-icon-active .cds-form-control-active, .cds-input-icon-active .cds-form-control-fail, .cds-input-icon-active .cds-form-control-success {
   display: flex;
   flex-direction: revert;
 }
@@ -997,10 +1113,10 @@ body {
 .cds-input-phone .cds-body-text, .cds-input-phone-active .cds-body-text, .cds-input-calendar .cds-body-text, .cds-input-calendar-success .cds-body-text, .cds-input-calendar-fail .cds-body-text, .cds-input-calendar-active .cds-body-text, .cds-input-icon .cds-body-text, .cds-input-icon-active .cds-body-text {
   color: #CCCCCC;
 }
-.cds-input-phone .cds-form-control-active .cds-small-text, .cds-input-phone .cds-form-control-active .cds-list li, .cds-list .cds-input-phone .cds-form-control-active li, .cds-input-phone .cds-list.cds-list-flush .cds-small-text, .cds-input-phone .cds-list.cds-list-flush li, .cds-input-phone-active .cds-form-control-active .cds-small-text, .cds-input-phone-active .cds-form-control-active .cds-list li, .cds-list .cds-input-phone-active .cds-form-control-active li, .cds-input-phone-active .cds-list.cds-list-flush .cds-small-text, .cds-input-phone-active .cds-list.cds-list-flush li, .cds-input-calendar .cds-form-control-active .cds-small-text, .cds-input-calendar .cds-form-control-active .cds-list li, .cds-list .cds-input-calendar .cds-form-control-active li, .cds-input-calendar .cds-list.cds-list-flush .cds-small-text, .cds-input-calendar .cds-list.cds-list-flush li, .cds-input-calendar-success .cds-form-control-active .cds-small-text, .cds-input-calendar-success .cds-form-control-active .cds-list li, .cds-list .cds-input-calendar-success .cds-form-control-active li, .cds-input-calendar-success .cds-list.cds-list-flush .cds-small-text, .cds-input-calendar-success .cds-list.cds-list-flush li, .cds-input-calendar-fail .cds-form-control-active .cds-small-text, .cds-input-calendar-fail .cds-form-control-active .cds-list li, .cds-list .cds-input-calendar-fail .cds-form-control-active li, .cds-input-calendar-fail .cds-list.cds-list-flush .cds-small-text, .cds-input-calendar-fail .cds-list.cds-list-flush li, .cds-input-calendar-active .cds-form-control-active .cds-small-text, .cds-input-calendar-active .cds-form-control-active .cds-list li, .cds-list .cds-input-calendar-active .cds-form-control-active li, .cds-input-calendar-active .cds-list.cds-list-flush .cds-small-text, .cds-input-calendar-active .cds-list.cds-list-flush li, .cds-input-icon .cds-form-control-active .cds-small-text, .cds-input-icon .cds-form-control-active .cds-list li, .cds-list .cds-input-icon .cds-form-control-active li, .cds-input-icon .cds-list.cds-list-flush .cds-small-text, .cds-input-icon .cds-list.cds-list-flush li, .cds-input-icon-active .cds-form-control-active .cds-small-text, .cds-input-icon-active .cds-form-control-active .cds-list li, .cds-list .cds-input-icon-active .cds-form-control-active li, .cds-input-icon-active .cds-list.cds-list-flush .cds-small-text, .cds-input-icon-active .cds-list.cds-list-flush li {
+.cds-input-phone .cds-form-control-active .cds-small-text, .cds-input-phone .cds-form-control-active .cds-progressbar-circle:before, .cds-input-phone .cds-form-control-active .cds-list li, .cds-list .cds-input-phone .cds-form-control-active li, .cds-input-phone-active .cds-form-control-active .cds-small-text, .cds-input-phone-active .cds-form-control-active .cds-progressbar-circle:before, .cds-input-phone-active .cds-form-control-active .cds-list li, .cds-list .cds-input-phone-active .cds-form-control-active li, .cds-input-calendar .cds-form-control-active .cds-small-text, .cds-input-calendar .cds-form-control-active .cds-progressbar-circle:before, .cds-input-calendar .cds-form-control-active .cds-list li, .cds-list .cds-input-calendar .cds-form-control-active li, .cds-input-calendar-success .cds-form-control-active .cds-small-text, .cds-input-calendar-success .cds-form-control-active .cds-progressbar-circle:before, .cds-input-calendar-success .cds-form-control-active .cds-list li, .cds-list .cds-input-calendar-success .cds-form-control-active li, .cds-input-calendar-fail .cds-form-control-active .cds-small-text, .cds-input-calendar-fail .cds-form-control-active .cds-progressbar-circle:before, .cds-input-calendar-fail .cds-form-control-active .cds-list li, .cds-list .cds-input-calendar-fail .cds-form-control-active li, .cds-input-calendar-active .cds-form-control-active .cds-small-text, .cds-input-calendar-active .cds-form-control-active .cds-progressbar-circle:before, .cds-input-calendar-active .cds-form-control-active .cds-list li, .cds-list .cds-input-calendar-active .cds-form-control-active li, .cds-input-icon .cds-form-control-active .cds-small-text, .cds-input-icon .cds-form-control-active .cds-progressbar-circle:before, .cds-input-icon .cds-form-control-active .cds-list li, .cds-list .cds-input-icon .cds-form-control-active li, .cds-input-icon-active .cds-form-control-active .cds-small-text, .cds-input-icon-active .cds-form-control-active .cds-progressbar-circle:before, .cds-input-icon-active .cds-form-control-active .cds-list li, .cds-list .cds-input-icon-active .cds-form-control-active li {
   color: #CCCCCC;
 }
-.cds-input-phone .cds-form-control-active .cds-body-text, .cds-input-phone .cds-list.cds-list-flush .cds-body-text, .cds-input-phone-active .cds-form-control-active .cds-body-text, .cds-input-phone-active .cds-list.cds-list-flush .cds-body-text, .cds-input-calendar .cds-form-control-active .cds-body-text, .cds-input-calendar .cds-list.cds-list-flush .cds-body-text, .cds-input-calendar-success .cds-form-control-active .cds-body-text, .cds-input-calendar-success .cds-list.cds-list-flush .cds-body-text, .cds-input-calendar-fail .cds-form-control-active .cds-body-text, .cds-input-calendar-fail .cds-list.cds-list-flush .cds-body-text, .cds-input-calendar-active .cds-form-control-active .cds-body-text, .cds-input-calendar-active .cds-list.cds-list-flush .cds-body-text, .cds-input-icon .cds-form-control-active .cds-body-text, .cds-input-icon .cds-list.cds-list-flush .cds-body-text, .cds-input-icon-active .cds-form-control-active .cds-body-text, .cds-input-icon-active .cds-list.cds-list-flush .cds-body-text {
+.cds-input-phone .cds-form-control-active .cds-body-text, .cds-input-phone-active .cds-form-control-active .cds-body-text, .cds-input-calendar .cds-form-control-active .cds-body-text, .cds-input-calendar-success .cds-form-control-active .cds-body-text, .cds-input-calendar-fail .cds-form-control-active .cds-body-text, .cds-input-calendar-active .cds-form-control-active .cds-body-text, .cds-input-icon .cds-form-control-active .cds-body-text, .cds-input-icon-active .cds-form-control-active .cds-body-text {
   color: #4D4D4D;
 }
 
@@ -1018,7 +1134,7 @@ body {
 .cds-input-calendar-fail .cds-ipack-calendar .cds-color {
   stroke: #D9364B;
 }
-.cds-input-calendar-fail .cds-small-text, .cds-input-calendar-fail .cds-list li, .cds-list .cds-input-calendar-fail li {
+.cds-input-calendar-fail .cds-small-text, .cds-input-calendar-fail .cds-progressbar-circle:before, .cds-input-calendar-fail .cds-list li, .cds-list .cds-input-calendar-fail li {
   color: #D9364B;
   margin-left: 16px;
 }
@@ -1029,7 +1145,7 @@ body {
 .cds-input-calendar-success .cds-ipack-calendar .cds-color {
   stroke: #3F9726;
 }
-.cds-input-calendar-success .cds-small-text, .cds-input-calendar-success .cds-list li, .cds-list .cds-input-calendar-success li {
+.cds-input-calendar-success .cds-small-text, .cds-input-calendar-success .cds-progressbar-circle:before, .cds-input-calendar-success .cds-list li, .cds-list .cds-input-calendar-success li {
   color: #3F9726;
   margin-left: 16px;
 }
@@ -1098,26 +1214,26 @@ body {
   fill: #3F9726;
 }
 
-.cds-interactive-plate .cds-form-control-active, .cds-interactive-plate .cds-list.cds-list-flush {
+.cds-interactive-plate .cds-form-control-active {
   display: flex;
   flex-direction: column;
   padding: 16px 36px 16px 16px;
 }
-.cds-interactive-plate .cds-form-control-active > div, .cds-interactive-plate .cds-list.cds-list-flush > div {
+.cds-interactive-plate .cds-form-control-active > div {
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
-.cds-interactive-plate .cds-form-control-active .cds-body-text, .cds-interactive-plate .cds-list.cds-list-flush .cds-body-text {
+.cds-interactive-plate .cds-form-control-active .cds-body-text {
   color: #4D4D4D;
 }
-.cds-interactive-plate .cds-form-control-active .cds-ipack-arrowdown, .cds-interactive-plate .cds-list.cds-list-flush .cds-ipack-arrowdown {
+.cds-interactive-plate .cds-form-control-active .cds-ipack-arrowdown {
   transform: translateX(24px);
 }
-.cds-interactive-plate .cds-form-control-active .cds-ipack-arrowdown path, .cds-interactive-plate .cds-list.cds-list-flush .cds-ipack-arrowdown path {
+.cds-interactive-plate .cds-form-control-active .cds-ipack-arrowdown path {
   stroke: #999999;
 }
-.cds-interactive-plate.cds-interactive-plate-text .cds-small-text, .cds-interactive-plate.cds-interactive-plate-text .cds-list li, .cds-list .cds-interactive-plate.cds-interactive-plate-text li {
+.cds-interactive-plate.cds-interactive-plate-text .cds-small-text, .cds-interactive-plate.cds-interactive-plate-text .cds-progressbar-circle:before, .cds-interactive-plate.cds-interactive-plate-text .cds-list li, .cds-list .cds-interactive-plate.cds-interactive-plate-text li {
   margin-top: 5px;
   color: #999999;
 }
@@ -1130,7 +1246,7 @@ body {
   width: max-content;
   z-index: 1;
 }
-.cds-tooltip .cds-small-text, .cds-tooltip .cds-list li, .cds-list .cds-tooltip li {
+.cds-tooltip .cds-small-text, .cds-tooltip .cds-progressbar-circle:before, .cds-tooltip .cds-list li, .cds-list .cds-tooltip li {
   color: #262626;
 }
 .cds-tooltip:after {
@@ -1183,13 +1299,13 @@ body {
 .cds-tooltip.cds-tooltip-warning.cds-tooltip-on-right:after {
   border-color: transparent transparent transparent #FDEBCC;
 }
-.cds-tooltip.cds-tooltip-warning .cds-form-control-active, .cds-tooltip.cds-tooltip-warning .cds-list.cds-list-flush {
+.cds-tooltip.cds-tooltip-warning .cds-form-control-active {
   background-color: #FDEBCC;
 }
-.cds-tooltip.cds-tooltip-warning .cds-form-control-fail-active .cds-small-text, .cds-tooltip.cds-tooltip-warning .cds-form-control-fail-active .cds-list li, .cds-list .cds-tooltip.cds-tooltip-warning .cds-form-control-fail-active li {
+.cds-tooltip.cds-tooltip-warning .cds-form-control-fail-active .cds-small-text, .cds-tooltip.cds-tooltip-warning .cds-form-control-fail-active .cds-progressbar-circle:before, .cds-tooltip.cds-tooltip-warning .cds-form-control-fail-active .cds-list li, .cds-list .cds-tooltip.cds-tooltip-warning .cds-form-control-fail-active li {
   color: #D9364B;
 }
-.cds-tooltip.cds-tooltip-warning .cds-form-control-success-active .cds-small-text, .cds-tooltip.cds-tooltip-warning .cds-form-control-success-active .cds-list li, .cds-list .cds-tooltip.cds-tooltip-warning .cds-form-control-success-active li {
+.cds-tooltip.cds-tooltip-warning .cds-form-control-success-active .cds-small-text, .cds-tooltip.cds-tooltip-warning .cds-form-control-success-active .cds-progressbar-circle:before, .cds-tooltip.cds-tooltip-warning .cds-form-control-success-active .cds-list li, .cds-list .cds-tooltip.cds-tooltip-warning .cds-form-control-success-active li {
   color: #3F9726;
 }
 
@@ -1217,7 +1333,7 @@ body {
 .cds-text-area.cds-text-area-active .cds-body-text {
   color: #4D4D4D;
 }
-.cds-text-area.cds-text-area-active .cds-small-text, .cds-text-area.cds-text-area-active .cds-list li, .cds-list .cds-text-area.cds-text-area-active li {
+.cds-text-area.cds-text-area-active .cds-small-text, .cds-text-area.cds-text-area-active .cds-progressbar-circle:before, .cds-text-area.cds-text-area-active .cds-list li, .cds-list .cds-text-area.cds-text-area-active li {
   margin-bottom: 2px;
   color: #CCCCCC;
 }
@@ -1227,11 +1343,11 @@ body {
 .cds-text-area.cds-text-area-fail .cds-body-text {
   color: #D9364B;
 }
-.cds-text-area.cds-text-area-fail .cds-small-text, .cds-text-area.cds-text-area-fail .cds-list li, .cds-list .cds-text-area.cds-text-area-fail li {
+.cds-text-area.cds-text-area-fail .cds-small-text, .cds-text-area.cds-text-area-fail .cds-progressbar-circle:before, .cds-text-area.cds-text-area-fail .cds-list li, .cds-list .cds-text-area.cds-text-area-fail li {
   margin-bottom: 2px;
   color: #CCCCCC;
 }
-.cds-text-area.cds-text-area-fail + .cds-small-text, .cds-list .cds-text-area.cds-text-area-fail + li {
+.cds-text-area.cds-text-area-fail + .cds-small-text, .cds-text-area.cds-text-area-fail + .cds-progressbar-circle:before, .cds-list .cds-text-area.cds-text-area-fail + li {
   color: #D9364B;
   margin-top: 6px;
   margin-left: 16px;
@@ -1239,7 +1355,7 @@ body {
 .cds-text-area.cds-text-area-success.cds-form-control-success {
   border-color: none;
 }
-.cds-text-area.cds-text-area-success.cds-form-control-success .cds-small-text, .cds-text-area.cds-text-area-success.cds-form-control-success .cds-list li, .cds-list .cds-text-area.cds-text-area-success.cds-form-control-success li {
+.cds-text-area.cds-text-area-success.cds-form-control-success .cds-small-text, .cds-text-area.cds-text-area-success.cds-form-control-success .cds-progressbar-circle:before, .cds-text-area.cds-text-area-success.cds-form-control-success .cds-list li, .cds-list .cds-text-area.cds-text-area-success.cds-form-control-success li {
   margin-bottom: 2px;
   color: #CCCCCC;
 }
@@ -1498,14 +1614,14 @@ body {
   background-color: #D9364B;
   left: -8px;
 }
-.cds-radiogroup .cds-small-text, .cds-radiogroup .cds-list li, .cds-list .cds-radiogroup li {
+.cds-radiogroup .cds-small-text, .cds-radiogroup .cds-progressbar-circle:before, .cds-radiogroup .cds-list li, .cds-list .cds-radiogroup li {
   color: #999999;
   margin-bottom: 6px;
 }
 .cds-radiogroup .cds-radiobutton {
   margin-bottom: 8px;
 }
-.cds-radiogroup.fail .cds-small-text:last-child, .cds-radiogroup.fail .cds-list li:last-child, .cds-list .cds-radiogroup.fail li:last-child {
+.cds-radiogroup.fail .cds-small-text:last-child, .cds-radiogroup.fail .cds-progressbar-circle:last-child:before, .cds-radiogroup.fail .cds-list li:last-child, .cds-list .cds-radiogroup.fail li:last-child {
   color: #D9364B;
   margin-top: 6px;
 }
@@ -1517,7 +1633,7 @@ body {
   justify-content: flex-start;
   align-items: flex-start;
 }
-.cds-radiogroup-btn .cds-small-text, .cds-radiogroup-btn .cds-list li, .cds-list .cds-radiogroup-btn li {
+.cds-radiogroup-btn .cds-small-text, .cds-radiogroup-btn .cds-progressbar-circle:before, .cds-radiogroup-btn .cds-list li, .cds-list .cds-radiogroup-btn li {
   margin-bottom: 8px;
   color: #999999;
 }
@@ -1544,11 +1660,11 @@ body {
   background-color: #D9364B;
   left: -8px;
 }
-.cds-radiogroup-btn.cds-radiogroup-horizontal.help .cds-small-text:last-child, .cds-radiogroup-btn.cds-radiogroup-horizontal.help .cds-list li:last-child, .cds-list .cds-radiogroup-btn.cds-radiogroup-horizontal.help li:last-child {
+.cds-radiogroup-btn.cds-radiogroup-horizontal.help .cds-small-text:last-child, .cds-radiogroup-btn.cds-radiogroup-horizontal.help .cds-progressbar-circle:last-child:before, .cds-radiogroup-btn.cds-radiogroup-horizontal.help .cds-list li:last-child, .cds-list .cds-radiogroup-btn.cds-radiogroup-horizontal.help li:last-child {
   color: #CCCCCC;
   margin-top: 8px;
 }
-.cds-radiogroup-btn.cds-radiogroup-horizontal.fail .cds-small-text:last-child, .cds-radiogroup-btn.cds-radiogroup-horizontal.fail .cds-list li:last-child, .cds-list .cds-radiogroup-btn.cds-radiogroup-horizontal.fail li:last-child {
+.cds-radiogroup-btn.cds-radiogroup-horizontal.fail .cds-small-text:last-child, .cds-radiogroup-btn.cds-radiogroup-horizontal.fail .cds-progressbar-circle:last-child:before, .cds-radiogroup-btn.cds-radiogroup-horizontal.fail .cds-list li:last-child, .cds-list .cds-radiogroup-btn.cds-radiogroup-horizontal.fail li:last-child {
   color: #D9364B;
   margin-top: 6px;
 }
@@ -1571,7 +1687,7 @@ body {
   color: #999999;
   margin-bottom: 8px;
 }
-.cds-checkboxgroup-line .cds-small-text, .cds-checkboxgroup-line .cds-list li, .cds-list .cds-checkboxgroup-line li, .cds-checkboxgroup-btn .cds-small-text, .cds-checkboxgroup-btn .cds-list li, .cds-list .cds-checkboxgroup-btn li {
+.cds-checkboxgroup-line .cds-small-text, .cds-checkboxgroup-line .cds-progressbar-circle:before, .cds-checkboxgroup-line .cds-list li, .cds-list .cds-checkboxgroup-line li, .cds-checkboxgroup-btn .cds-small-text, .cds-checkboxgroup-btn .cds-progressbar-circle:before, .cds-checkboxgroup-btn .cds-list li, .cds-list .cds-checkboxgroup-btn li {
   color: #CCCCCC;
   margin-bottom: 8px;
 }
@@ -1583,7 +1699,7 @@ body {
   background-color: #D9364B;
   left: -8px;
 }
-.cds-checkboxgroup-line.fail .cds-small-text:last-child, .cds-checkboxgroup-line.fail .cds-list li:last-child, .cds-list .cds-checkboxgroup-line.fail li:last-child, .cds-checkboxgroup-btn.fail .cds-small-text:last-child, .cds-checkboxgroup-btn.fail .cds-list li:last-child, .cds-list .cds-checkboxgroup-btn.fail li:last-child {
+.cds-checkboxgroup-line.fail .cds-small-text:last-child, .cds-checkboxgroup-line.fail .cds-progressbar-circle:last-child:before, .cds-checkboxgroup-line.fail .cds-list li:last-child, .cds-list .cds-checkboxgroup-line.fail li:last-child, .cds-checkboxgroup-btn.fail .cds-small-text:last-child, .cds-checkboxgroup-btn.fail .cds-progressbar-circle:last-child:before, .cds-checkboxgroup-btn.fail .cds-list li:last-child, .cds-list .cds-checkboxgroup-btn.fail li:last-child {
   color: #D9364B;
   margin-top: 8px;
 }
@@ -1633,11 +1749,11 @@ body {
   color: #999999;
   margin-bottom: 8px;
 }
-.cds-checkboxgroup .cds-small-text, .cds-checkboxgroup .cds-list li, .cds-list .cds-checkboxgroup li {
+.cds-checkboxgroup .cds-small-text, .cds-checkboxgroup .cds-progressbar-circle:before, .cds-checkboxgroup .cds-list li, .cds-list .cds-checkboxgroup li {
   color: #CCCCCC;
   margin-bottom: 8px;
 }
-.cds-checkboxgroup.fail .cds-small-text:last-child, .cds-checkboxgroup.fail .cds-list li:last-child, .cds-list .cds-checkboxgroup.fail li:last-child {
+.cds-checkboxgroup.fail .cds-small-text:last-child, .cds-checkboxgroup.fail .cds-progressbar-circle:last-child:before, .cds-checkboxgroup.fail .cds-list li:last-child, .cds-list .cds-checkboxgroup.fail li:last-child {
   color: #D9364B;
   margin-top: 6px;
 }
@@ -1709,7 +1825,7 @@ body {
   color: #999999;
 }
 
-.cds-notification .cds-form-control-active, .cds-notification .cds-list.cds-list-flush {
+.cds-notification .cds-form-control-active {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1779,7 +1895,7 @@ body {
   color: #FFFFFF;
   margin-bottom: 16px;
 }
-.cds-sidebar .cds-sidebar-form .cds-small-text, .cds-sidebar .cds-sidebar-form .cds-list li, .cds-list .cds-sidebar .cds-sidebar-form li {
+.cds-sidebar .cds-sidebar-form .cds-small-text, .cds-sidebar .cds-sidebar-form .cds-progressbar-circle:before, .cds-sidebar .cds-sidebar-form .cds-list li, .cds-list .cds-sidebar .cds-sidebar-form li {
   color: #FFFFFF;
   margin-bottom: 30px;
 }
@@ -1797,7 +1913,7 @@ body {
 .cds-sidebar.cds-sidebar-flat .cds-sidebar-form .cds-h4 {
   color: #1946BA;
 }
-.cds-sidebar.cds-sidebar-flat .cds-sidebar-form .cds-small-text, .cds-sidebar.cds-sidebar-flat .cds-sidebar-form .cds-list li, .cds-list .cds-sidebar.cds-sidebar-flat .cds-sidebar-form li {
+.cds-sidebar.cds-sidebar-flat .cds-sidebar-form .cds-small-text, .cds-sidebar.cds-sidebar-flat .cds-sidebar-form .cds-progressbar-circle:before, .cds-sidebar.cds-sidebar-flat .cds-sidebar-form .cds-list li, .cds-list .cds-sidebar.cds-sidebar-flat .cds-sidebar-form li {
   color: #4D4D4D;
 }
 .cds-sidebar.cds-sidebar-flat .cds-sidebar-form .cds-ipack-close {
@@ -1808,7 +1924,7 @@ body {
   color: #CCCCCC;
 }
 
-.cds-popup .cds-form-control-active, .cds-popup .cds-list.cds-list-flush {
+.cds-popup .cds-form-control-active {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -1816,13 +1932,13 @@ body {
   width: 536px;
   height: 300px;
 }
-.cds-popup .cds-form-control-active .cds-h3, .cds-popup .cds-list.cds-list-flush .cds-h3 {
+.cds-popup .cds-form-control-active .cds-h3 {
   color: #262626;
 }
-.cds-popup .cds-form-control-active .cds-body-text, .cds-popup .cds-list.cds-list-flush .cds-body-text {
+.cds-popup .cds-form-control-active .cds-body-text {
   color: #4D4D4D;
 }
-.cds-popup .cds-form-control-active .cds-btn.cds-btn-circle, .cds-popup .cds-list.cds-list-flush .cds-btn.cds-btn-circle {
+.cds-popup .cds-form-control-active .cds-btn.cds-btn-circle {
   position: absolute;
   right: 32px;
   top: 32px;
@@ -1845,24 +1961,391 @@ ol.cds-list.cds-list-numeric.cds-list-numeric-secondary .cds-list-numeric-second
   border-bottom: none;
   list-style-type: lower-alpha;
 }
-ol.cds-list.cds-list-item-custom > li {
+ol.cds-list.cds-list-item-custom .cds-item-custom {
   border-bottom: none;
   list-style-type: none;
-}
-ol.cds-list.cds-list-item-custom > li:before {
+  position: relative;
   display: flex;
   flex-direction: row;
   flex-shrink: 0;
   align-items: center;
-  justify-content: center;
+}
+ol.cds-list.cds-list-item-custom .cds-item-custom:before {
   content: "";
+  position: absolute;
+  left: -18px;
   width: 10px;
   height: 1px;
   background-color: #1946BA;
 }
+ol.cds-list.cds-list-item-custom .cds-list-item-secondary .cds-item-custom {
+  border-bottom: none;
+  list-style-type: none;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  align-items: center;
+}
+ol.cds-list.cds-list-item-custom .cds-list-item-secondary .cds-item-custom:before {
+  content: "";
+  position: absolute;
+  left: -12px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #1946BA;
+}
+
+ul.cds-list.cds-list-flush {
+  background-color: transparent;
+  width: max-content;
+}
+ul.cds-list.cds-list-flush .cds-list-item {
+  width: auto;
+  border-bottom: 1px solid #EEEEEE;
+  list-style-type: none;
+  padding: 5px 4px;
+}
+ul.cds-list.cds-list-flush .cds-list-item.cds-list-item-active {
+  background-color: #1946BA;
+  color: #FFFFFF;
+}
+
+.cds-datapicker {
+  display: flex;
+  flex-direction: column;
+  width: min-content;
+  height: max-content;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+.cds-datapicker .cds-thead {
+  border-radius: 4px 4px 0 0;
+  padding: 7px 20px;
+  background-color: #1946BA;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.cds-datapicker .cds-thead .cds-ipack-arrow {
+  margin: 0 10px;
+}
+.cds-datapicker .cds-thead .cds-body-text {
+  color: #FFFFFF;
+}
+.cds-datapicker .cds-thead .cds-body-text span {
+  margin-right: 16px;
+}
+.cds-datapicker .cds-thead .cds-body-text .cds-ipack-arrow-2 {
+  margin-left: 8px;
+}
+.cds-datapicker .cds-thead .row {
+  display: flex;
+  flex-direction: row;
+}
+.cds-datapicker .cds-thead .row:first-child {
+  justify-content: space-between;
+}
+.cds-datapicker .cds-thead .row .cds-small-text, .cds-datapicker .cds-thead .row .cds-progressbar-circle:before, .cds-datapicker .cds-thead .row .cds-list li, .cds-list .cds-datapicker .cds-thead .row li {
+  width: 24px;
+  height: 24px;
+  margin: 8px 12px 0;
+  color: #E8E8E8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cds-datapicker .cds-thead .row .cds-small-text:first-child, .cds-datapicker .cds-thead .row .cds-progressbar-circle:first-child:before, .cds-datapicker .cds-thead .row .cds-list li:first-child, .cds-list .cds-datapicker .cds-thead .row li:first-child {
+  margin-left: 0;
+}
+.cds-datapicker .cds-thead .row .cds-small-text:last-child, .cds-datapicker .cds-thead .row .cds-progressbar-circle:last-child:before, .cds-datapicker .cds-thead .row .cds-list li:last-child, .cds-list .cds-datapicker .cds-thead .row li:last-child {
+  margin-right: 0;
+}
+.cds-datapicker .cds-tbody {
+  background-color: #FFFFFF;
+  margin: 8px 16px;
+  display: flex;
+  width: 320px;
+  flex-wrap: wrap;
+}
+.cds-datapicker .cds-tbody .cds-small-text, .cds-datapicker .cds-tbody .cds-progressbar-circle:before, .cds-datapicker .cds-tbody .cds-list li, .cds-list .cds-datapicker .cds-tbody li {
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  color: #262626;
+  border: 1px solid transparent;
+  background-color: #FFFFFF;
+  margin-right: 16px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cds-datapicker .cds-tbody .cds-small-text:nth-child(7n), .cds-datapicker .cds-tbody .cds-progressbar-circle:nth-child(7n):before, .cds-datapicker .cds-tbody .cds-list li:nth-child(7n), .cds-list .cds-datapicker .cds-tbody li:nth-child(7n) {
+  margin-right: 0;
+}
+.cds-datapicker .cds-tbody .cds-small-text.cds-today, .cds-datapicker .cds-tbody .cds-today.cds-progressbar-circle:before, .cds-datapicker .cds-tbody .cds-list li.cds-today, .cds-list .cds-datapicker .cds-tbody li.cds-today {
+  background-color: #1946BA;
+  border: 1px solid #1946BA;
+  color: #FFFFFF;
+}
+.cds-datapicker .cds-tbody .cds-small-text.cds-day-hover, .cds-datapicker .cds-tbody .cds-day-hover.cds-progressbar-circle:before, .cds-datapicker .cds-tbody .cds-list li.cds-day-hover, .cds-list .cds-datapicker .cds-tbody li.cds-day-hover, .cds-datapicker .cds-tbody .cds-small-text:hover, .cds-datapicker .cds-tbody .cds-progressbar-circle:hover:before, .cds-datapicker .cds-tbody .cds-list li:hover, .cds-list .cds-datapicker .cds-tbody li:hover {
+  background-color: #D1DAF1;
+  border-color: #D1DAF1;
+  color: #262626;
+}
+.cds-datapicker .cds-tbody .cds-small-text:active, .cds-datapicker .cds-tbody .cds-progressbar-circle:active:before, .cds-datapicker .cds-tbody .cds-list li:active, .cds-list .cds-datapicker .cds-tbody li:active, .cds-datapicker .cds-tbody .cds-small-text.cds-day-active, .cds-datapicker .cds-tbody .cds-day-active.cds-progressbar-circle:before, .cds-datapicker .cds-tbody .cds-list li.cds-day-active, .cds-list .cds-datapicker .cds-tbody li.cds-day-active {
+  border: 1px solid #1946BA;
+}
+.cds-datapicker .cds-tbody .cds-small-text:active .cds-small-text, .cds-datapicker .cds-tbody .cds-progressbar-circle:active:before .cds-small-text, .cds-datapicker .cds-tbody .cds-small-text:active .cds-progressbar-circle:before, .cds-datapicker .cds-tbody .cds-progressbar-circle:active:before .cds-progressbar-circle:before, .cds-datapicker .cds-tbody .cds-list li:active .cds-small-text, .cds-datapicker .cds-tbody .cds-list li:active .cds-progressbar-circle:before, .cds-list .cds-datapicker .cds-tbody li:active .cds-small-text, .cds-list .cds-datapicker .cds-tbody li:active .cds-progressbar-circle:before, .cds-datapicker .cds-tbody .cds-small-text:active .cds-list li, .cds-datapicker .cds-tbody .cds-progressbar-circle:active:before .cds-list li, .cds-list .cds-datapicker .cds-tbody .cds-small-text:active li, .cds-list .cds-datapicker .cds-tbody .cds-progressbar-circle:active:before li, .cds-datapicker .cds-tbody .cds-list li:active li, .cds-list .cds-datapicker .cds-tbody li:active li, .cds-datapicker .cds-tbody .cds-small-text.cds-day-active .cds-small-text, .cds-datapicker .cds-tbody .cds-day-active.cds-progressbar-circle:before .cds-small-text, .cds-datapicker .cds-tbody .cds-small-text.cds-day-active .cds-progressbar-circle:before, .cds-datapicker .cds-tbody .cds-day-active.cds-progressbar-circle:before .cds-progressbar-circle:before, .cds-datapicker .cds-tbody .cds-list li.cds-day-active .cds-small-text, .cds-datapicker .cds-tbody .cds-list li.cds-day-active .cds-progressbar-circle:before, .cds-list .cds-datapicker .cds-tbody li.cds-day-active .cds-small-text, .cds-list .cds-datapicker .cds-tbody li.cds-day-active .cds-progressbar-circle:before, .cds-datapicker .cds-tbody .cds-small-text.cds-day-active .cds-list li, .cds-datapicker .cds-tbody .cds-day-active.cds-progressbar-circle:before .cds-list li, .cds-list .cds-datapicker .cds-tbody .cds-small-text.cds-day-active li, .cds-list .cds-datapicker .cds-tbody .cds-day-active.cds-progressbar-circle:before li, .cds-datapicker .cds-tbody .cds-list li.cds-day-active li, .cds-list .cds-datapicker .cds-tbody li.cds-day-active li {
+  color: #262626;
+}
+.cds-datapicker.cds-datapicker-limitdate .cds-tbody .cds-small-text, .cds-datapicker.cds-datapicker-limitdate .cds-tbody .cds-progressbar-circle:before, .cds-datapicker.cds-datapicker-limitdate .cds-tbody .cds-list li, .cds-list .cds-datapicker.cds-datapicker-limitdate .cds-tbody li {
+  color: #CCCCCC;
+}
+.cds-datapicker.cds-datapicker-limitdate .cds-tbody .cds-small-text.cds-today, .cds-datapicker.cds-datapicker-limitdate .cds-tbody .cds-today.cds-progressbar-circle:before, .cds-datapicker.cds-datapicker-limitdate .cds-tbody .cds-list li.cds-today, .cds-list .cds-datapicker.cds-datapicker-limitdate .cds-tbody li.cds-today {
+  color: #FFFFFF;
+}
+.cds-datapicker.cds-datapicker-limitdate .cds-tbody .cds-small-text.cds-today ~ .cds-small-text, .cds-datapicker.cds-datapicker-limitdate .cds-tbody .cds-today.cds-progressbar-circle:before ~ .cds-small-text, .cds-datapicker.cds-datapicker-limitdate .cds-tbody .cds-small-text.cds-today ~ .cds-progressbar-circle:before, .cds-datapicker.cds-datapicker-limitdate .cds-tbody .cds-today.cds-progressbar-circle:before ~ .cds-progressbar-circle:before, .cds-datapicker.cds-datapicker-limitdate .cds-tbody .cds-list li.cds-today ~ .cds-small-text, .cds-datapicker.cds-datapicker-limitdate .cds-tbody .cds-list li.cds-today ~ .cds-progressbar-circle:before, .cds-list .cds-datapicker.cds-datapicker-limitdate .cds-tbody li.cds-today ~ .cds-small-text, .cds-list .cds-datapicker.cds-datapicker-limitdate .cds-tbody li.cds-today ~ .cds-progressbar-circle:before, .cds-datapicker.cds-datapicker-limitdate .cds-tbody .cds-list .cds-small-text.cds-today ~ li, .cds-datapicker.cds-datapicker-limitdate .cds-tbody .cds-list .cds-today.cds-progressbar-circle:before ~ li, .cds-list .cds-datapicker.cds-datapicker-limitdate .cds-tbody .cds-small-text.cds-today ~ li, .cds-list .cds-datapicker.cds-datapicker-limitdate .cds-tbody .cds-today.cds-progressbar-circle:before ~ li, .cds-datapicker.cds-datapicker-limitdate .cds-tbody .cds-list li.cds-today ~ li, .cds-list .cds-datapicker.cds-datapicker-limitdate .cds-tbody li.cds-today ~ li {
+  color: #262626;
+}
+.cds-datapicker.cds-datapicker-limitdate .cds-tbody .cds-small-text:active, .cds-datapicker.cds-datapicker-limitdate .cds-tbody .cds-progressbar-circle:active:before, .cds-datapicker.cds-datapicker-limitdate .cds-tbody .cds-list li:active, .cds-list .cds-datapicker.cds-datapicker-limitdate .cds-tbody li:active, .cds-datapicker.cds-datapicker-limitdate .cds-tbody .cds-small-text.cds-day-active, .cds-datapicker.cds-datapicker-limitdate .cds-tbody .cds-day-active.cds-progressbar-circle:before, .cds-datapicker.cds-datapicker-limitdate .cds-tbody .cds-list li.cds-day-active, .cds-list .cds-datapicker.cds-datapicker-limitdate .cds-tbody li.cds-day-active {
+  border: 1px solid #1946BA;
+  color: #262626 !important;
+}
+.cds-datapicker .cds-days-events {
+  text-decoration: underline 2px #1946BA;
+}
+
+.cds-toggle {
+  display: flex;
+  flex-direction: row;
+  width: max-content;
+  height: max-content;
+  position: relative;
+  cursor: pointer;
+  margin: 4px;
+  /* Checked State */
+  /* disabled State */
+}
+.cds-toggle input[type=checkbox] {
+  margin: 0;
+  width: 44px;
+  height: 24px;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 2px solid #D1DAF1;
+  border-radius: 83px;
+  position: relative;
+  outline: 0;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.cds-toggle input[type=checkbox]:after {
+  position: absolute;
+  content: "";
+  top: 2px;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  background: #1946BA;
+  border-radius: 50%;
+  z-index: 2;
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+}
+.cds-toggle .cds-ipack-check, .cds-toggle .cds-toggle-off {
+  position: absolute;
+  -webkit-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  fill: #fff;
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+  z-index: 1;
+}
+.cds-toggle .cds-ipack-check {
+  top: 7px;
+  left: 7px;
+  -webkit-transform: translateX(190%) translateY(-50%) scale(0);
+  transform: translateX(190%) translateY(-30%) scale(0);
+}
+.cds-toggle .cds-toggle-off {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 2px solid #D1DAF1;
+  top: 10px;
+  left: 28px;
+  -webkit-transform: translateX(0) translateY(-30%) scale(1);
+  transform: translateX(0) translateY(-30%) scale(1);
+}
+.cds-toggle input[type=checkbox]:checked {
+  background: #1946BA;
+  border-color: #1946BA;
+}
+.cds-toggle input[type=checkbox]:checked:after {
+  left: calc(100% - 19px);
+  background-color: #FFFFFF;
+}
+.cds-toggle input[type=checkbox]:checked + .cds-ipack-check {
+  -webkit-transform: translateX(0) translateY(0) scale(1);
+  transform: translateX(0) translateY(0) scale(1);
+}
+.cds-toggle input[type=checkbox]:checked + .cds-ipack-check path {
+  fill: #FFFFFF;
+}
+.cds-toggle input[type=checkbox]:checked ~ .cds-toggle-off {
+  -webkit-transform: translateX(-190%) translateY(-30%) scale(0);
+  transform: translateX(-190%) translateY(-30%) scale(0);
+}
+.cds-toggle input[type=checkbox]:disabled {
+  border-color: #CCCCCC;
+}
+.cds-toggle input[type=checkbox]:disabled:after {
+  background-color: #999999;
+}
+.cds-toggle .cds-toggle-off {
+  border-color: #CCCCCC;
+}
+.cds-toggle.cds-toggle-text div:last-child {
+  margin-left: 12px;
+}
+.cds-toggle.cds-toggle-text div:last-child .cds-small-text-bold, .cds-toggle.cds-toggle-text div:last-child .cds-badge-pill {
+  color: #262626;
+  margin-bottom: 2px;
+}
+.cds-toggle.cds-toggle-text div:last-child .cds-small-text, .cds-toggle.cds-toggle-text div:last-child .cds-progressbar-circle:before, .cds-toggle.cds-toggle-text div:last-child .cds-list li, .cds-list .cds-toggle.cds-toggle-text div:last-child li {
+  color: #4D4D4D;
+}
+
+.cds-progressbar-circle {
+  position: relative;
+  width: max-content;
+  height: max-content;
+}
+.cds-progressbar-circle:before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  content: "40%";
+  color: #1946BA;
+}
+.cds-progressbar-circle svg {
+  position: relative;
+}
+.cds-progressbar-circle svg .cds-progress-ring {
+  stroke: #EEEEEE;
+}
+.cds-progressbar-circle svg .cds-progress-circle {
+  stroke: #1946BA;
+  transition: 0.35s stroke-dashoffset;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+.cds-progressbar-circle.cds-progress-circle-success:before {
+  color: #3F9726;
+  content: "100%";
+}
+.cds-progressbar-circle.cds-progress-circle-success .cds-progress-circle {
+  stroke: #3F9726;
+}
+.cds-progressbar-circle.cds-progress-circle-fail:before {
+  color: #D9364B;
+  content: "50%";
+}
+.cds-progressbar-circle.cds-progress-circle-fail .cds-progress-circle {
+  stroke: #D9364B;
+}
+
+.cds-collapse-link .cds-link.cds-link-dotted {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.cds-collapse-link .cds-link.cds-link-dotted .cds-ipack-arrow {
+  transform: scale(-1);
+  margin-left: 8px;
+}
+.cds-collapse-link.cds-collapse-link-open .cds-link.cds-link-dotted .cds-ipack-arrow {
+  transform: scale(1);
+}
+
+.cds-collapse-btn.cds-collapse-open > .cds-body-text {
+  color: #4D4D4D;
+  margin-right: 8px;
+}
+
+.cds-border-spiner {
+  flex-shrink: 0;
+  animation: rotate 1s linear infinite;
+  background: #1946BA;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  position: relative;
+}
+.cds-border-spiner:before, .cds-border-spiner:after {
+  content: "";
+  position: absolute;
+}
+.cds-border-spiner:before {
+  border-radius: 50%;
+  background: linear-gradient(0deg, white 50%, rgba(255, 255, 255, 0.9) 100%) 0% 0%, linear-gradient(90deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.6) 100%) 100% 0%, linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.3) 100%) 100% 100%, linear-gradient(360deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%) 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 50% 50%;
+  top: -1px;
+  bottom: -1px;
+  left: -1px;
+  right: -1px;
+}
+.cds-border-spiner:after {
+  background: white;
+  border-radius: 50%;
+  top: 4px;
+  bottom: 4px;
+  left: 4px;
+  right: 4px;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+ul.cds-list-header {
+  padding: 0;
+}
+ul.cds-list-header.cds-header-filled .cds-small-text, ul.cds-list-header.cds-header-filled .cds-list li, .cds-list ul.cds-list-header.cds-header-filled li, ul.cds-list-header.cds-header-filled .cds-progressbar-circle:before {
+  color: #262626;
+  background-color: #D1DAF1;
+  padding: 8px 48px;
+}
+ul.cds-list-header.cds-header .cds-small-text, ul.cds-list-header.cds-header .cds-list li, .cds-list ul.cds-list-header.cds-header li, ul.cds-list-header.cds-header .cds-progressbar-circle:before {
+  color: #4D4D4D;
+  background-color: none;
+  padding: 8px 48px;
+}
+ul.cds-list-header li.cds-body-text {
+  margin-bottom: 8px;
+  list-style-type: none;
+  color: #4D4D4D;
+}
+ul.cds-list-header li.cds-body-text div {
+  padding-left: 48px;
+  padding-right: 28px;
+}
 
 .content-wrap > .row > .table {
   margin: 30px;
+  margin-right: 0;
 }
 
 .primary {
@@ -1897,7 +2380,7 @@ ol.cds-list.cds-list-item-custom > li:before {
 .content-wrap > .row > .classes {
   display: flex;
   flex-wrap: wrap;
-  width: 1400px;
+  width: 1250px;
   flex-shrink: 0;
 }
 
@@ -1907,7 +2390,7 @@ ol.cds-list.cds-list-item-custom > li:before {
   flex-flow: column;
   height: fit-content;
   margin-bottom: 50px;
-  width: 45%;
+  width: 50%;
 }
 
 .content-wrap > .row > .classes > .element > .title {
@@ -2421,28 +2904,28 @@ ol.cds-list.cds-list-item-custom > li:before {
   padding: 32px;
   border: none;
 }
-.cds-confirmation-modal.cds-form-control-active, .cds-confirmation-modal.cds-list.cds-list-flush {
+.cds-confirmation-modal.cds-form-control-active {
   height: max-content;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
-.cds-confirmation-modal.cds-form-control-active .row:first-child, .cds-confirmation-modal.cds-list.cds-list-flush .row:first-child {
+.cds-confirmation-modal.cds-form-control-active .row:first-child {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   box-sizing: border-box;
 }
-.cds-confirmation-modal.cds-form-control-active div:last-child, .cds-confirmation-modal.cds-list.cds-list-flush div:last-child {
+.cds-confirmation-modal.cds-form-control-active div:last-child {
   justify-self: flex-end;
   align-self: flex-end;
 }
-.cds-confirmation-modal.cds-form-control-active div:last-child .cds-btn-secondary, .cds-confirmation-modal.cds-list.cds-list-flush div:last-child .cds-btn-secondary {
+.cds-confirmation-modal.cds-form-control-active div:last-child .cds-btn-secondary {
   margin-right: 16px;
   margin-top: 32px;
 }
-.cds-confirmation-modal.cds-form-control-active div:last-child .cds-btn-secondary-white, .cds-confirmation-modal.cds-list.cds-list-flush div:last-child .cds-btn-secondary-white {
+.cds-confirmation-modal.cds-form-control-active div:last-child .cds-btn-secondary-white {
   margin-right: 16px;
   margin-top: 32px;
 }
