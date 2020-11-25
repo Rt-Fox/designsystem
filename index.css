@@ -1769,21 +1769,21 @@ body {
 .cds-link.cds-link {
   color: #1946BA;
 }
-.cds-link.cds-link:active {
+.cds-link.cds-link:active, .cds-link.cds-link.active {
   text-decoration: underline;
   color: #143895;
 }
 .cds-link.cds-link-dark {
   color: #4D4D4D;
 }
-.cds-link.cds-link-dark:active {
+.cds-link.cds-link-dark:active, .cds-link.cds-link-dark.active {
   text-decoration: underline;
   color: #143895;
 }
 .cds-link.cds-link-light {
   color: #999999;
 }
-.cds-link.cds-link-light:active {
+.cds-link.cds-link-light:active, .cds-link.cds-link-light.active {
   text-decoration: underline;
   color: #262626;
 }
@@ -1792,7 +1792,7 @@ body {
   text-decoration-style: dotted;
   color: #1946BA;
 }
-.cds-link.cds-link-dotted:active {
+.cds-link.cds-link-dotted:active, .cds-link.cds-link-dotted.active {
   text-decoration: underline;
   text-decoration-style: dotted;
   color: #0F2A70;
@@ -1801,17 +1801,17 @@ body {
   background-color: #1946BA;
   color: #FFFFFF;
 }
-.cds-link.cds-link-dark-background:active {
+.cds-link.cds-link-dark-background:active, .cds-link.cds-link-dark-background.active {
   text-decoration: underline;
   color: #999999;
 }
-.cds-link:hover {
+.cds-link:hover, .cds-link.hover {
   text-decoration: underline;
 }
-.cds-link.cds-link-light:hover {
+.cds-link.cds-link-light:hover, .cds-link.hover.cds-link-light {
   color: #262626;
 }
-.cds-link.cds-link-dotted:hover {
+.cds-link.cds-link-dotted:hover, .cds-link.hover.cds-link-dotted {
   text-decoration: underline;
   text-decoration-style: dotted;
 }

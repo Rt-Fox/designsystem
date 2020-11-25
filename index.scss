@@ -1973,7 +1973,7 @@ body {
   &.cds-link {
     color: $color-primary;
 
-    &:active {
+    &:active,&.active {
       text-decoration: underline;
       color: $color-primary-500;
     }
@@ -1981,7 +1981,7 @@ body {
   &.cds-link-dark {
     color: $color-dark-700;
 
-    &:active {
+    &:active,&.active {
       text-decoration: underline;
       color: $color-primary-500;
     }
@@ -1989,7 +1989,7 @@ body {
   &.cds-link-light {
     color: $color-dark-500;
 
-    &:active {
+    &:active,&.active {
       text-decoration: underline;
       color: $color-dark;
     }
@@ -1999,7 +1999,7 @@ body {
     text-decoration-style: dotted;
     color: $color-primary;
 
-    &:active {
+    &:active,&.active {
       text-decoration: underline;
       text-decoration-style: dotted;
       color: $color-primary-700;
@@ -2009,18 +2009,18 @@ body {
     background-color: $color-primary;
     color: $color-light-100;
 
-    &:active {
+    &:active,&.active {
       text-decoration: underline;
       color: $color-dark-500;
     }
   }
-  &:hover {
+  &:hover, &.hover {
     text-decoration: underline;
   }
-  &.cds-link-light:hover {
+  &.cds-link-light:hover,&.hover.cds-link-light {
     color: $color-dark;
   }
-  &.cds-link-dotted:hover {
+  &.cds-link-dotted:hover,&.hover.cds-link-dotted  {
     text-decoration: underline;
     text-decoration-style: dotted;
   }
