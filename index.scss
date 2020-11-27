@@ -76,7 +76,11 @@ body {
   width: 500px;
   flex-shrink: 0;
 }
-
+.w600 {
+  display: flex;
+  width: 600px;
+  flex-shrink: 0;
+}
 .w700 {
   width: 700px;
   flex-shrink: 0;
@@ -88,7 +92,6 @@ body {
 }
 
 .content-wrap {
-  max-height: 100vh;
   min-height: 100vh;
 }
 /* ВНЕШНИЙ БЛОК */
@@ -231,27 +234,40 @@ body {
 }
 
 .css-code {
+  width: max-content;
   flex-shrink: 0;
   font-family: Segoe UI, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
   line-height: 26px;
-  color: $color-dark-700;
-  margin-left: 20px;
+  color: $color-dark;
+  margin-left: 36px;
+  margin-top: 8px;
+  margin-bottom: 16px;
+  margin-right: 10px;
 
-  .span-yellow {
+  p:first-child {
     color: $color-warning;
     margin-left: -20px;
   }
+
+  //в фигме два варианта расскраски, поздно заметил
+  // class="cds-color-dark-500"
   .cds-color-dark-500 {
-    margin-left: 30px;
+    margin-left: 10px;
+    color: $color-dark-700;
   }
   .cds-color-dark-300 {
-    margin-left: 40px;
+    margin-left: 20px;
+    color: $color-dark-500;
   }
 }
-
+.margin-less {
+  .css-code {
+    margin-bottom: 8px;
+    margin-top: 8px;}
+}
 //Заголовки
 .cds-sp1 {
   font-family: Segoe UI, sans-serif;
@@ -427,7 +443,7 @@ body {
 //базовые цвета
 .color-block {
   margin-bottom: 30px;
-  margin-right: 120px;
+  margin-right: 100px;
 
   .css-code {
     display: flex;
@@ -1532,6 +1548,14 @@ body {
     box-sizing: border-box;
   }
 }
+.rotate{
+  text-align: center;
+  writing-mode: tb-rl;
+  transform: scale(-1);
+  color: $color-dark-700;
+  font-size: 63px;
+}
+
 .cds-tab {
   width: max-content;
 
@@ -2260,6 +2284,7 @@ ul.cds-list.cds-list-flush {
   border-radius: 4px;
   @extend .cds-shadow;
   flex-shrink: 0;
+
   .cds-thead {
     border-radius: 4px 4px 0 0;
     padding: 7px 20px;
@@ -2308,9 +2333,9 @@ ul.cds-list.cds-list-flush {
   }
   .cds-tbody {
     background-color: $color-light-100;
-    margin: 8px 16px;
+    margin: 8px auto;
     display: flex;
-    width: 320px;
+    width: 340px;
     flex-wrap: wrap;
 
     .cds-small-text {
@@ -2318,17 +2343,13 @@ ul.cds-list.cds-list-flush {
       height: 30px;
       border-radius: 4px;
       color: $color-dark;
-      border: 1px solid transparent;
+      border: 1.0px solid transparent;
       background-color: $color-light-100;
-      margin-right: 16px;
-      margin-bottom: 8px;
+      margin: 4px 8px;
       display: flex;
       align-items: center;
       justify-content: center;
 
-      &:nth-child(7n) {
-        margin-right: 0;
-      }
       &.cds-today {
         background-color: $color-primary;
         border: 1px solid $color-primary;
@@ -2345,23 +2366,27 @@ ul.cds-list.cds-list-flush {
           color: $color-dark;
         }
       }
+      &.disabled {
+        background-color: transparent!important;
+        border: 1px solid transparent!important;
+        color: transparent!important;
+      }
     }
   }
   &.cds-datapicker-limitdate {
     .cds-tbody {
       .cds-small-text {
         color: $color-dark-300;
-
-        &.cds-today {
-          color: $color-light-100;
-
-          & ~ .cds-small-text {
-            color: $color-dark;
-          }
-        }
         &:active, &.cds-day-active {
           border: 1px solid $color-primary;
           color: $color-dark!important;
+        }
+      }
+      .cds-today {
+        color: $color-light-100;
+
+        & ~ .cds-small-text {
+          color: $color-dark;
         }
       }
     }
@@ -2370,7 +2395,6 @@ ul.cds-list.cds-list-flush {
     text-decoration: underline 2px $color-primary;
   }
 }
-
 .cds-toggle {
   display: flex;
   flex-direction: row;
